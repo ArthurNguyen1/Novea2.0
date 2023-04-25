@@ -148,3 +148,5 @@ C:\Users\P43s\Source\Repos\Novea2.0\Novea2.0\obj\Debug\Novea2.0.csproj.CoreCompi
 C:\Users\P43s\Source\Repos\Novea2.0\Novea2.0\obj\Debug\Novea2.0.csproj.CopyComplete
 C:\Users\P43s\Source\Repos\Novea2.0\Novea2.0\obj\Debug\Novea2.0.exe
 C:\Users\P43s\Source\Repos\Novea2.0\Novea2.0\obj\Debug\Novea2.0.pdb
+C:\Users\P43s\source\repos\Novea2.0\Novea2.0\obj\Debug\Resources\Reusable Code\StylesResources.baml
+C:\Users\P43s\source\repos\Novea2.0\Novea2.0\obj\Debug\App.baml
