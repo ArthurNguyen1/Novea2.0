@@ -1,0 +1,16 @@
+C:\Users\P43s\source\repos\Novea2.0\bin\Debug\Novea2.0.exe.config
+C:\Users\P43s\source\repos\Novea2.0\bin\Debug\Novea2.0.exe
+C:\Users\P43s\source\repos\Novea2.0\bin\Debug\Novea2.0.pdb
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.csproj.AssemblyReference.cache
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.csproj.SuggestedBindingRedirects.cache
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\MainWindow.g.cs
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\App.g.cs
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0_MarkupCompile.cache
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0_MarkupCompile.lref
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\MainWindow.baml
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.g.resources
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2._0.Properties.Resources.resources
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.csproj.GenerateResource.cache
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.csproj.CoreCompileInputs.cache
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.exe
+C:\Users\P43s\source\repos\Novea2.0\obj\Debug\Novea2.0.pdb
