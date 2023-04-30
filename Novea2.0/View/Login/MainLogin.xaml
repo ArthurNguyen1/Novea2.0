@@ -119,7 +119,7 @@
                                 BorderBrush="Transparent"
                                 Width="130" Height="130"
                                 Margin="20 0 0 0">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -128,7 +128,7 @@
                                     <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnAdmin}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
 
                             <Grid Width="auto" Height="auto">
                                 <Rectangle Fill="#3E9FB3" Cursor="Hand"
@@ -159,7 +159,7 @@
                                 BorderBrush="Transparent"
                                 Width="130" Height="130"
                                 Margin="30 0 0 0">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -168,7 +168,7 @@
                                     <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnClient}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
 
                             <Grid Width="auto" Height="auto">
                                 <Rectangle Fill="#FF9702" Cursor="Hand"
@@ -199,7 +199,7 @@
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="30 0 0 0">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -208,7 +208,7 @@
                                     <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnStore}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
 
                             <Grid  Width="auto" Height="auto">
                                 <Rectangle Fill="#F9708C" 
@@ -235,7 +235,7 @@
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="30 0 0 0">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -244,7 +244,7 @@
                                     <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnShipper}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
 
                             <Grid  Width="auto" Height="auto">
                                 <Rectangle Fill="#34A853" 
@@ -269,7 +269,7 @@
                             CornerRadius="15" 
                             Width="auto" Height="auto">
                     <Grid>
-                        <Frame x:Name="Login" 
+                        <Frame x:Name="LoginFrame" 
                                Source="/View/Login/ClientLogin.xaml"                                
                                NavigationUIVisibility="Hidden">
                         </Frame>
