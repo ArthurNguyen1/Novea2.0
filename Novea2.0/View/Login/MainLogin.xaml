@@ -107,83 +107,163 @@
                                Text="Login As"
                                FontSize="19" 
                                FontFamily="Segoe UI Semibold" Margin="0,10,0,0"/>
+                    <StackPanel Width="650" Height="160"
+                                Orientation="Horizontal"
+                                Margin="0 -15 0 0">
+                        <Button HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Padding="-5"
+                                x:Uid="0"
+                                x:Name="btnAdmin"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Width="130" Height="130"
+                                Margin="20 0 0 0">
+                                <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding SwitchTab}"
+                                                           CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetIdTab}"
+                                                           CommandParameter="{Binding ElementName=btnAdmin}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
 
-                    <Button VerticalAlignment="Top" 
-                            Padding="-5"
-                            x:Uid="1"
-                            x:Name="btnCLient"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Width="130" Height="130" 
-                            Margin="354,40,529,0">
-                        <!--<i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding SwitchTab}"
-                                                       CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
-                                <i:InvokeCommandAction Command="{Binding GetIdTab}"
-                                                       CommandParameter="{Binding ElementName=btnCLient}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                            <Grid Width="auto" Height="auto">
+                                <Rectangle Fill="#3E9FB3" Cursor="Hand"
+                                           HorizontalAlignment="Center"
+                                           Width="128" Height="130"  
+                                           RadiusY="14.5" RadiusX="14.5"
+                                           VerticalAlignment="Center"/>
+                                <Image HorizontalAlignment="Center"
+                                       Width="72" Height="65" Margin="0,20,0,0" 
+                                       VerticalAlignment="Top" 
+                                       Source="/Resources/Images/admin.png"/>
+                                <TextBlock HorizontalAlignment="Center" 
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           FontSize="15"
+                                           Height="20"
+                                           Margin="0,100,0,0" 
+                                           TextWrapping="Wrap" 
+                                           Text="ADMIN" 
+                                           VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
+                            </Grid>
+                        </Button>
 
-                        <Grid Width="auto" Height="auto">
-                            <Rectangle Fill="#FD8A87" Cursor="Hand"
-                                       HorizontalAlignment="Center"
-                                       Width="128" Height="130"  
-                                       RadiusY="14.5" RadiusX="14.5"
-                                       VerticalAlignment="Center"/>
-                            <Image HorizontalAlignment="Center"
-                                   Width="72" Height="65" Margin="0,20,0,0" 
-                                   VerticalAlignment="Top" 
-                                   Source="\Resources\Images\gamer.png"/>
-                            <TextBlock HorizontalAlignment="Center" 
-                                       Foreground="{StaticResource plainTextColor3}"
-                                       FontSize="15"
-                                       Height="20"
-                                       Margin="0,100,0,0" 
-                                       TextWrapping="Wrap" 
-                                       Text="KHÁCH HÀNG" 
-                                       VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
-                        </Grid>
-                    </Button>
+                        <Button VerticalAlignment="Top"
+                                Padding="-5"
+                                x:Uid="1"
+                                x:Name="btnClient"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Width="130" Height="130"
+                                Margin="30 0 0 0">
+                                <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding SwitchTab}"
+                                                           CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetIdTab}"
+                                                           CommandParameter="{Binding ElementName=btnClient}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
 
-                    <Button VerticalAlignment="Top" 
-                            Height="130" Width="130" 
-                            Margin="508,40,333,0"   
-                            x:Uid="0"                         
-                            x:Name="btnAdmin"
-                            Padding="-5"
-                            Background="Transparent"
-                            BorderBrush="Transparent">
-                        <!--<i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding SwitchTab}"
-                                                       CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="MouseMove">
-                                <i:InvokeCommandAction Command="{Binding GetIdTab}"
-                                                       CommandParameter="{Binding ElementName=btnAdmin}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                            <Grid Width="auto" Height="auto">
+                                <Rectangle Fill="#FF9702" Cursor="Hand"
+                                           HorizontalAlignment="Center"
+                                           Width="128" Height="130"  
+                                           RadiusY="14.5" RadiusX="14.5"
+                                           VerticalAlignment="Center"/>
+                                <Image HorizontalAlignment="Center"
+                                       Width="72" Height="65" Margin="0,20,0,0" 
+                                       VerticalAlignment="Top" 
+                                       Source="/Resources/Images/customer.png"/>
+                                <TextBlock HorizontalAlignment="Center" 
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           FontSize="15"
+                                           Height="20"
+                                           Margin="0,100,0,0" 
+                                           TextWrapping="Wrap" 
+                                           Text="KHÁCH HÀNG" 
+                                           VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
+                            </Grid>
+                        </Button>
 
-                        <Grid  Width="auto" Height="auto">
-                            <Rectangle Fill="#FC84CB" 
-                                       HorizontalAlignment="Left" 
-                                       Height="130"  Width="130"
-                                       RadiusY="14.5" RadiusX="14.5"/>
-                            <Image HorizontalAlignment="Center"                                   
-                                   Height="65" Margin="0,20,0,0" 
-                                   VerticalAlignment="Top" Width="86"
-                                   Source="\Resources\Images\store.png"/>
-                            <TextBlock HorizontalAlignment="Center" 
+                        <Button VerticalAlignment="Top" 
+                                Height="130" Width="130"  
+                                x:Uid="2"                         
+                                x:Name="btnStore"
+                                Padding="-5"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Margin="30 0 0 0">
+                                <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding SwitchTab}"
+                                                           CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetIdTab}"
+                                                           CommandParameter="{Binding ElementName=btnStore}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
+
+                            <Grid  Width="auto" Height="auto">
+                                <Rectangle Fill="#F9708C" 
+                                           HorizontalAlignment="Left" 
+                                           Height="130"  Width="130"
+                                           RadiusY="14.5" RadiusX="14.5"/>
+                                <Image HorizontalAlignment="Center"                                   
+                                       Height="65" Margin="0,20,0,0" 
+                                       VerticalAlignment="Top" Width="86"
+                                       Source="/Resources/Images/store.png"/>
+                                <TextBlock HorizontalAlignment="Center" 
+                                           FontSize="15"
+                                           Height="20" Margin="0,100,0,0"
+                                           TextWrapping="Wrap" Text="CỬA HÀNG"
+                                           VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
+                            </Grid>
+                        </Button>
+
+                        <Button VerticalAlignment="Top"
+                                Height="130" Width="130" 
+                                x:Uid="3"                         
+                                x:Name="btnShipper"
+                                Padding="-5"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Margin="30 0 0 0">
+                                <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding SwitchTab}"
+                                                           CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetIdTab}"
+                                                           CommandParameter="{Binding ElementName=btnShipper}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
+
+                            <Grid  Width="auto" Height="auto">
+                                <Rectangle Fill="#34A853" 
+                                           HorizontalAlignment="Left" 
+                                           Height="130"  Width="130"
+                                           RadiusY="14.5" RadiusX="14.5"/>
+                                <Image HorizontalAlignment="Center"                                   
+                                       Height="65" Margin="0,20,0,0" 
+                                       VerticalAlignment="Top" Width="86"
+                                       Source="/Resources/Images/shipper.png"/>
+                                <TextBlock HorizontalAlignment="Center" 
                                        FontSize="15"
                                        Height="20" Margin="0,100,0,0"
-                                       TextWrapping="Wrap" Text="CỬA HÀNG"
+                                       TextWrapping="Wrap" Text="SHIPPER"
                                        VerticalAlignment="Top" Width="100" TextAlignment="Center"/>
-                        </Grid>
-                    </Button>
-
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+                                       
                     <Border Margin="235,186,235,95" 
                             CornerRadius="15" 
                             Width="auto" Height="auto">
