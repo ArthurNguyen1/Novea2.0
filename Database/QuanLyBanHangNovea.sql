@@ -16,7 +16,7 @@ CREATE TABLE ADMINIS
 	EMAIL varchar(max),
 	NGDK datetime,
 	AVATAR varbinary(max),
-	REASONBANNING bit,
+	REASONBANNING nvarchar(max),
 	STATU bit
 ) 
 
@@ -34,7 +34,7 @@ CREATE TABLE SHIPPER
 	LUONG money,
 	SHIPSTATUS bit,
 	AVATAR varbinary(max),
-	REASONBANNING bit,
+	REASONBANNING nvarchar(max),
 	STATU bit
 )
 
@@ -52,7 +52,7 @@ CREATE TABLE KHACH
 	NGDK datetime,
 	DOANHSO money,
 	AVATAR varbinary(max),
-	REASONBANNING bit,
+	REASONBANNING nvarchar(max),
 	STATU bit
 )
 
@@ -68,7 +68,7 @@ CREATE TABLE CUAHANG
 	NGDK datetime,	
 	DOANHTHU money,
 	AVATAR varbinary(max),
-	REASONBANNING bit,
+	REASONBANNING nvarchar(max),
 	STATU bit
 )
 
@@ -104,7 +104,7 @@ CREATE TABLE CTHD
 	SOCTHD varchar(128) primary key,
 	SOLUONG int,
 	TRIGIA money,
-	CHUTHICH varchar(64),
+	CHUTHICH nvarchar(max),
 	SOHD varchar(128) FOREIGN KEY REFERENCES HOADON(SOHD),
 	MASP varchar(128) FOREIGN KEY REFERENCES SANPHAM(MASP),
 )
