@@ -83,7 +83,7 @@
                 <Label Content="ĐĂNG NHẬP"                    
                        Foreground="{StaticResource color1}"
                        FontFamily="Segoe UI Black" 
-                       FontSize="60" Margin="0 0 0 10" 
+                       FontSize="60" Margin="0 -10 0 10" 
                        VerticalAlignment="Top" 
                        HorizontalAlignment="Center" 
                        FontWeight="Bold"/>
@@ -109,7 +109,7 @@
                                FontFamily="Segoe UI Semibold" Margin="0,10,0,0"/>
                     <StackPanel Width="650" Height="160"
                                 Orientation="Horizontal"
-                                Margin="0 -15 0 0">
+                                Margin="0 50 0 0">
                         <Button HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Padding="-5"
@@ -119,7 +119,7 @@
                                 BorderBrush="Transparent"
                                 Width="130" Height="130"
                                 Margin="20 0 0 0">
-                                <!--<i:Interaction.Triggers>
+                            <!--<i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -159,7 +159,7 @@
                                 BorderBrush="Transparent"
                                 Width="130" Height="130"
                                 Margin="30 0 0 0">
-                                <!--<i:Interaction.Triggers>
+                            <!--<i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -199,7 +199,7 @@
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="30 0 0 0">
-                                <!--<i:Interaction.Triggers>
+                            <!--<i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -235,7 +235,7 @@
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="30 0 0 0">
-                                <!--<i:Interaction.Triggers>
+                            <!--<i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
@@ -263,19 +263,18 @@
                             </Grid>
                         </Button>
                     </StackPanel>
-                                       
-                    <Border Margin="235,186,235,95" 
+                </Grid>
+                
+                <Border Margin="235,-10,235,95" 
                             CornerRadius="15" 
                             Width="auto" Height="auto">
-                        <Grid>
-                            <!--<Frame x:Name="Login" 
-                               Source="/view/Login/ClientLoginPage.xaml"                                
+                    <Grid>
+                        <Frame x:Name="Login" 
+                               Source="/View/Login/ClientLogin.xaml"                                
                                NavigationUIVisibility="Hidden">
-
-                            </Frame>-->
-                        </Grid>
-                    </Border>
-                </Grid>
+                        </Frame>
+                    </Grid>
+                </Border>
             </StackPanel>
         </Grid>
     </Border>
