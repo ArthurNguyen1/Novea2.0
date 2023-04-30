@@ -3,4 +3,7 @@
                     xmlns:viewmodel="clr-namespace:Novea2._0.ViewModel.Login">
     <viewmodel:MainLoginViewModel x:Key="MainLoginVM"/>
     <viewmodel:ClientLoginViewModel x:Key="ClientLoginVM"/>
+    <viewmodel:AdminLoginViewModel x:Key="AdminLoginVM"/>
+    <viewmodel:StoreLoginViewModel x:Key="StoreLoginVM"/>
+    <viewmodel:ShipperLoginViewModel x:Key="ShipperLoginVM"/>
 </ResourceDictionary>
