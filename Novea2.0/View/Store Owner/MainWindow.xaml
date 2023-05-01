@@ -350,15 +350,15 @@
                                                          Width="{Binding Width,ElementName=a}"
                                                          Height="{Binding Width,ElementName=a}">
                                 </materialDesign:PackIcon>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding Closewd}"                                               
-                                                                    CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                        <i:InvokeCommandAction Command="{Binding CloseWd}"                                               
+                                                               CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
 
-                            <Button Style="{StaticResource controlButton}"
+                            <!--<Button Style="{StaticResource controlButton}"
                                     Tag="{StaticResource plainTextColor1}"
                                     Margin="5 0 0 0"
                                     Width="25">
@@ -366,13 +366,13 @@
                                                          Width="{Binding Width,ElementName=a}"
                                                          Height="{Binding Width,ElementName=a}">
                                 </materialDesign:PackIcon>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding Refresh}"                                    
                                                                     CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
-                            </Button>
+                                </i:Interaction.Triggers>
+                            </Button>-->
 
                             <Button Style="{StaticResource controlButton}"
                                     Tag="{StaticResource plainTextColor1}"
@@ -382,12 +382,12 @@
                                                          Width="{Binding Width,ElementName=a}"
                                                          Height="{Binding Width,ElementName=a}">
                                 </materialDesign:PackIcon>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding Minimizewd}"                                    
-                                                                    CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                        <i:InvokeCommandAction Command="{Binding MinimizeWd}"                                    
+                                                               CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                         </StackPanel>
                     </Border>
