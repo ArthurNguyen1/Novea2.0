@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Novea2._0.ViewModel.Login
 {
@@ -14,13 +16,24 @@ namespace Novea2._0.ViewModel.Login
     {
         public ICommand SwitchTab { get; set; }
         public ICommand GetIdTab { get; set; }
+        public ICommand MinimizeLogin { get; set; }
+        public ICommand CloseLogin { get; set; }
         int buttonIndex;
         public MainLoginViewModel()
         {
             GetIdTab = new RelayCommand<Button>((p) => true, (p) => buttonIndex = int.Parse(p.Uid));
             SwitchTab = new RelayCommand<MainLogin>((p) => true, (p) => switchTab(p));
+            MinimizeLogin = new RelayCommand<MainLogin>((p) => true, (p) => minimizeLogin(p));
+            CloseLogin = new RelayCommand<MainLogin>((p) => true, (p) => closeLogin());
         }
-
+        private void closeLogin()
+        {
+            Application.Current.Shutdown();
+        }
+        private void minimizeLogin(MainLogin p)
+        {
+            p.WindowState = WindowState.Minimized;
+        }
         private void switchTab(MainLogin p)
         {
             switch (buttonIndex)

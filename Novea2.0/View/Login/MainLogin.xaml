@@ -56,12 +56,12 @@
                             <materialDesign:PackIcon Kind="WindowMinimize"
                                                      Width="{Binding Width,ElementName=a}"
                                                      Height="{Binding Width,ElementName=a}"/>
-                            <!--<i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding MinimizeLogin}"                                    
-                                                           CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding MinimizeLogin}"                                    
+                                                        CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </Button>
 
                         <Button Style="{StaticResource controlButton}"                                   
@@ -70,12 +70,12 @@
                             <materialDesign:PackIcon Kind="CloseThick"
                                                      Width="{Binding Width,ElementName=a}"
                                                      Height="{Binding Width,ElementName=a}"/>
-                            <!--<i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding CloseLogin}"                                               
-                                                                        CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding CloseLogin}"                                               
+                                                                    CommandParameter="{Binding ElementName=MainLoginWD}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </Button>
                     </StackPanel>
                 </Grid>
