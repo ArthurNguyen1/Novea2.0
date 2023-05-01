@@ -393,11 +393,10 @@
                     </Border>
 
                     <Grid Grid.Row="1">
-                        <!--<Frame x:Name="Main" 
-                           Source="/view/Admin/HomeView.xaml" 
-                           NavigationUIVisibility="Hidden"
-                           DataContext="{StaticResource MainVM}">
-                        </Frame>-->
+                        <Frame x:Name="MainFrame" 
+                               Source="/View/Store Owner/Home.xaml" 
+                               NavigationUIVisibility="Hidden">
+                        </Frame>
                     </Grid>
                 </Grid>
             </Border>
