@@ -7,4 +7,5 @@
     <viewmodel:DetailOrderViewModel x:Key="DetailOrderVM"/>
     <viewmodel:ProductViewModel x:Key="ProductVM"/>
     <viewmodel:DetailProductViewModel x:Key="DetailProductVM"/>
+    <viewmodel:CustomerViewModel x:Key="CustomerVM"/>
 </ResourceDictionary>
