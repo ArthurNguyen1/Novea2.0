@@ -211,16 +211,16 @@
                                          Tag="{StaticResource color1}"
                                          Uid="2"
                                          x:Name="btnProduct">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SwitchTab}"
-                                                       CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="MouseMove">
                                         <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                        CommandParameter="{Binding ElementName=btnProduct}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Drink" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock FontFamily="Segoe UI" 

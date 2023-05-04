@@ -143,6 +143,7 @@
     <Compile Include="ViewModel\Store Owner\HomeViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\OrderViewModel.cs" />
+    <Compile Include="ViewModel\Store Owner\ProductViewModel.cs" />
     <Compile Include="View\Login\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
@@ -173,6 +174,9 @@
     </Compile>
     <Compile Include="View\Store Owner\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store Owner\Product.xaml.cs">
+      <DependentUpon>Product.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\Reusable Code\LoginMainResources.xaml">
       <SubType>Designer</SubType>
@@ -219,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Store Owner\Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Store Owner\Product.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

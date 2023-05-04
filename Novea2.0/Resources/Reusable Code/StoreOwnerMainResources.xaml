@@ -5,4 +5,5 @@
     <viewmodel:HomeViewModel x:Key="HomeVM"/>
     <viewmodel:OrderViewModel x:Key="OrderVM"/>
     <viewmodel:DetailOrderViewModel x:Key="DetailOrderVM"/>
+    <viewmodel:ProductViewModel x:Key="ProductVM"/>
 </ResourceDictionary>

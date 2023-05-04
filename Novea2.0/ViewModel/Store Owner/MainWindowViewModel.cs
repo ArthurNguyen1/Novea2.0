@@ -43,6 +43,7 @@ namespace Novea2._0.ViewModel.Store_Owner
                     p.MainFrame.NavigationService.Navigate(new Order());
                     break;
                 case 2:
+                    p.MainFrame.NavigationService.Navigate(new Product());
                     break;
                 case 3:
                     break;
