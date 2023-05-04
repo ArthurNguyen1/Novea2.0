@@ -1,4 +1,5 @@
-﻿using Novea2._0.View.Store_Owner;
+﻿using Novea2._0.View;
+using Novea2._0.View.Store_Owner;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Novea2._0.ViewModel.Store_Owner
         public ICommand CloseWd { get; set; }
         public ICommand SwitchTab { get; set; }
         public ICommand GetIdTab { get; set; }
+        public ICommand LogOutCommand { get; set; }
         int buttonIndex;
         public MainWindowViewModel()
         {
@@ -23,6 +25,7 @@ namespace Novea2._0.ViewModel.Store_Owner
             CloseWd = new RelayCommand<MainWindow>((p) => true, (p) => closeWindow());
             GetIdTab = new RelayCommand<RadioButton>((p) => true, (p) => buttonIndex = int.Parse(p.Uid));
             SwitchTab = new RelayCommand<MainWindow>((p) => true, (p) => switchTab(p));
+            LogOutCommand = new RelayCommand<MainWindow>((p) => true, (p) => logOut(p));
         }
         private void minimizeWindow(MainWindow p)
         {
@@ -57,6 +60,12 @@ namespace Novea2._0.ViewModel.Store_Owner
                 default:
                     break;
             }
+        }
+        private void logOut(MainWindow p)
+        {
+            MainLogin login = new MainLogin();
+            login.Show();
+            p.Close();
         }
     }
 }

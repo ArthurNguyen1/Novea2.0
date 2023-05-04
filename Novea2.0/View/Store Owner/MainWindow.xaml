@@ -299,12 +299,12 @@
                             <RadioButton Style="{StaticResource menuButton}"                                
                                          Tag="{StaticResource color1}"
                                          x:Name="btnLogout">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding LogOutCommand}"
-                                       CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                                               CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock FontFamily="Segoe UI" 
