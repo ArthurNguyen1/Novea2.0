@@ -139,6 +139,7 @@
     <Compile Include="ViewModel\Login\ShipperLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Store Owner\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\CustomerViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\DetailOrderViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\DetailProductViewModel.cs" />
@@ -147,6 +148,8 @@
     <Compile Include="ViewModel\Store Owner\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\OrderViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\ProductViewModel.cs" />
+    <Compile Include="ViewModel\Store Owner\SettingViewModel.cs" />
+    <Compile Include="ViewModel\Store Owner\StoreInfoViewModel.cs" />
     <Compile Include="View\Login\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Store Owner\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Store Owner\Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
@@ -189,6 +195,12 @@
     </Compile>
     <Compile Include="View\Store Owner\Product.xaml.cs">
       <DependentUpon>Product.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store Owner\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store Owner\StoreInfo.xaml.cs">
+      <DependentUpon>StoreInfo.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\Reusable Code\LoginMainResources.xaml">
       <SubType>Designer</SubType>
@@ -222,6 +234,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Store Owner\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Store Owner\Customer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -251,6 +267,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Store Owner\Product.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Store Owner\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Store Owner\StoreInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
