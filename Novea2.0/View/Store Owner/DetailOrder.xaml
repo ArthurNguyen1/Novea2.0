@@ -59,7 +59,7 @@
                             x:Name="a">
                         <materialDesign:PackIcon Kind="WindowMinimize"
                                                  Foreground="{StaticResource plainTextColor3}" 
-                                                 Height="24" Width="25" 
+                                                 Height="25" Width="25" 
                                                  HorizontalAlignment="Center" 
                                                  VerticalAlignment="Center"/>
                         <!--<i:Interaction.Triggers>
@@ -76,7 +76,7 @@
                             Width="25">
                         <materialDesign:PackIcon Kind="CloseThick" 
                                                  Foreground="{StaticResource plainTextColor3}"
-                                                 Height="24" Width="25" 
+                                                 Height="25" Width="25" 
                                                  HorizontalAlignment="Center" 
                                                  VerticalAlignment="Center"/>
                         <!--<i:Interaction.Triggers>
@@ -93,7 +93,7 @@
                        HorizontalAlignment="Center"
                        FontFamily="Segoe UI Bold"
                        VerticalAlignment="Center" 
-                       FontSize="20"
+                       FontSize="30"
                        Text="CHI TIẾT ĐƠN HÀNG"
                        Height="auto" Width="auto"/>
 

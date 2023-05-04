@@ -140,6 +140,7 @@
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Store Owner\DetailOrderViewModel.cs" />
+    <Compile Include="ViewModel\Store Owner\DetailProductViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\HomeViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\OrderViewModel.cs" />
@@ -165,6 +166,9 @@
     </Compile>
     <Compile Include="View\Store Owner\DetailOrder.xaml.cs">
       <DependentUpon>DetailOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Store Owner\DetailProduct.xaml.cs">
+      <DependentUpon>DetailProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Store Owner\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -211,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Store Owner\DetailOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Store Owner\DetailProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
