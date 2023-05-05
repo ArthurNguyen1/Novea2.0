@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLyBanHangNoveaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMINIS">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="varchar(max)" />
+          <Property Name="MATKHAU" Type="varchar(max)" />
+          <Property Name="HOTEN" Type="nvarchar(max)" />
+          <Property Name="NGSINH" Type="datetime" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="varchar(max)" />
+          <Property Name="NGDK" Type="datetime" />
+          <Property Name="AVATAR" Type="varbinary(max)" />
+          <Property Name="REASONBANNING" Type="nvarchar(max)" />
+          <Property Name="STATU" Type="bit" />
+        </EntityType>
+        <EntityType Name="CTHD">
+          <Key>
+            <PropertyRef Name="SOCTHD" />
+          </Key>
+          <Property Name="SOCTHD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="TRIGIA" Type="money" />
+          <Property Name="CHUTHICH" Type="nvarchar(max)" />
+          <Property Name="SOHD" Type="varchar" MaxLength="128" />
+          <Property Name="MASP" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="CUAHANG">
+          <Key>
+            <PropertyRef Name="MACH" />
+          </Key>
+          <Property Name="MACH" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="varchar(max)" />
+          <Property Name="MATKHAU" Type="varchar(max)" />
+          <Property Name="TENCH" Type="nvarchar(max)" />
+          <Property Name="DIADIEM" Type="nvarchar(max)" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="varchar(max)" />
+          <Property Name="NGDK" Type="datetime" />
+          <Property Name="DOANHTHU" Type="money" />
+          <Property Name="AVATAR" Type="varbinary(max)" />
+          <Property Name="REASONBANNING" Type="nvarchar(max)" />
+          <Property Name="STATU" Type="bit" />
+        </EntityType>
+        <EntityType Name="DANHGIA">
+          <Key>
+            <PropertyRef Name="MADG" />
+          </Key>
+          <Property Name="MADG" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NGAYDG" Type="datetime" />
+          <Property Name="COMMENT" Type="nvarchar(max)" />
+          <Property Name="RATE" Type="int" />
+          <Property Name="MAND_KHACH" Type="varchar" MaxLength="128" />
+          <Property Name="MASP" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="SOHD" />
+          </Key>
+          <Property Name="SOHD" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="NGMH" Type="datetime" />
+          <Property Name="TONGTIEN" Type="money" />
+          <Property Name="STATU" Type="int" />
+          <Property Name="MAND_KHACH" Type="varchar" MaxLength="128" />
+          <Property Name="MAND_SHIPPER" Type="varchar" MaxLength="128" />
+          <Property Name="MACH" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="KHACH">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="varchar(max)" />
+          <Property Name="MATKHAU" Type="varchar(max)" />
+          <Property Name="HOTEN" Type="nvarchar(max)" />
+          <Property Name="NGSINH" Type="datetime" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="varchar(max)" />
+          <Property Name="DIACHI" Type="nvarchar(max)" />
+          <Property Name="NGDK" Type="datetime" />
+          <Property Name="DOANHSO" Type="money" />
+          <Property Name="AVATAR" Type="varbinary(max)" />
+          <Property Name="REASONBANNING" Type="nvarchar(max)" />
+          <Property Name="STATU" Type="bit" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MASP" />
+          </Key>
+          <Property Name="MASP" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TENSP" Type="nvarchar(max)" />
+          <Property Name="LOAISP" Type="nvarchar(max)" />
+          <Property Name="DONVI" Type="nvarchar(max)" />
+          <Property Name="DONGIA" Type="money" />
+          <Property Name="SIZE" Type="varchar" MaxLength="10" />
+          <Property Name="MOTA" Type="nvarchar(max)" />
+          <Property Name="AVAILABLE" Type="bit" />
+          <Property Name="HINHSP" Type="varbinary(max)" />
+          <Property Name="AVERAGERATE" Type="float" />
+          <Property Name="MACH" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="SHIPPER">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="varchar(max)" />
+          <Property Name="MATKHAU" Type="varchar(max)" />
+          <Property Name="HOTEN" Type="nvarchar(max)" />
+          <Property Name="NGSINH" Type="datetime" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="varchar(max)" />
+          <Property Name="NGDK" Type="datetime" />
+          <Property Name="LUONG" Type="money" />
+          <Property Name="SHIPSTATUS" Type="bit" />
+          <Property Name="AVATAR" Type="varbinary(max)" />
+          <Property Name="REASONBANNING" Type="nvarchar(max)" />
+          <Property Name="STATU" Type="bit" />
+        </EntityType>
+        <Association Name="FK__CTHD__MASP__46E78A0C">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHD__SOHD__45F365D3">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="SOHD" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="SOHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANHGIA__MAND_KH__49C3F6B7">
+          <End Role="KHACH" Type="Self.KHACH" Multiplicity="0..1" />
+          <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="DANHGIA">
+              <PropertyRef Name="MAND_KHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANHGIA__MASP__4AB81AF0">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="DANHGIA">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MACH__4316F928">
+          <End Role="CUAHANG" Type="Self.CUAHANG" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUAHANG">
+              <PropertyRef Name="MACH" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MAND_KHA__412EB0B6">
+          <End Role="KHACH" Type="Self.KHACH" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MAND_KHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MAND_SHI__4222D4EF">
+          <End Role="SHIPPER" Type="Self.SHIPPER" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SHIPPER">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MAND_SHIPPER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MACH__3E52440B">
+          <End Role="CUAHANG" Type="Self.CUAHANG" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUAHANG">
+              <PropertyRef Name="MACH" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyBanHangNoveaModelStoreContainer">
+          <EntitySet Name="ADMINIS" EntityType="Self.ADMINIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CTHD" EntityType="Self.CTHD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUAHANG" EntityType="Self.CUAHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DANHGIA" EntityType="Self.DANHGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACH" EntityType="Self.KHACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SHIPPER" EntityType="Self.SHIPPER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CTHD__MASP__46E78A0C" Association="Self.FK__CTHD__MASP__46E78A0C">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="CTHD" EntitySet="CTHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHD__SOHD__45F365D3" Association="Self.FK__CTHD__SOHD__45F365D3">
+            <End Role="HOADON" EntitySet="HOADON" />
+            <End Role="CTHD" EntitySet="CTHD" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANHGIA__MAND_KH__49C3F6B7" Association="Self.FK__DANHGIA__MAND_KH__49C3F6B7">
+            <End Role="KHACH" EntitySet="KHACH" />
+            <End Role="DANHGIA" EntitySet="DANHGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANHGIA__MASP__4AB81AF0" Association="Self.FK__DANHGIA__MASP__4AB81AF0">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="DANHGIA" EntitySet="DANHGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MACH__4316F928" Association="Self.FK__HOADON__MACH__4316F928">
+            <End Role="CUAHANG" EntitySet="CUAHANG" />
+            <End Role="HOADON" EntitySet="HOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MAND_KHA__412EB0B6" Association="Self.FK__HOADON__MAND_KHA__412EB0B6">
+            <End Role="KHACH" EntitySet="KHACH" />
+            <End Role="HOADON" EntitySet="HOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MAND_SHI__4222D4EF" Association="Self.FK__HOADON__MAND_SHI__4222D4EF">
+            <End Role="SHIPPER" EntitySet="SHIPPER" />
+            <End Role="HOADON" EntitySet="HOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MACH__3E52440B" Association="Self.FK__SANPHAM__MACH__3E52440B">
+            <End Role="CUAHANG" EntitySet="CUAHANG" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyBanHangNoveaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMINI">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HOTEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NGSINH" Type="DateTime" Precision="3" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NGDK" Type="DateTime" Precision="3" />
+          <Property Name="AVATAR" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="REASONBANNING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATU" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CTHD">
+          <Key>
+            <PropertyRef Name="SOCTHD" />
+          </Key>
+          <Property Name="SOCTHD" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="TRIGIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CHUTHICH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SOHD" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MASP" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CTHD__MASP__46E78A0C" FromRole="CTHD" ToRole="SANPHAM" />
+          <NavigationProperty Name="HOADON" Relationship="Self.FK__CTHD__SOHD__45F365D3" FromRole="CTHD" ToRole="HOADON" />
+        </EntityType>
+        <EntityType Name="CUAHANG">
+          <Key>
+            <PropertyRef Name="MACH" />
+          </Key>
+          <Property Name="MACH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TENCH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DIADIEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NGDK" Type="DateTime" Precision="3" />
+          <Property Name="DOANHTHU" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AVATAR" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="REASONBANNING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATU" Type="Boolean" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MACH__4316F928" FromRole="CUAHANG" ToRole="HOADON" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MACH__3E52440B" FromRole="CUAHANG" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="DANHGIA">
+          <Key>
+            <PropertyRef Name="MADG" />
+          </Key>
+          <Property Name="MADG" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGAYDG" Type="DateTime" Precision="3" />
+          <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATE" Type="Int32" />
+          <Property Name="MAND_KHACH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MASP" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KHACH" Relationship="Self.FK__DANHGIA__MAND_KH__49C3F6B7" FromRole="DANHGIA" ToRole="KHACH" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__DANHGIA__MASP__4AB81AF0" FromRole="DANHGIA" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="SOHD" />
+          </Key>
+          <Property Name="SOHD" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGMH" Type="DateTime" Precision="3" />
+          <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="STATU" Type="Int32" />
+          <Property Name="MAND_KHACH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MAND_SHIPPER" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="MACH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__SOHD__45F365D3" FromRole="HOADON" ToRole="CTHD" />
+          <NavigationProperty Name="CUAHANG" Relationship="Self.FK__HOADON__MACH__4316F928" FromRole="HOADON" ToRole="CUAHANG" />
+          <NavigationProperty Name="KHACH" Relationship="Self.FK__HOADON__MAND_KHA__412EB0B6" FromRole="HOADON" ToRole="KHACH" />
+          <NavigationProperty Name="SHIPPER" Relationship="Self.FK__HOADON__MAND_SHI__4222D4EF" FromRole="HOADON" ToRole="SHIPPER" />
+        </EntityType>
+        <EntityType Name="KHACH">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HOTEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NGSINH" Type="DateTime" Precision="3" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NGDK" Type="DateTime" Precision="3" />
+          <Property Name="DOANHSO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AVATAR" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="REASONBANNING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATU" Type="Boolean" />
+          <NavigationProperty Name="DANHGIAs" Relationship="Self.FK__DANHGIA__MAND_KH__49C3F6B7" FromRole="KHACH" ToRole="DANHGIA" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MAND_KHA__412EB0B6" FromRole="KHACH" ToRole="HOADON" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MASP" />
+          </Key>
+          <Property Name="MASP" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENSP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LOAISP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DONVI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DONGIA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SIZE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AVAILABLE" Type="Boolean" />
+          <Property Name="HINHSP" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AVERAGERATE" Type="Double" />
+          <Property Name="MACH" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CTHDs" Relationship="Self.FK__CTHD__MASP__46E78A0C" FromRole="SANPHAM" ToRole="CTHD" />
+          <NavigationProperty Name="CUAHANG" Relationship="Self.FK__SANPHAM__MACH__3E52440B" FromRole="SANPHAM" ToRole="CUAHANG" />
+          <NavigationProperty Name="DANHGIAs" Relationship="Self.FK__DANHGIA__MASP__4AB81AF0" FromRole="SANPHAM" ToRole="DANHGIA" />
+        </EntityType>
+        <EntityType Name="SHIPPER">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAIKHOAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="HOTEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NGSINH" Type="DateTime" Precision="3" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NGDK" Type="DateTime" Precision="3" />
+          <Property Name="LUONG" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SHIPSTATUS" Type="Boolean" />
+          <Property Name="AVATAR" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="REASONBANNING" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATU" Type="Boolean" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MAND_SHI__4222D4EF" FromRole="SHIPPER" ToRole="HOADON" />
+        </EntityType>
+        <Association Name="FK__CTHD__MASP__46E78A0C">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHD__SOHD__45F365D3">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
+          <End Role="CTHD" Type="Self.CTHD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="SOHD" />
+            </Principal>
+            <Dependent Role="CTHD">
+              <PropertyRef Name="SOHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MACH__4316F928">
+          <End Role="CUAHANG" Type="Self.CUAHANG" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUAHANG">
+              <PropertyRef Name="MACH" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MACH__3E52440B">
+          <End Role="CUAHANG" Type="Self.CUAHANG" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUAHANG">
+              <PropertyRef Name="MACH" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANHGIA__MAND_KH__49C3F6B7">
+          <End Role="KHACH" Type="Self.KHACH" Multiplicity="0..1" />
+          <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="DANHGIA">
+              <PropertyRef Name="MAND_KHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DANHGIA__MASP__4AB81AF0">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="DANHGIA">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MAND_KHA__412EB0B6">
+          <End Role="KHACH" Type="Self.KHACH" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MAND_KHACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HOADON__MAND_SHI__4222D4EF">
+          <End Role="SHIPPER" Type="Self.SHIPPER" Multiplicity="0..1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SHIPPER">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="MAND_SHIPPER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyBanHangNoveaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINIS" EntityType="Self.ADMINI" />
+          <EntitySet Name="CTHDs" EntityType="Self.CTHD" />
+          <EntitySet Name="CUAHANGs" EntityType="Self.CUAHANG" />
+          <EntitySet Name="DANHGIAs" EntityType="Self.DANHGIA" />
+          <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+          <EntitySet Name="KHACHes" EntityType="Self.KHACH" />
+          <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+          <EntitySet Name="SHIPPERs" EntityType="Self.SHIPPER" />
+          <AssociationSet Name="FK__CTHD__MASP__46E78A0C" Association="Self.FK__CTHD__MASP__46E78A0C">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="CTHD" EntitySet="CTHDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHD__SOHD__45F365D3" Association="Self.FK__CTHD__SOHD__45F365D3">
+            <End Role="HOADON" EntitySet="HOADONs" />
+            <End Role="CTHD" EntitySet="CTHDs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MACH__4316F928" Association="Self.FK__HOADON__MACH__4316F928">
+            <End Role="CUAHANG" EntitySet="CUAHANGs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MACH__3E52440B" Association="Self.FK__SANPHAM__MACH__3E52440B">
+            <End Role="CUAHANG" EntitySet="CUAHANGs" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANHGIA__MAND_KH__49C3F6B7" Association="Self.FK__DANHGIA__MAND_KH__49C3F6B7">
+            <End Role="KHACH" EntitySet="KHACHes" />
+            <End Role="DANHGIA" EntitySet="DANHGIAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DANHGIA__MASP__4AB81AF0" Association="Self.FK__DANHGIA__MASP__4AB81AF0">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="DANHGIA" EntitySet="DANHGIAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MAND_KHA__412EB0B6" Association="Self.FK__HOADON__MAND_KHA__412EB0B6">
+            <End Role="KHACH" EntitySet="KHACHes" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HOADON__MAND_SHI__4222D4EF" Association="Self.FK__HOADON__MAND_SHI__4222D4EF">
+            <End Role="SHIPPER" EntitySet="SHIPPERs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyBanHangNoveaModelStoreContainer" CdmEntityContainer="QuanLyBanHangNoveaEntities">
+          <EntitySetMapping Name="ADMINIS">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.ADMINI">
+              <MappingFragment StoreEntitySet="ADMINIS">
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NGDK" ColumnName="NGDK" />
+                <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+                <ScalarProperty Name="REASONBANNING" ColumnName="REASONBANNING" />
+                <ScalarProperty Name="STATU" ColumnName="STATU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTHDs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.CTHD">
+              <MappingFragment StoreEntitySet="CTHD">
+                <ScalarProperty Name="SOCTHD" ColumnName="SOCTHD" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="TRIGIA" ColumnName="TRIGIA" />
+                <ScalarProperty Name="CHUTHICH" ColumnName="CHUTHICH" />
+                <ScalarProperty Name="SOHD" ColumnName="SOHD" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUAHANGs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.CUAHANG">
+              <MappingFragment StoreEntitySet="CUAHANG">
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+                <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="TENCH" ColumnName="TENCH" />
+                <ScalarProperty Name="DIADIEM" ColumnName="DIADIEM" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NGDK" ColumnName="NGDK" />
+                <ScalarProperty Name="DOANHTHU" ColumnName="DOANHTHU" />
+                <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+                <ScalarProperty Name="REASONBANNING" ColumnName="REASONBANNING" />
+                <ScalarProperty Name="STATU" ColumnName="STATU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DANHGIAs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.DANHGIA">
+              <MappingFragment StoreEntitySet="DANHGIA">
+                <ScalarProperty Name="MADG" ColumnName="MADG" />
+                <ScalarProperty Name="NGAYDG" ColumnName="NGAYDG" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="RATE" ColumnName="RATE" />
+                <ScalarProperty Name="MAND_KHACH" ColumnName="MAND_KHACH" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.HOADON">
+              <MappingFragment StoreEntitySet="HOADON">
+                <ScalarProperty Name="SOHD" ColumnName="SOHD" />
+                <ScalarProperty Name="NGMH" ColumnName="NGMH" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="STATU" ColumnName="STATU" />
+                <ScalarProperty Name="MAND_KHACH" ColumnName="MAND_KHACH" />
+                <ScalarProperty Name="MAND_SHIPPER" ColumnName="MAND_SHIPPER" />
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHes">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.KHACH">
+              <MappingFragment StoreEntitySet="KHACH">
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGDK" ColumnName="NGDK" />
+                <ScalarProperty Name="DOANHSO" ColumnName="DOANHSO" />
+                <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+                <ScalarProperty Name="REASONBANNING" ColumnName="REASONBANNING" />
+                <ScalarProperty Name="STATU" ColumnName="STATU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SANPHAMs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.SANPHAM">
+              <MappingFragment StoreEntitySet="SANPHAM">
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="LOAISP" ColumnName="LOAISP" />
+                <ScalarProperty Name="DONVI" ColumnName="DONVI" />
+                <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+                <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="AVAILABLE" ColumnName="AVAILABLE" />
+                <ScalarProperty Name="HINHSP" ColumnName="HINHSP" />
+                <ScalarProperty Name="AVERAGERATE" ColumnName="AVERAGERATE" />
+                <ScalarProperty Name="MACH" ColumnName="MACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHIPPERs">
+            <EntityTypeMapping TypeName="QuanLyBanHangNoveaModel.SHIPPER">
+              <MappingFragment StoreEntitySet="SHIPPER">
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NGDK" ColumnName="NGDK" />
+                <ScalarProperty Name="LUONG" ColumnName="LUONG" />
+                <ScalarProperty Name="SHIPSTATUS" ColumnName="SHIPSTATUS" />
+                <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+                <ScalarProperty Name="REASONBANNING" ColumnName="REASONBANNING" />
+                <ScalarProperty Name="STATU" ColumnName="STATU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
