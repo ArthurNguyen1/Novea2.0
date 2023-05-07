@@ -178,6 +178,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\Customer\HomeViewModel.cs" />
     <Compile Include="ViewModel\Customer\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\Customer\StoreDetailViewModel.cs" />
     <Compile Include="ViewModel\Login\AdminLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ClientLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\MainLoginViewModel.cs" />
@@ -200,6 +201,9 @@
     </Compile>
     <Compile Include="View\Customer\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\StoreDetail.xaml.cs">
+      <DependentUpon>StoreDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
@@ -276,6 +280,10 @@
     <Page Include="View\Customer\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Customer\StoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login\AdminLogin.xaml">
       <SubType>Designer</SubType>
