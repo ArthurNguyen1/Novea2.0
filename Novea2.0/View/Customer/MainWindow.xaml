@@ -305,11 +305,10 @@
                         </StackPanel>
                     </Border>
                     <Grid Grid.Row="1">
-                        <!--<Frame x:Name="Main" 
-                               Source="/View/Client/Home.xaml"
-                               NavigationUIVisibility="Hidden"
-                               DataContext="{StaticResource GuestVM}">
-                        </Frame>-->
+                        <Frame x:Name="MainFrame" 
+                               Source="/View/Customer/Home.xaml"
+                               NavigationUIVisibility="Hidden">
+                        </Frame>
                     </Grid>
                 </Grid>
             </Border>
