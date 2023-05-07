@@ -45,9 +45,9 @@
                         </Frame>
                     </TabItem>
                     <TabItem Header="Đổi mật khẩu">
-                        <!--<Frame Source="/View/Client/ChangePassword.xaml" 
+                        <Frame Source="/View/Customer/ChangePassword.xaml" 
                                NavigationUIVisibility="Hidden">
-                        </Frame>-->
+                        </Frame>
                     </TabItem>
                 </TabControl>
             </Border>

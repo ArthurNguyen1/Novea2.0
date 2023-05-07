@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\Customer\CartViewModel.cs" />
+    <Compile Include="ViewModel\Customer\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Customer\HomeViewModel.cs" />
     <Compile Include="ViewModel\Customer\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Customer\OrderHistoryViewModel.cs" />
@@ -203,6 +204,9 @@
     <Compile Include="ViewModel\Store Owner\StoreInfoViewModel.cs" />
     <Compile Include="View\Customer\Cart.xaml.cs">
       <DependentUpon>Cart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Customer\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -294,6 +298,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Customer\Cart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Customer\ChangePassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
