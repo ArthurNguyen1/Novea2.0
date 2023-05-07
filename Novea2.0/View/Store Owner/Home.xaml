@@ -11,7 +11,7 @@
       d:DesignHeight="565" d:DesignWidth="820"
       Title="Home"
       x:Name="HomePage"
-      DataContext="{StaticResource HomeVM}">
+      DataContext="{StaticResource StoreOwnerHomeVM}">
 
     <!--<i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

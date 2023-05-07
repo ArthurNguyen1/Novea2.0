@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:Novea2._0.ViewModel.Store_Owner">
     <viewmodel:MainWindowViewModel x:Key="StoreOwnerMainWindowVM"/>
-    <viewmodel:HomeViewModel x:Key="HomeVM"/>
+    <viewmodel:HomeViewModel x:Key="StoreOwnerHomeVM"/>
     <viewmodel:OrderViewModel x:Key="OrderVM"/>
     <viewmodel:DetailOrderViewModel x:Key="DetailOrderVM"/>
     <viewmodel:ProductViewModel x:Key="ProductVM"/>
