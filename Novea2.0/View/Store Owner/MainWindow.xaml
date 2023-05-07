@@ -15,7 +15,7 @@
         x:Name="MainWD"
         Title="MainWindow" 
         Height="600" Width="1024"
-        DataContext="{StaticResource MainWindowVM}">
+        DataContext="{StaticResource StoreOwnerMainWindowVM}">
     
     <!--<i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -130,7 +130,7 @@
                         <TextBlock x:Name="TenDangNhap"
                                    FontFamily="Segoe UI"
                                    Margin="5"
-                                   Text="VŨ ĐỨC MINH" 
+                                   Text="nhvtmanh" 
                                    Foreground="#fff8f0" 
                                    TextWrapping="Wrap"
                                    FontSize="22" 
@@ -152,7 +152,8 @@
                                    DockPanel.Dock="Top"                                  
                                    TextAlignment="Center" 
                                    Width="178" 
-                                   FontFamily="Calibri">
+                                   FontFamily="Montserrat"
+                                   FontWeight="SemiBold">
                         </TextBlock>
 
                         <Separator Margin="13" 
