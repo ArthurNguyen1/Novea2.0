@@ -9,7 +9,7 @@
       d:DesignHeight="565" d:DesignWidth="820"
       Title="Setting"
       x:Name="SettingPage"
-      DataContext="{StaticResource SettingVM}">
+      DataContext="{StaticResource StoreOwnerSettingVM}">
 
     <Border Height="565"
             Width="820"
