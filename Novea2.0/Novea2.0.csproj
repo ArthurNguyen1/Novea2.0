@@ -249,6 +249,10 @@
     <Compile Include="View\Store Owner\StoreInfo.xaml.cs">
       <DependentUpon>StoreInfo.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\Reusable Code\CustomerMainResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Reusable Code\LoginMainResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
