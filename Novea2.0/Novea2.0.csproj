@@ -180,6 +180,7 @@
     <Compile Include="ViewModel\Customer\HomeViewModel.cs" />
     <Compile Include="ViewModel\Customer\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Customer\OrderHistoryViewModel.cs" />
+    <Compile Include="ViewModel\Customer\PersonInfoViewModel.cs" />
     <Compile Include="ViewModel\Customer\ProductDetailViewModel.cs" />
     <Compile Include="ViewModel\Customer\SettingViewModel.cs" />
     <Compile Include="ViewModel\Customer\StoreDetailViewModel.cs" />
@@ -211,6 +212,9 @@
     </Compile>
     <Compile Include="View\Customer\OrderHistory.xaml.cs">
       <DependentUpon>OrderHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\PersonInfo.xaml.cs">
+      <DependentUpon>PersonInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Customer\ProductDetail.xaml.cs">
       <DependentUpon>ProductDetail.xaml</DependentUpon>
@@ -302,6 +306,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Customer\OrderHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Customer\PersonInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

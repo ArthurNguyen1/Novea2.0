@@ -8,4 +8,5 @@
     <viewmodel:CartViewModel x:Key="CartVM"/>
     <viewmodel:OrderHistoryViewModel x:Key="OrderHistoryVM"/>
     <viewmodel:SettingViewModel x:Key="CustomerSettingVM"/>
+    <viewmodel:PersonInfoViewModel x:Key="PersonInfoVM"/>
 </ResourceDictionary>

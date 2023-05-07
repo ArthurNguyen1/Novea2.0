@@ -40,9 +40,9 @@
                             materialDesign:ColorZoneAssist.Background="{DynamicResource MaterialDesignCardBackground}">
                     <TabItem Foreground="Red" 
                              Header="Thông tin cá nhân">
-                        <!--<Frame Source="/View/Customer/PersonInfo.xaml" 
+                        <Frame Source="/View/Customer/PersonInfo.xaml" 
                                NavigationUIVisibility="Hidden">
-                        </Frame>-->
+                        </Frame>
                     </TabItem>
                     <TabItem Header="Đổi mật khẩu">
                         <!--<Frame Source="/View/Client/ChangePassword.xaml" 
