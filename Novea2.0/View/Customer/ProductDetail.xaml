@@ -1,0 +1,272 @@
+﻿<Window x:Class="Novea2._0.View.Customer.ProductDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Novea2._0.View.Customer" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="ProductDetail" 
+        Height="500" Width="750"
+        x:Name="ProductDetailWD"
+        DataContext="{StaticResource ProductDetailVM}">
+    
+    <!--<i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding Loadwd}"
+                                   CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>-->
+
+    <Border CornerRadius="15">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0.5">
+                <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Border CornerRadius="15 0 0 15">
+                    <StackPanel>
+                        <Border Width="250"
+                                Height="250"
+                                HorizontalAlignment="Center"
+                                Margin="0,25,0,0">
+                            <!--<Image Source="{Binding Image}"/>-->
+                            <Image Source="/Resources/Images/tradaocamsa.jpg"
+                                   Stretch="UniformToFill"/>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Button Style="{StaticResource controlButton}"
+                            Tag="{StaticResource plainTextColor1}"
+                            Width="30"
+                            Margin="390,0,0,0"
+                            x:Name="clostBt">
+                        <materialDesign:PackIcon Kind="CloseThick" 
+                                                 Width="{Binding Width, ElementName=clostBt}" 
+                                                 Height="{Binding Width, ElementName=clostBt}">
+                        </materialDesign:PackIcon>
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding CloseProductDetailwdCommand}"                                               
+                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="280"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Visibility="Hidden">
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           Foreground="{StaticResource color1}"
+                                           FontSize="30"
+                                           Height="35"
+                                           Margin="10,-120,0,0"
+                                           Text="SOHD"
+                                           Visibility="Hidden"/>
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           Background="{StaticResource plainTextColor3}"
+                                           FontSize="25"
+                                           Width="140" Height="40"
+                                           Margin="10,-118,0,0"
+                                           Text=""
+                                           x:Name="txbSOHD"
+                                           Visibility="Hidden">
+                                </TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 0 0 0">
+                                <TextBlock FontFamily="Segoe UI Bold"
+                                           FontSize="30"
+                                           Foreground="{StaticResource color1}"
+                                           HorizontalAlignment="Center"
+                                           TextAlignment="Center"
+                                           TextWrapping="Wrap"
+                                           x:Name="txbTENSP"
+                                           Text="Trà đào cam sả"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 5 0 0">
+                                <TextBlock FontFamily="Segoe UI"
+                                           FontWeight="ExtraBold"
+                                           FontSize="25"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"
+                                           x:Name="txbSIZE"
+                                           Text="M"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 5 0 0">
+                                <TextBlock FontFamily="Segoe UI Bold"
+                                           FontSize="25"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"
+                                           x:Name="txbDONGIA"
+                                           Text="69,000 VND"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 10 0 0">
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           Foreground="{StaticResource color1}"
+                                           FontSize="30"
+                                           Height="auto"
+                                           Width="auto"
+                                           Text="Mô tả"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 5 0 0">
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           FontSize="25"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"
+                                           TextWrapping="Wrap"
+                                           x:Name="txbMOTA"
+                                           Text="Hương vị thơm ngon tuyệt vời"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 10 0 0">
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           Foreground="{StaticResource color1}"
+                                           FontSize="30"
+                                           Height="35"
+                                           Width="auto"
+                                           Text="Số lượng"/>
+                                <Border CornerRadius="10"
+                                        Margin="55 0 0 0"
+                                        BorderThickness="2"
+                                        BorderBrush="gray"
+                                        Width="170"
+                                        Height="40"
+                                        HorizontalAlignment="Center">
+                                    <TextBox FontFamily="{StaticResource Custom1}"
+                                             Foreground="{StaticResource plainTextColor3}"
+                                             FontSize="25"
+                                             Text="{Binding SL}"
+                                             x:Name="txbSL"
+                                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                             materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                             materialDesign:HintAssist.Hint="Nhập số lượng"
+                                             materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
+                                             materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource color1}">
+                                        <!--<i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="TextChanged">
+                                                <i:InvokeCommandAction Command="{Binding UpdateSLCommand}"
+                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>-->
+                                    </TextBox>
+                                </Border>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <StackPanel  Orientation="Horizontal" Margin="30,30,0,0" Height="auto" Width="auto" HorizontalAlignment="Left">
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           FontSize="30"
+                                           Height="30"
+                                           Foreground="{StaticResource color1}"
+                                           HorizontalAlignment="Center"
+                                           Text="Thành tiền:"/>
+                                <TextBlock FontFamily="{StaticResource Custom1}"
+                                           Margin="10 0 0 0"
+                                           FontSize="30"
+                                           Height="30"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"
+                                           Text="{Binding Trigia, StringFormat=\{0:#\,###\} VNĐ}"
+                                           x:Name="tXbTongTien">
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Button Foreground="{StaticResource color1}"
+                                    Background="Transparent"
+                                    BorderThickness="1"
+                                    BorderBrush="{StaticResource color1}"
+                                    FontSize="20"
+                                    FontFamily="{StaticResource Custom}"
+                                    Width="210"
+                                    Height="50"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    Margin="0,30,0,0"
+                                    Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                    Content="Thêm vào giỏ hàng">
+                                <!--<i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <i:InvokeCommandAction Command="{Binding AddToCartCommand}"
+                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>-->
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

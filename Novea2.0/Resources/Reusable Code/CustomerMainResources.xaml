@@ -4,4 +4,5 @@
     <viewmodel:MainWindowViewModel x:Key="CustomerMainWindowVM"/>
     <viewmodel:HomeViewModel x:Key="CustomerHomeVM"/>
     <viewmodel:StoreDetailViewModel x:Key="StoreDetailVM"/>
+    <viewmodel:ProductDetailViewModel x:Key="ProductDetailVM"/>
 </ResourceDictionary>
