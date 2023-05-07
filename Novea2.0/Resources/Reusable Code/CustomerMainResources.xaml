@@ -7,4 +7,5 @@
     <viewmodel:ProductDetailViewModel x:Key="ProductDetailVM"/>
     <viewmodel:CartViewModel x:Key="CartVM"/>
     <viewmodel:OrderHistoryViewModel x:Key="OrderHistoryVM"/>
+    <viewmodel:SettingViewModel x:Key="CustomerSettingVM"/>
 </ResourceDictionary>

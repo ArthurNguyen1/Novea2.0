@@ -181,6 +181,7 @@
     <Compile Include="ViewModel\Customer\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Customer\OrderHistoryViewModel.cs" />
     <Compile Include="ViewModel\Customer\ProductDetailViewModel.cs" />
+    <Compile Include="ViewModel\Customer\SettingViewModel.cs" />
     <Compile Include="ViewModel\Customer\StoreDetailViewModel.cs" />
     <Compile Include="ViewModel\Login\AdminLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ClientLoginViewModel.cs" />
@@ -213,6 +214,9 @@
     </Compile>
     <Compile Include="View\Customer\ProductDetail.xaml.cs">
       <DependentUpon>ProductDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Customer\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Customer\StoreDetail.xaml.cs">
       <DependentUpon>StoreDetail.xaml</DependentUpon>
@@ -302,6 +306,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Customer\ProductDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Customer\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -427,6 +435,7 @@
       <DependentUpon>QuanLyBanHangNovea.edmx</DependentUpon>
       <LastGenOutput>QuanLyBanHangNovea.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Images\setting.png" />
     <Resource Include="Resources\Images\orderhistory.png" />
     <Resource Include="Resources\Images\cart.png" />
     <Resource Include="Resources\Images\tradaocamsa.jpg" />

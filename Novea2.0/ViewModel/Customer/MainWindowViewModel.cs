@@ -56,6 +56,7 @@ namespace Novea2._0.ViewModel.Customer
                     p.MainFrame.NavigationService.Navigate(new OrderHistory());
                     break;
                 case 3:
+                    p.MainFrame.NavigationService.Navigate(new Setting());
                     break;
                 default:
                     break;
