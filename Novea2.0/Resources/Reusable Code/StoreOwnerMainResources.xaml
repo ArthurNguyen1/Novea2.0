@@ -11,5 +11,5 @@
     <viewmodel:HistoryViewModel x:Key="HistoryVM"/>
     <viewmodel:SettingViewModel x:Key="StoreOwnerSettingVM"/>
     <viewmodel:StoreInfoViewModel x:Key="StoreInfoVM"/>
-    <viewmodel:ChangePasswordViewModel x:Key="ChangePasswordVM"/>
+    <viewmodel:ChangePasswordViewModel x:Key="StoreOwnerChangePasswordVM"/>
 </ResourceDictionary>
