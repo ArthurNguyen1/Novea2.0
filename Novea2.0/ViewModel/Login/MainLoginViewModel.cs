@@ -1,8 +1,12 @@
 ﻿using Novea2._0.View;
 using Novea2._0.View.Login;
+using Novea2._0.Model;
+using Novea2._0.ViewModel;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,6 +22,8 @@ namespace Novea2._0.ViewModel.Login
         public ICommand GetIdTab { get; set; }
         public ICommand MinimizeLogin { get; set; }
         public ICommand CloseLogin { get; set; }
+        public ICommand CloseLG { get; set; }
+
         int buttonIndex;
         public MainLoginViewModel()
         {
@@ -25,6 +31,14 @@ namespace Novea2._0.ViewModel.Login
             SwitchTab = new RelayCommand<MainLogin>((p) => true, (p) => switchTab(p));
             MinimizeLogin = new RelayCommand<MainLogin>((p) => true, (p) => minimizeLogin(p));
             CloseLogin = new RelayCommand<MainLogin>((p) => true, (p) => closeLogin());
+            CloseLG = new RelayCommand<MainLogin>((p) => true, (p) => CloseMainLogin(p));
+        }
+        public void CloseMainLogin(MainLogin p)
+        {
+            if (Const.IsLogin)
+            {
+                p.Hide();
+            }
         }
         private void closeLogin()
         {
