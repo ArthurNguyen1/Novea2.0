@@ -12,11 +12,11 @@
       x:Name="AdminLoginPage"
       DataContext="{StaticResource AdminLoginVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding _Loadwd}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="15"                        
             Background="#3E9FB3">
@@ -42,12 +42,12 @@
                              Foreground="{StaticResource plainTextColor2}"
                              materialDesign:HintAssist.Hint="Mật khẩu" 
                              Width="250" Margin="5">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="PasswordChanged">
                             <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
                                                    CommandParameter="{Binding ElementName=password}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </PasswordBox>
             </StackPanel>
             <Grid Height="auto">
@@ -68,16 +68,16 @@
                     HorizontalAlignment="Center" 
                     FontSize="22" 
                     FontWeight="Bold">
-                <!--<i:Interaction.Triggers>
+                <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <i:InvokeCommandAction Command="{Binding Login}"
-                                               CommandParameter="{Binding ElementName=ClientLoginWD}"></i:InvokeCommandAction>
+                                               CommandParameter="{Binding ElementName=AdminLoginPage}"></i:InvokeCommandAction>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="TouchEnter">
                         <i:InvokeCommandAction Command="{Binding Login}"
-                                               CommandParameter="{Binding ElementName=ClientLoginWD}"></i:InvokeCommandAction>
+                                               CommandParameter="{Binding ElementName=AdminLoginPage}"></i:InvokeCommandAction>
                     </i:EventTrigger>
-                </i:Interaction.Triggers>-->
+                </i:Interaction.Triggers>
             </Button>
             <StackPanel Orientation="Horizontal" 
                         Margin="0,0,0,0" 
