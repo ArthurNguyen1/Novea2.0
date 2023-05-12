@@ -23,7 +23,7 @@ namespace Novea2._0.Model
         public string SOHD { get; set; }
         public Nullable<System.DateTime> NGMH { get; set; }
         public Nullable<decimal> TONGTIEN { get; set; }
-        public Nullable<int> STATU { get; set; }
+        public string STATU { get; set; }
         public string MAND_KHACH { get; set; }
         public string MAND_SHIPPER { get; set; }
         public string MACH { get; set; }
