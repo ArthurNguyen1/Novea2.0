@@ -12,4 +12,5 @@
     <viewmodel:SettingViewModel x:Key="StoreOwnerSettingVM"/>
     <viewmodel:StoreInfoViewModel x:Key="StoreInfoVM"/>
     <viewmodel:ChangePasswordViewModel x:Key="StoreOwnerChangePasswordVM"/>
+    <viewmodel:AddProductViewModel x:Key="AddProductVM"/>
 </ResourceDictionary>
