@@ -10,12 +10,12 @@
       x:Name="StoreDetailPage"
       DataContext="{StaticResource StoreDetailVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadDetailStoreCommand}"
-                                   CommandParameter="{Binding ElementName=StoreDetailwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=StoreDetailPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="40 0 40 40"
             Background="Transparent">
@@ -39,12 +39,12 @@
                                              HorizontalAlignment="Center"
                                              VerticalAlignment="Center">
                     </materialDesign:PackIcon>
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding BackToHomeCommand}"
-                                                   CommandParameter="{Binding ElementName=StoreDetailwd}"></i:InvokeCommandAction>
+                                                   CommandParameter="{Binding ElementName=StoreDetailPage}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
             <Grid Grid.Row="1">
@@ -138,12 +138,12 @@
                                 <WrapPanel/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
-                                                       CommandParameter="{Binding ElementName=StoreDetailwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=StoreDetailPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ListView>
                 </Grid>
             </Grid>
