@@ -16,20 +16,20 @@
         x:Name="MainWD"
         DataContext="{StaticResource CustomerMainWindowVM}">
     
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadGuestwdCommand}"
-                                   CommandParameter="{Binding ElementName=Guestwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="30" BorderThickness="1">
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindowCommand}"
                                        CommandParameter="{Binding ElementName=Guestwd}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
 
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
