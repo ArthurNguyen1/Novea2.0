@@ -13,12 +13,12 @@
       x:Name="HomePage"
       DataContext="{StaticResource StoreOwnerHomeVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=Homewd}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding LoadWdCommand}"
+                                   CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0">
         <Border.Background>
@@ -90,12 +90,12 @@
                                        FontWeight="SemiBold"
                                        HorizontalAlignment="Left"
                                        Margin="20 40 10 0" Width="135">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
                                         <i:InvokeCommandAction Command="{Binding LoadSP}"
-                                                           CommandParameter="{Binding ElementName=Homewd}"></i:InvokeCommandAction>
+                                                           CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -139,12 +139,12 @@
                                        HorizontalAlignment="Left"
                                        Margin="20 40 10 0" 
                                        Width="135">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
                                         <i:InvokeCommandAction Command="{Binding LoadDon}"
-                                                       CommandParameter="{Binding ElementName=Homewd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -189,12 +189,12 @@
                                        Foreground="{StaticResource plainTextColor2}"
                                        HorizontalAlignment="Left"
                                        Margin="18 40 10 0">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
                                         <i:InvokeCommandAction Command="{Binding LoadDoanhThu}"
-                                                       CommandParameter="{Binding ElementName=Homewd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -286,12 +286,12 @@
                                 </syncfusion:ColumnSeries.ColorModel>
                             </syncfusion:ColumnSeries>
 
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Loaded">
                                     <i:InvokeCommandAction Command="{Binding LoadChart}"
-                                                       CommandParameter="{Binding ElementName=Homewd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
                         </syncfusion:SfChart>
                     </StackPanel>
                 </Border>
@@ -361,7 +361,7 @@
                             <!--<i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
-                                                       CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>-->
                         </ListView>
