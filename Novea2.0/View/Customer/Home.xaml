@@ -13,12 +13,12 @@
       x:Name="HomePage"
       DataContext="{StaticResource CustomerHomeVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadStoreCommand}"
-                                   CommandParameter="{Binding ElementName=Storewd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -76,12 +76,12 @@
                                          BorderThickness="0"                                                  
                                          MinWidth="200"                                                  
                                          VerticalAlignment="Center">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                                   CommandParameter="{Binding ElementName=Storewd}"></i:InvokeCommandAction>
+                                                                   CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </TextBox>
                                 <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
                                         Grid.Column="2">
@@ -150,12 +150,12 @@
                             <WrapPanel/>
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding StoreDetailCommand}"
-                                                   CommandParameter="{Binding ElementName=Storewd}"></i:InvokeCommandAction>
+                                                   CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </ListView>
             </Grid>
         </Grid>
