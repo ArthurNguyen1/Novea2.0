@@ -16,16 +16,16 @@
         x:Name="DetailProducWD"
         DataContext="{StaticResource DetailProductVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding GetMaSP}"
-                                   CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding GetMaSPCommand}"
+                                   CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding LoadWdCommand}"
+                                   CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="15">
         <Border.Background>
@@ -34,12 +34,12 @@
                 <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
-                <i:InvokeCommandAction Command="{Binding MoveWindow}"
-                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                <i:InvokeCommandAction Command="{Binding MoveWdCommand}"
+                                       CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -58,12 +58,12 @@
                     <materialDesign:PackIcon Kind="CloseThick" 
                                              Foreground="White" 
                                              Height="25" Width="25">
-                        <!--<i:Interaction.Triggers>
-                            <i:EventTrigger EventName="MouseLeftButtonDown">
-                                <i:InvokeCommandAction Command="{Binding Closewd}"
-                                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding CloseWdCommand}"
+                                                       CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </materialDesign:PackIcon>
                 </StackPanel>
             </Grid>
@@ -103,12 +103,12 @@
                         Width="190" Height="40" 
                         Background="Transparent" 
                         Foreground="{StaticResource color1}">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding UpdateImageCommand}"
-                                                   CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                                                   CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
             <Grid Grid.Column="1" Grid.Row="2" Margin="0,0,0,27" Height="auto">
@@ -330,12 +330,12 @@
                                 <TextBlock Text="AVAILABLE"
                                            Margin="0,-3,0,0" 
                                            Foreground="{StaticResource color1}"/>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SetAvailProduct}"
-                                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                             <Button x:Name="btnUnAvail"
                                     Background="Transparent"
@@ -345,12 +345,12 @@
                                            Text="UNAVAILABLE" 
                                            Margin="0 -3 0 -2"
                                            Width="auto" Height="20"/>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SetUnAvailProduct}"
-                                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                         </StackPanel>
                         <Border Grid.Column="1" Grid.Row="1"/>
@@ -364,12 +364,12 @@
                         Width="200">
                     <TextBlock Text="CẬP NHẬT SẢN PHẨM"
                                Foreground="{StaticResource color1}"/>
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <i:InvokeCommandAction Command="{Binding UpdateProduct}"
-                                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                            <i:InvokeCommandAction Command="{Binding UpdateProductCommand}"
+                                                   CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
 
                 <Button x:Name="btnDelete" 
@@ -379,12 +379,12 @@
                         Width="200">
                     <TextBlock Foreground="{StaticResource color1}"
                                Text="XÓA SẢN PHẨM"/>
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <i:InvokeCommandAction Command="{Binding DeleteProduct}"
-                                                       CommandParameter="{Binding ElementName=DetailProductwd}"></i:InvokeCommandAction>
+                            <i:InvokeCommandAction Command="{Binding DeleteProductCommand}"
+                                                   CommandParameter="{Binding ElementName=DetailProducWD}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
         </Grid>
