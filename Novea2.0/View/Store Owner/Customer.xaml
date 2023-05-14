@@ -12,12 +12,12 @@
       x:Name="CustomerPage"
       DataContext="{StaticResource CustomerVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadCommand}"                                                       
-                                   CommandParameter="{Binding ElementName=customerwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
     
     <Border Height="565"
             Width="820"
@@ -66,12 +66,12 @@
                             Content="A->Z"/>
                         <ComboBoxItem
                             Content="Z->A"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding SortCommand}"
-                                                       CommandParameter="{Binding ElementName=customerwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <StackPanel Orientation="Horizontal"
@@ -101,12 +101,12 @@
                                          BorderThickness="0"                                                  
                                          MinWidth="200"                                                  
                                          VerticalAlignment="Center">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                       CommandParameter="{Binding ElementName=customerwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </TextBox>
                                 <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
                                         Grid.Column="2">
