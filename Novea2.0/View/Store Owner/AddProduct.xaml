@@ -64,12 +64,12 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Background="Transparent" Margin="-272,0,0,0">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseLeftButtonDown">
-                            <i:InvokeCommandAction Command="{Binding MoveWindow}"
-                                       CommandParameter="{Binding ElementName=AddProductwd}"></i:InvokeCommandAction>
+                            <i:InvokeCommandAction Command="{Binding MoveWdCommand}"
+                                       CommandParameter="{Binding ElementName=AddProductWD}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                     <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Right" 
                                 VerticalAlignment="Center"

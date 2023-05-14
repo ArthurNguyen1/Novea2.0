@@ -17,6 +17,7 @@ namespace Novea2._0.ViewModel.Store_Owner
     {
         public ICommand MinimizeWdCommand { get; set; }
         public ICommand CloseWdCommand { get; set; }
+        public ICommand MoveWdCommand { get; set; } 
         public ICommand AddImageCommand { get; set; }
         private byte[] imageData;
         private BitmapImage selectedImage;
@@ -30,6 +31,11 @@ namespace Novea2._0.ViewModel.Store_Owner
             MinimizeWdCommand = new RelayCommand<AddProduct>((p) => true, (p) => MinimizeWd(p));
             CloseWdCommand = new RelayCommand<AddProduct>((p) => true, (p) => CloseWd(p));
             AddImageCommand = new RelayCommand<Image>((p) => true, (p) => AddImage());
+            MoveWdCommand = new RelayCommand<AddProduct>((p) => true, (p) => MoveWindow(p));
+        }
+        private void MoveWindow(AddProduct p)
+        {
+            p.DragMove();
         }
         private void AddImage()
         {
