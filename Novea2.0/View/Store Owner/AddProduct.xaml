@@ -50,12 +50,12 @@
                         Width="181" Height="40"  
                         Foreground="{StaticResource color1}" 
                         Margin="0,342,0,0">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <i:InvokeCommandAction Command="{Binding AddImage}"
-                                                       CommandParameter="{Binding ElementName=HinhAnh}"></i:InvokeCommandAction>
+                            <i:InvokeCommandAction Command="{Binding AddImageCommand}"
+                                                   CommandParameter="{Binding ElementName=HinhAnh}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
             <Grid Grid.Column="1">
