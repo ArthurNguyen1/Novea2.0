@@ -19,9 +19,16 @@ namespace Novea2._0.View.Store_Owner
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow instance;
+        public static MainWindow Instance
+        {
+            get { return instance; }
+            set { instance = value; }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            instance = this;
         }
     }
 }

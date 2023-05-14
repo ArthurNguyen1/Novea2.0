@@ -12,12 +12,12 @@
       x:Name="StoreInfoPage"
       DataContext="{StaticResource StoreInfoVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
             <i:EventTrigger EventName="Loaded">
                 <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                       CommandParameter="{Binding ElementName=ShopInfoSettingwd}"></i:InvokeCommandAction>
+                                       CommandParameter="{Binding ElementName=StoreInfoPage}"></i:InvokeCommandAction>
             </i:EventTrigger>
-     </i:Interaction.Triggers>-->
+     </i:Interaction.Triggers>
     
     <Border Height="565"
             Width="820"
@@ -84,12 +84,12 @@
                                               Opacity="0.5"
                                               BlurRadius="5"/>
                         </Button.Effect>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding AddImage}"
                                                        CommandParameter="{Binding ElementName=img}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                     <Grid Grid.Column="1" Margin="0,0,0,1" Grid.RowSpan="2">
                         <StackPanel Margin="10,10,-228,10">
@@ -223,12 +223,12 @@
                                       Opacity="0.5"
                                       BlurRadius="5"/>
                 </Button.Effect>
-                <!--<i:Interaction.Triggers>
+                <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <i:InvokeCommandAction Command="{Binding UpdateInfo}"
-                                               CommandParameter="{Binding ElementName=ShopInfoSettingwd}"></i:InvokeCommandAction>
+                                               CommandParameter="{Binding ElementName=StoreInfoPage}"></i:InvokeCommandAction>
                     </i:EventTrigger>
-                </i:Interaction.Triggers>-->
+                </i:Interaction.Triggers>
             </Button>
         </Grid>
     </Border>
