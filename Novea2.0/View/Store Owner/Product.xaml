@@ -12,12 +12,12 @@
       x:Name="ProductPage"
       DataContext="{StaticResource ProductVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
-                                   CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border Height="565"
             Width="820"
@@ -74,12 +74,12 @@
                         <ComboBoxItem Content="Sữa chua"/>
                         <ComboBoxItem Content="Nước ép"/>
                         <ComboBoxItem Content="Nước ngọt"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding Filter}"
-                                                       CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <ComboBox x:Name="cbbSort"
@@ -100,12 +100,12 @@
                                 </StackPanel>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding Orderby}"
-                                                       CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <StackPanel Orientation="Horizontal"
@@ -136,12 +136,12 @@
                                          BorderThickness="0"                                                  
                                          MinWidth="200"                                                  
                                          VerticalAlignment="Center">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                       CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </TextBox>
                                 <Button Style="{StaticResource MaterialDesignToolButton}"                                                               
                                         Foreground="{StaticResource plainTextColor2}"                                        
@@ -178,12 +178,12 @@
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"/>
                             </StackPanel>
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction Command="{Binding AddPdPdCommand}"
-                                                       CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
                         </Button>
                     </StackPanel>
                 </StackPanel>
@@ -248,12 +248,12 @@
                             <WrapPanel/>
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
-                                                   CommandParameter="{Binding ElementName=Productwd}"></i:InvokeCommandAction>
+                                                   CommandParameter="{Binding ElementName=ProductPage}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </ListView>
             </Grid>
         </Grid>
