@@ -289,12 +289,12 @@
                                 BorderBrush="{StaticResource color1}"
                                 Foreground="{StaticResource color1}"
                                 x:Name="btnadd">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding AddProduct}"
-                                                       CommandParameter="{Binding ElementName=AddProductwd}"></i:InvokeCommandAction>
+                                    <i:InvokeCommandAction Command="{Binding AddProductCommand}"
+                                                       CommandParameter="{Binding ElementName=AddProductWD}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
                         </Button>
                     </StackPanel>
                 </Grid>
