@@ -187,6 +187,7 @@
     <Compile Include="ViewModel\Customer\StoreDetailViewModel.cs" />
     <Compile Include="ViewModel\Login\AdminLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ClientLoginViewModel.cs" />
+    <Compile Include="ViewModel\Login\ClientSignUpViewModel.cs" />
     <Compile Include="ViewModel\Login\MainLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ShipperLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
@@ -236,6 +237,9 @@
     </Compile>
     <Compile Include="View\Login\ClientLogin.xaml.cs">
       <DependentUpon>ClientLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\ClientSignUp.xaml.cs">
+      <DependentUpon>ClientSignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login\MainLogin.xaml.cs">
       <DependentUpon>MainLogin.xaml</DependentUpon>
@@ -346,6 +350,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login\ClientLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\ClientSignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
