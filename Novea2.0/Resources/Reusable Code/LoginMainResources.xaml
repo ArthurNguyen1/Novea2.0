@@ -8,4 +8,5 @@
     <viewmodel:ShipperLoginViewModel x:Key="ShipperLoginVM"/>
     <viewmodel:StoreSignUpViewModel x:Key="StoreSignUpVM"/>
     <viewmodel:ClientSignUpViewModel x:Key="ClientSignUpVM"/>
+    <viewmodel:ForgotPasswordViewModel x:Key="ForgotPasswordVM"/>
 </ResourceDictionary>
