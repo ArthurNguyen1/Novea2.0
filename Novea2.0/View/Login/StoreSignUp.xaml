@@ -1,0 +1,241 @@
+﻿<Window x:Class="Novea2._0.View.Login.StoreSignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Novea2._0.View.Login" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="StoreSignUp" 
+        Height="450" Width="650"
+        x:Name="StoreSignUpWD"
+        DataContext="{StaticResource StoreSignUpVM}">
+
+    <Border CornerRadius="12" Background="MidnightBlue">
+        <!--<i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+                <i:InvokeCommandAction Command="{Binding Movewd}"
+                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  Background="Transparent">
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0">
+                    <Button Style="{StaticResource controlButton}"
+                            Tag="{StaticResource plainTextColor1}"
+                            Margin="5 0 0 0"
+                            Width="25">
+                        <materialDesign:PackIcon Kind="WindowMinimize" 
+                                                 Foreground="{StaticResource plainTextColor3}" 
+                                                 Height="24" Width="25" 
+                                                 HorizontalAlignment="Center" 
+                                                 VerticalAlignment="Center"/>
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding Minimizewd}"
+                                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </Button>
+                    <Button Style="{StaticResource controlButton}"
+                            Tag="{StaticResource plainTextColor1}"
+                            Width="25"
+                            x:Name="a">
+                        <materialDesign:PackIcon Kind="CloseThick" 
+                                                 Foreground="{StaticResource plainTextColor3}" 
+                                                 Height="24" Width="24"/>
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding Close1}"
+                                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock Text="ĐĂNG KÝ"
+                           HorizontalAlignment="Center"
+                           FontSize="24"
+                           Foreground="#FC84CB"
+                           FontFamily="{StaticResource Custom}"/>
+            </Grid>
+            <Grid Grid.Row="2"
+                  Margin="0,15,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Border Margin="0,0,0,0.333" Grid.RowSpan="2">
+                        <Ellipse Height="150" Width="150" 
+                                 VerticalAlignment="Top" 
+                                 HorizontalAlignment="Left"
+                                 Margin="30" 
+                                 StrokeThickness="5">
+                            <Ellipse.Effect>
+                                <DropShadowEffect ShadowDepth="0"
+                                                  Color="Black"
+                                                  Opacity="10"
+                                                  BlurRadius="10"/>
+                            </Ellipse.Effect>
+                            <Ellipse.Fill>
+                                <ImageBrush x:Name="HinhAnh1" ImageSource="{Binding SelectedImage}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                    <Button HorizontalAlignment="Left" 
+                            Margin="30,-85,0,0" 
+                            VerticalAlignment="Top"
+                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                            Content="Thêm ảnh đại diện" 
+                            FontFamily="{StaticResource Custom}"
+                            BorderThickness="0"
+                            Width="160" Height="40" 
+                            Background="#FC84CB" 
+                            Foreground="White"
+                            Grid.Row="1">
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding AddImage}"
+                                              CommandParameter="{Binding ElementName=HinhAnh1}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </Button>
+                    <Grid Grid.Column="1">
+                        <StackPanel Margin="0,0,0,24">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Background="{StaticResource plainTextColor3}"
+                                         Foreground="{StaticResource plainTextColor2}" 
+                                         Margin="0,10,0,0" 
+                                         materialDesign:HintAssist.Foreground="Black"
+                                         materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                         Width="190" Height="45"
+                                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                                         VerticalAlignment="Top"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"
+                                         MaxWidth="400" 
+                                         x:Name="User"
+                                         FontFamily="{StaticResource Custom}"
+                                         materialDesign:HintAssist.Hint="Tên đăng nhập"/>
+                                <PasswordBox Background="{StaticResource plainTextColor3}"
+                                             Foreground="{StaticResource plainTextColor2}" 
+                                             x:Name="password"
+                                             Margin="10,10,0,0"
+                                             Height="45"
+                                             Width="190"
+                                             Style="{StaticResource MaterialDesignFilledPasswordBox}"
+                                             FontSize="11"
+                                             FontWeight="Normal"
+                                             FontFamily="{StaticResource Custom}"
+                                             materialDesign:HintAssist.Foreground="Black"
+                                             materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                             materialDesign:HintAssist.Hint="Mật khẩu" >
+                                    <!--<i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="PasswordChanged">
+                                            <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                                          CommandParameter="{Binding ElementName=password}"></i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>-->
+                                </PasswordBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,0,0,0">
+                                <TextBox Background="{StaticResource plainTextColor3}"
+                                         Foreground="{StaticResource plainTextColor2}" 
+                                         Margin="0,10,10,0" 
+                                         materialDesign:HintAssist.Foreground="Black"
+                                         materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                         Width="190" Height="45"
+                                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                                         VerticalAlignment="Top"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"
+                                         MaxWidth="400" x:Name="TenCH"
+                                         FontFamily="{StaticResource Custom}"
+                                         materialDesign:HintAssist.Hint="Tên cửa hàng"/>
+                                <TextBox Width="190"
+                                         Margin="0,10,0,0"
+                                         Background="{StaticResource plainTextColor3}"
+                                         Foreground="{StaticResource plainTextColor2}" 
+                                         Style="{StaticResource MaterialDesignFilledTextBox}"
+                                         materialDesign:HintAssist.Foreground="Black"
+                                         materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"
+                                         x:Name="SDT"
+                                         FontFamily="{StaticResource Custom}"
+                                         materialDesign:HintAssist.Hint="Số điện thoại"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0"/>
+                            <TextBox Background="{StaticResource plainTextColor3}"
+                                     Foreground="{StaticResource plainTextColor2}" 
+                                     Margin="-50,10,0,0"
+                                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                                     VerticalAlignment="Top"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     MaxWidth="400" x:Name="Mail"
+                                     materialDesign:HintAssist.Foreground="Black"
+                                     materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                     FontFamily="{StaticResource Custom}"
+                                     materialDesign:HintAssist.Hint="Email" 
+                                     Width="390"/>
+                            <TextBox Background="{StaticResource plainTextColor3}"
+                                     Foreground="{StaticResource plainTextColor2}" 
+                                     Margin="-50,10,0,0"
+                                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                                     VerticalAlignment="Top"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     MaxWidth="400" x:Name="DCCH"
+                                     materialDesign:HintAssist.Foreground="Black"
+                                     materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                                     FontFamily="{StaticResource Custom}"
+                                     materialDesign:HintAssist.Hint="Địa chỉ cửa hàng" 
+                                     Width="390"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="0,286,0,0" Grid.RowSpan="2">
+                        <Button Width="390"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Đăng ký"
+                                BorderThickness="0"
+                                FontFamily="{StaticResource Custom}"
+                                Foreground="White"
+                                Background="#FC84CB"
+                                Height="40"
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                            <!--<i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding Register}"
+                                                  CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>-->
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

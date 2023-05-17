@@ -190,6 +190,7 @@
     <Compile Include="ViewModel\Login\MainLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ShipperLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
+    <Compile Include="ViewModel\Login\StoreSignUpViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Store Owner\AddProductViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\ChangePasswordViewModel.cs" />
@@ -248,6 +249,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Login\StoreSignUp.xaml.cs">
+      <DependentUpon>StoreSignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Store Owner\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
@@ -354,6 +358,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login\StoreLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\StoreSignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

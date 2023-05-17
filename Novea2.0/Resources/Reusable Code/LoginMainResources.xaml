@@ -6,4 +6,5 @@
     <viewmodel:AdminLoginViewModel x:Key="AdminLoginVM"/>
     <viewmodel:StoreLoginViewModel x:Key="StoreLoginVM"/>
     <viewmodel:ShipperLoginViewModel x:Key="ShipperLoginVM"/>
+    <viewmodel:StoreSignUpViewModel x:Key="StoreSignUpVM"/>
 </ResourceDictionary>
