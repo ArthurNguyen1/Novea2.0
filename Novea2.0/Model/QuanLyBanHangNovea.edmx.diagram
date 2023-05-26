@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d9ea6c7a606544f4b3a717f50f8d2446" Name="Diagram1" ZoomLevel="93">
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.ADMINI" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.CTHD" Width="1.5" PointX="5.25" PointY="4.25" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.CUAHANG" Width="1.5" PointX="0.75" PointY="3.125" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.DANHGIA" Width="1.5" PointX="5.25" PointY="7.625" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.HOADON" Width="1.5" PointX="3" PointY="2.375" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.KHACH" Width="1.5" PointX="0.75" PointY="8.875" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.SANPHAM" Width="1.5" PointX="3" PointY="7" />
-        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.SHIPPER" Width="1.5" PointX="0.75" PointY="13.75" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__CTHD__MASP__46E78A0C" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__CTHD__SOHD__45F365D3" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MACH__4316F928" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__SANPHAM__MACH__3E52440B" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__DANHGIA__MAND_KH__49C3F6B7" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__DANHGIA__MASP__4AB81AF0" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MAND_KHA__412EB0B6" />
-        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MAND_SHI__4222D4EF" />
+      <Diagram DiagramId="f075e2acf2c84118acce1968bae45288" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.ADMINI" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.CTHD" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.CUAHANG" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.DANHGIA" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.HOADON" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.KHACH" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.SANPHAM" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangNoveaModel.SHIPPER" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__CTHD__MASP__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__CTHD__SOHD__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MACH__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__SANPHAM__MACH__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__DANHGIA__MAND_KH__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__DANHGIA__MASP__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MAND_KHA__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangNoveaModel.FK__HOADON__MAND_SHI__68487DD7" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
