@@ -24,8 +24,8 @@ namespace Novea2._0.ViewModel.Login
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
         public ICommand Login { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
-        //public ICommand RegisterCommand { get; set; }
-        //public ICommand ForgetPassCommand { get; set; }
+        public ICommand RegisterCommand { get; set; }
+        public ICommand ForgetPassCommand { get; set; }
         public ICommand _Loadwd { get; set; }
 
         public StoreLoginViewModel()
@@ -36,8 +36,8 @@ namespace Novea2._0.ViewModel.Login
             _Loadwd = new RelayCommand<StoreLogin>((p) => true, (p) => loadwd());
             Login = new RelayCommand<StoreLogin>((p) => true, (p) => login(p));
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) => { Password = p.Password; });
-            //RegisterCommand = new RelayCommand<StoreLogin>((p) => true, (p) => _RegisterCommand(p));
-            //ForgetPassCommand = new RelayCommand<StoreLogin>((p) => true, (p) => _ForgetPassCommand(p));
+            RegisterCommand = new RelayCommand<StoreLogin>((p) => true, (p) => Register());
+            ForgetPassCommand = new RelayCommand<StoreLogin>((p) => true, (p) => ForgetPass());
         }
         void loadwd()
         {
@@ -99,16 +99,16 @@ namespace Novea2._0.ViewModel.Login
             }
             return hash.ToString();
         }
-        //void _RegisterCommand(AdminLoginPage parameter)
-        //{
-        //    AdminSignUp adminSignUp = new AdminSignUp();
-        //    adminSignUp.ShowDialog();
-        //}
-        //void _ForgetPassCommand(AdminLoginPage parameter)
-        //{
-        //    ForgotPassword forgetPassView = new ForgotPassword();
-        //    forgetPassView.ShowDialog();
-        //}
+        void Register()
+        {
+            StoreSignUp storeSignUp = new StoreSignUp();
+            storeSignUp.ShowDialog();
+        }
+        void ForgetPass()
+        {
+            ForgotPassword forgetPassView = new ForgotPassword();
+            forgetPassView.ShowDialog();
+        }
     }
 
 }

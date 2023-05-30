@@ -91,12 +91,12 @@
                            FontWeight="Bold" 
                            FontSize="14"
                            VerticalAlignment="Bottom">
-                           <!--<i:Interaction.Triggers>
-                               <i:EventTrigger EventName="MouseLeftButtonDown">
-                                   <i:InvokeCommandAction Command="{Binding RegisterCommand}"
-                                                          CommandParameter="{Binding ElementName=ClientLoginWD}"></i:InvokeCommandAction>
-                               </i:EventTrigger>
-                           </i:Interaction.Triggers>-->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding RegisterCommand}"
+                                          CommandParameter="{Binding ElementName=StoreLoginPage}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Foreground" Value="DarkGray"/>
@@ -118,12 +118,12 @@
                            FontSize="14" 
                            FontWeight="Bold" 
                            VerticalAlignment="Bottom">
-                           <!--<i:Interaction.Triggers>
-                               <i:EventTrigger EventName="MouseLeftButtonDown">
-                                   <i:InvokeCommandAction Command="{Binding ForgetPassCommand}"
-                                                          CommandParameter="{Binding ElementName=ClientLoginWD}"></i:InvokeCommandAction>
-                               </i:EventTrigger>
-                           </i:Interaction.Triggers>-->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding ForgetPassCommand}"
+                                          CommandParameter="{Binding ElementName=StoreLoginPage}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Foreground" Value="DarkGray"/>
