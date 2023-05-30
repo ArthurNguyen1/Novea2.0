@@ -18,12 +18,12 @@
         DataContext="{StaticResource StoreSignUpVM}">
 
     <Border CornerRadius="12" Background="MidnightBlue">
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
-                <i:InvokeCommandAction Command="{Binding Movewd}"
-                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                <i:InvokeCommandAction Command="{Binding MoveWindowCommand}"
+                              CommandParameter="{Binding ElementName=StoreSignUpWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -45,12 +45,12 @@
                                                  Height="24" Width="25" 
                                                  HorizontalAlignment="Center" 
                                                  VerticalAlignment="Center"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding Minimizewd}"
-                                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding MinimizeWdCommand}"
+                                              CommandParameter="{Binding ElementName=StoreSignUpWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                     <Button Style="{StaticResource controlButton}"
                             Tag="{StaticResource plainTextColor1}"
@@ -59,12 +59,12 @@
                         <materialDesign:PackIcon Kind="CloseThick" 
                                                  Foreground="{StaticResource plainTextColor3}" 
                                                  Height="24" Width="24"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding Close1}"
-                                              CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding CloseWdCommand}"
+                                              CommandParameter="{Binding ElementName=StoreSignUpWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -114,12 +114,12 @@
                             Background="#FC84CB" 
                             Foreground="White"
                             Grid.Row="1">
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding AddImage}"
+                                <i:InvokeCommandAction Command="{Binding AddImageCommand}"
                                               CommandParameter="{Binding ElementName=HinhAnh1}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                     <Grid Grid.Column="1">
                         <StackPanel Margin="0,0,0,24">
@@ -151,12 +151,6 @@
                                              materialDesign:HintAssist.Foreground="Black"
                                              materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
                                              materialDesign:HintAssist.Hint="Mật khẩu" >
-                                    <!--<i:Interaction.Triggers>
-                                        <i:EventTrigger EventName="PasswordChanged">
-                                            <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
-                                                          CommandParameter="{Binding ElementName=password}"></i:InvokeCommandAction>
-                                        </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
                                 </PasswordBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
@@ -228,12 +222,12 @@
                                 Background="#FC84CB"
                                 Height="40"
                                 Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding Register}"
-                                                  CommandParameter="{Binding ElementName=AdminRegisterwd}"></i:InvokeCommandAction>
+                                    <i:InvokeCommandAction Command="{Binding SignUpCommand}"
+                                                  CommandParameter="{Binding ElementName=StoreSignUpWD}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
                         </Button>
                     </Grid>
                 </Grid>
