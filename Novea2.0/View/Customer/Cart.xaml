@@ -12,12 +12,12 @@
       x:Name="CartPage"
       DataContext="{StaticResource CartVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadCartCommand}"
-                                   CommandParameter="{Binding ElementName=Cartwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=CartPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -192,12 +192,12 @@
                         Margin="400,10,0,0"                                    
                         Foreground="{StaticResource color1}"                                   
                         materialDesign:ButtonAssist.CornerRadius="10">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding AcceptCartCommand}"
-                                   CommandParameter="{Binding ElementName=Cartwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=CartPage}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
                 <Button BorderThickness="1"     
                         BorderBrush="{StaticResource color1}"
@@ -212,12 +212,12 @@
                         Margin="591,10,0,0"                                    
                         Foreground="{StaticResource color1}"                                   
                         materialDesign:ButtonAssist.CornerRadius="10">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding DeleteCartCommand}"
-                                   CommandParameter="{Binding ElementName=Cartwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=CartPage}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
         </Grid>
