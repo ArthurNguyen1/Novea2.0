@@ -31,7 +31,7 @@ namespace Novea2._0.Model
         public string EMAIL { get; set; }
         public string DIACHI { get; set; }
         public Nullable<System.DateTime> NGDK { get; set; }
-        public Nullable<decimal> DOANHSO { get; set; }
+        public decimal DOANHSO { get; set; }
         public byte[] AVATAR { get; set; }
         public string REASONBANNING { get; set; }
         public Nullable<bool> STATU { get; set; }

@@ -25,7 +25,7 @@ namespace Novea2._0.Model
         public string TENSP { get; set; }
         public string LOAISP { get; set; }
         public string DONVI { get; set; }
-        public Nullable<decimal> DONGIA { get; set; }
+        public decimal DONGIA { get; set; }
         public string SIZE { get; set; }
         public string MOTA { get; set; }
         public Nullable<bool> AVAILABLE { get; set; }
