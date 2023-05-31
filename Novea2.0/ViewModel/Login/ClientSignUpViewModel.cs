@@ -89,6 +89,7 @@ namespace Novea2._0.ViewModel.Login
                 temp.TAIKHOAN = p.User.Text;
                 temp.MATKHAU = MainLoginViewModel.MD5Hash(MainLoginViewModel.Base64Encode(p.password.Password));
                 temp.AVATAR = imageData;
+                temp.STATU = true;
                 DataProvider.Ins.DB.KHACHes.Add(temp);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Chúc mừng bạn đã đăng ký thành công !", "THÔNG BÁO", MessageBoxButton.OK);
