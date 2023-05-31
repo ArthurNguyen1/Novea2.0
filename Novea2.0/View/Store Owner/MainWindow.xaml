@@ -17,21 +17,21 @@
         Height="600" Width="1024"
         DataContext="{StaticResource StoreOwnerMainWindowVM}">
     
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="30"
             BorderThickness="1">
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindow}"
-                                       CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                       CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
 
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -138,12 +138,12 @@
                                    DockPanel.Dock="Top" 
                                    TextAlignment="Center" 
                                    Width="auto">
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Loaded">
                                     <i:InvokeCommandAction Command="{Binding TenDangNhap_Loaded}"
-                                                       CommandParameter="{Binding ElementName=Mainwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>/>-->
+                            </i:Interaction.Triggers>/>
                         </TextBlock>
 
                         <TextBlock Text="Chủ Cửa Hàng"  
