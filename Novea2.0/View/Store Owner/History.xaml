@@ -12,12 +12,12 @@
       x:Name="HistoryPage"
       DataContext="{StaticResource HistoryVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadCsCommand}"                                                       
-                                   CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=HistoryPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
     
     <Border Height="565"
             Width="820"
@@ -62,14 +62,15 @@
                               Width="200" 
                               Height="46"
                               Margin="30 0 0 0">
+                        <ComboBoxItem Content="Không"/>
                         <ComboBoxItem Content="Tăng dần"/>
                         <ComboBoxItem Content="Giảm dần"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding SortCommand}"
-                                                       CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding SortDayCommand}"
+                                                       CommandParameter="{Binding ElementName=HistoryPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <ComboBox Style="{StaticResource MaterialDesignFilledComboBox}"                           
@@ -82,14 +83,15 @@
                               Width="200" 
                               Height="46"
                               Margin="30 0 0 0">
+                        <ComboBoxItem Content="Không"/>
                         <ComboBoxItem Content="Tăng dần"/>
                         <ComboBoxItem Content="Giảm dần"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding SortCommand}"
-                                                       CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding SortMoneyCommand}"
+                                                       CommandParameter="{Binding ElementName=HistoryPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <StackPanel Orientation="Horizontal"
@@ -122,12 +124,12 @@
                                          BorderThickness="0"                                                  
                                          MinWidth="200"                                                  
                                          VerticalAlignment="Center">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                       CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=HistoryPage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </TextBox>
                                 <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
                                         Grid.Column="2">
@@ -197,8 +199,8 @@
                         </Grid>
                     </Border>
 
-                    <ListView x:Name="ListViewBill" 
-                              ItemsSource="{Binding ListHD}"      
+                    <ListView x:Name="ListViewHistory" 
+                              ItemsSource="{Binding listHD}"      
                               SelectionMode="Single"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"                      
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" 
@@ -253,7 +255,7 @@
                                                    FontSize="18"/>
 
                                         <TextBlock Grid.Column="4"
-                                                   Text="{Binding TRANGTHAI}"
+                                                   Text="{Binding STATU}"
                                                    HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
                                                    FontFamily="{StaticResource Custom}"
@@ -267,12 +269,12 @@
                                 <WrapPanel/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
-                                                       CommandParameter="{Binding ElementName=Managerwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=HistoryPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>
