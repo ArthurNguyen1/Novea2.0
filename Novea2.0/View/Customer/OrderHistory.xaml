@@ -12,12 +12,12 @@
       x:Name="OrderHistoryPage"
       DataContext="{StaticResource OrderHistoryVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadOrderHistoryCommand}"
-                                   CommandParameter="{Binding ElementName=OrderHistorywd}"/>
+                                   CommandParameter="{Binding ElementName=OrderHistoryPage}"/>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
     
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -62,7 +62,7 @@
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding OrderCommand}"
-                                                       CommandParameter="{Binding ElementName=OrderHistorywd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=OrderHistoryPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ComboBox>
@@ -81,7 +81,7 @@
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding FilterCommand}"
-                                                       CommandParameter="{Binding ElementName=OrderHistorywd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=OrderHistoryPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ComboBox>
@@ -117,7 +117,7 @@
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                       CommandParameter="{Binding ElementName=OrderHistorywd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=OrderHistoryPage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                 </TextBox>
@@ -251,7 +251,7 @@
                                                        VerticalAlignment="Center"
                                                        FontFamily="{StaticResource Custom}"
                                                        FontSize="18"
-                                                       Text="{Binding DONE}"/>
+                                                       Text="{Binding STATU}"/>
                                         </Grid>
                                     </Grid>
                                 </Border>

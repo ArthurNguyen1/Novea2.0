@@ -15,12 +15,12 @@
         x:Name="ProductDetailWD"
         DataContext="{StaticResource ProductDetailVM}">
     
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=ProductDetailWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="15">
         <Border.Background>
@@ -41,9 +41,10 @@
                                 Height="250"
                                 HorizontalAlignment="Center"
                                 Margin="0,25,0,0">
-                            <!--<Image Source="{Binding Image}"/>-->
-                            <Image Source="/Resources/Images/tradaocamsa.jpg"
+                            <Image Source="{Binding Image}"
                                    Stretch="UniformToFill"/>
+                            <!--<Image Source="/Resources/Images/tradaocamsa.jpg"
+                                   Stretch="UniformToFill"/>-->
                         </Border>
                     </StackPanel>
                 </Border>
@@ -63,12 +64,12 @@
                                                  Width="{Binding Width, ElementName=clostBt}" 
                                                  Height="{Binding Width, ElementName=clostBt}">
                         </materialDesign:PackIcon>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding CloseProductDetailwdCommand}"                                               
-                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductDetailWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -194,12 +195,12 @@
                                              materialDesign:HintAssist.Hint="Nhập số lượng"
                                              materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
                                              materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource color1}">
-                                        <!--<i:Interaction.Triggers>
+                                        <i:Interaction.Triggers>
                                             <i:EventTrigger EventName="TextChanged">
                                                 <i:InvokeCommandAction Command="{Binding UpdateSLCommand}"
-                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductDetailWD}"></i:InvokeCommandAction>
                                             </i:EventTrigger>
-                                        </i:Interaction.Triggers>-->
+                                        </i:Interaction.Triggers>
                                     </TextBox>
                                 </Border>
                             </StackPanel>
@@ -256,12 +257,12 @@
                                     Margin="0,30,0,0"
                                     Style="{StaticResource MaterialDesignFlatMidBgButton}"
                                     Content="Thêm vào giỏ hàng">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding AddToCartCommand}"
-                                                       CommandParameter="{Binding ElementName=ProductDetailwd}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=ProductDetailWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                         </Grid>
                     </Grid>

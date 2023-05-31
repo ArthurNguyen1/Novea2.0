@@ -29,7 +29,7 @@ namespace Novea2._0.Model
         public string SDT { get; set; }
         public string EMAIL { get; set; }
         public Nullable<System.DateTime> NGDK { get; set; }
-        public Nullable<decimal> DOANHTHU { get; set; }
+        public decimal DOANHTHU { get; set; }
         public byte[] AVATAR { get; set; }
         public string REASONBANNING { get; set; }
         public Nullable<bool> STATU { get; set; }

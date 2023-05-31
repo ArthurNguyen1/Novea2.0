@@ -140,7 +140,8 @@ namespace Novea2._0.ViewModel.Customer
                     var CountSPExist = DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == Const.HD.SOHD && p.MASP == Const.SP_temp.MASP).Count();
                     if (CountSPExist > 0)
                     {
-                        MessageBox.Show("Bạn đã thêm sản phẩm này vào giỏ hàng.");
+                        MessageBox.Show("Bạn đã thêm sản phẩm này vào giỏ hàng.\n" +
+                                        "Nếu bạn muốn thay đổi chi tiết đơn hàng, mời bạn vào giao diện giỏ hàng.");
                     }
                     else
                     {
