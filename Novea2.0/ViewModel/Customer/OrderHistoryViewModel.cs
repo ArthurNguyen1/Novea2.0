@@ -63,13 +63,13 @@ namespace Novea2._0.ViewModel.Customer
                     }
                 case "1":
                     {
-                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "đang giao"));
+                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đang giao"));
                         p.ListViewHD.ItemsSource = ListHD;
                         break;
                     }
                 case "2":
                     {
-                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "đã nhận"));
+                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đã nhận"));
                         p.ListViewHD.ItemsSource = ListHD;
                         break;
                     }
@@ -116,14 +116,14 @@ namespace Novea2._0.ViewModel.Customer
         {
             try
             {
-                TongTien = (int)DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU == "đã nhận").Select(h => h.TONGTIEN).Sum();
+                TongTien = (int)DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU == "Đã nhận").Select(h => h.TONGTIEN).Sum();
             }
             catch
             {
                 TongTien = 0;
             }
             DataProvider.Ins.Refresh();
-            ListHD1 = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU != "khởi tạo"));
+            ListHD1 = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU != "Khởi tạo"));
             ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()));
             p.cbbFilter.SelectedIndex = 0;
             p.cbbOrder.SelectedIndex = 0;

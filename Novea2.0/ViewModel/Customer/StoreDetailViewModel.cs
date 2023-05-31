@@ -84,7 +84,7 @@ namespace Novea2._0.ViewModel.Customer
                 hd.NGMH = DateTime.Now;
                 hd.TONGTIEN = 0;
                 //Set hd.STATU
-                hd.STATU = "";
+                hd.STATU = "Khởi tạo";
                 hd.MAND_KHACH = Const.KH.MAND;
                 hd.MACH = Const.CH.MACH;
                 Const.HD = hd;
@@ -123,7 +123,7 @@ namespace Novea2._0.ViewModel.Customer
                         hd.NGMH = DateTime.Now;
                         hd.TONGTIEN = 0;
                         //Set hd.STATU
-                        hd.STATU = "";
+                        hd.STATU = "Khởi tạo";
                         hd.MAND_KHACH = Const.KH.MAND;
                         hd.MACH = Const.CH.MACH;
                         Const.HD = hd;
