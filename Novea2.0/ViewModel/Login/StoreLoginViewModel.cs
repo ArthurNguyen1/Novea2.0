@@ -17,7 +17,7 @@ using System.Windows.Input;
 namespace Novea2._0.ViewModel.Login
 {
     public class StoreLoginViewModel : BaseViewModel
-    {
+    { 
         public ICommand Login { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ForgetPassCommand { get; set; }
@@ -41,14 +41,15 @@ namespace Novea2._0.ViewModel.Login
             try
             {
                 if (p == null) return;
-                string PassEncode = MD5Hash(Base64Encode(Password));
-                var accCountCH = DataProvider.Ins.DB.CUAHANGs.Where(x => x.TAIKHOAN == Username && x.MATKHAU == PassEncode && x.STATU == true).Count();
+                string username = p.tbUsername.Text;
+                string PassEncode = MainLoginViewModel.MD5Hash(MainLoginViewModel.Base64Encode(p.password.Password));
+                var accCountCH = DataProvider.Ins.DB.CUAHANGs.Where(x => x.TAIKHOAN == username && x.MATKHAU == PassEncode && x.STATU == true).Count();
                 if (accCountCH > 0)
                 {
                     if (p.Remember.IsChecked == true)
                     {
                         Const.IsLogin = true;
-                        Const.TenDangNhap = Username;
+                        Const.TenDangNhap = username;
 
                         Properties.Settings.Default.Save();
 
@@ -58,10 +59,9 @@ namespace Novea2._0.ViewModel.Login
                     else
                     {
                         Const.IsLogin = true;
-                        Const.TenDangNhap = Username;
+                        Const.TenDangNhap = username;
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
-                        Username = "";
                     }
                 }
                 else
