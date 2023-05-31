@@ -28,8 +28,7 @@
                 <materialDesign:PackIcon Kind="Account" 
                                          VerticalAlignment="Center" 
                                          Foreground="{StaticResource plainTextColor2}"/>
-                <TextBox x:Name="dangnhap" 
-                         Text="{Binding Username}"                         
+                <TextBox x:Name="tbUsername"                        
                          Foreground="{StaticResource plainTextColor2}"
                          materialDesign:HintAssist.Hint="Tên tài khoản" 
                          Width="250" Margin="5"/>
@@ -42,12 +41,6 @@
                              Foreground="{StaticResource plainTextColor2}"
                              materialDesign:HintAssist.Hint="Mật khẩu" 
                              Width="250" Margin="5">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="PasswordChanged">
-                            <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
-                                                   CommandParameter="{Binding ElementName=password}"></i:InvokeCommandAction>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                 </PasswordBox>
             </StackPanel>
             <Grid Height="auto">
