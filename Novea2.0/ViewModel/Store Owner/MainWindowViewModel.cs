@@ -21,6 +21,11 @@ namespace Novea2._0.ViewModel.Store_Owner
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        private BitmapImage _Ava;
+        public BitmapImage Ava { get => _Ava; set { _Ava = value; OnPropertyChanged(); } }
+        public string Name;
+        int buttonIndex;
+
         public ICommand MinimizeWd { get; set; }
         public ICommand CloseWd { get; set; }
         public ICommand SwitchTab { get; set; }
@@ -28,16 +33,7 @@ namespace Novea2._0.ViewModel.Store_Owner
         public ICommand LogOutCommand { get; set; }
         public ICommand Loadwd { get; set; }
         public ICommand MoveWindow { get; set; }
-        public ICommand TenDangNhap_Loaded { get; set; }
-        private CUAHANG _User;
-        public CUAHANG User { get => _User; set { _User = value; OnPropertyChanged(); } }
-
-        private BitmapImage _Ava;
-        public BitmapImage Ava { get => _Ava; set { _Ava = value; OnPropertyChanged(); } }
-
-        public string Name;
-
-        int buttonIndex;
+        public ICommand TenDangNhap_Loaded { get; set; }      
         public MainWindowViewModel()
         {
             MinimizeWd = new RelayCommand<MainWindow>((p) => true, (p) => minimizeWindow(p));
@@ -53,10 +49,6 @@ namespace Novea2._0.ViewModel.Store_Owner
         {
             if (Const.IsLogin)
             {
-                string a = Const.TenDangNhap;
-                User = DataProvider.Ins.DB.CUAHANGs.Where(x => x.TAIKHOAN == a).FirstOrDefault();
-                Const.CH = User;
-                Const.MACH = User.MACH;
                 byte[] imageData = Const.CH.AVATAR;
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
@@ -68,7 +60,7 @@ namespace Novea2._0.ViewModel.Store_Owner
         }
         public void LoadTenAD(MainWindow p)
         {
-            p.TenDangNhap.Text = string.Join(" ", User.TENCH.Split().Reverse().Take(2).Reverse());
+            p.TenDangNhap.Text = string.Join(" ", Const.CH.TENCH.Split().Reverse().Take(2).Reverse());
         }
         private void minimizeWindow(MainWindow p)
         {
