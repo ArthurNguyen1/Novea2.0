@@ -23,7 +23,6 @@ namespace Novea2._0.ViewModel.Login
         public ICommand GetIdTab { get; set; }
         public ICommand MinimizeLogin { get; set; }
         public ICommand CloseLogin { get; set; }
-        public ICommand CloseLG { get; set; }
 
         int buttonIndex;
         public MainLoginViewModel()
@@ -32,14 +31,6 @@ namespace Novea2._0.ViewModel.Login
             SwitchTab = new RelayCommand<MainLogin>((p) => true, (p) => switchTab(p));
             MinimizeLogin = new RelayCommand<MainLogin>((p) => true, (p) => minimizeLogin(p));
             CloseLogin = new RelayCommand<MainLogin>((p) => true, (p) => closeLogin());
-            CloseLG = new RelayCommand<MainLogin>((p) => true, (p) => CloseMainLogin(p));
-        }
-        public void CloseMainLogin(MainLogin p)
-        {
-            if (Const.IsLogin)
-            {
-                p.Hide();
-            }
         }
         private void closeLogin()
         {
