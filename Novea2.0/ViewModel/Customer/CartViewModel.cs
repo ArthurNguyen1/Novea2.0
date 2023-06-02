@@ -69,7 +69,7 @@ namespace Novea2._0.ViewModel.Customer
             if (h == MessageBoxResult.Yes)
             {
                 var uRow = DataProvider.Ins.DB.HOADONs.Where(w => w.SOHD == Const.HD.SOHD).FirstOrDefault();
-                uRow.STATU = "đang xử lý";
+                uRow.STATU = "Đang xử lý";
                 DataProvider.Ins.DB.SaveChanges();
 
                 listCTHD = null;
