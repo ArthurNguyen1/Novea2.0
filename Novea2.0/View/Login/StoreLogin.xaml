@@ -14,7 +14,8 @@
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding _Loadwd}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding _Loadwd}"
+                          CommandParameter="{Binding ElementName=StoreLoginPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
@@ -46,9 +47,15 @@
             <Grid Height="auto">
                 <CheckBox x:Name="Remember" 
                           Cursor="Hand"                          
-                          Content="Nhớ tên tài khoản" 
+                          Content="Nhớ tài khoản" 
                           Margin="127,10,0,21" 
-                          Foreground="{StaticResource ResourceKey=plainTextColor2}"/>
+                          Foreground="{StaticResource ResourceKey=plainTextColor2}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Unchecked">
+                            <i:InvokeCommandAction Command="{Binding UncheckedCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </CheckBox>
             </Grid>
             <Button IsDefault="True"
                     Content="ĐĂNG NHẬP"
