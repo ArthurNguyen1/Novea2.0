@@ -34,16 +34,16 @@ namespace Novea2._0.ViewModel.Login
         }
         void Unchecked()
         {
-            Properties.Settings.Default.isRememberCheck = false;
+            Properties.Settings.Default.Store_isChecked = false;
             Properties.Settings.Default.Save();
         }
         void loadwd(StoreLogin p)
         {
             Const.IsLogin = false;
-            if (Properties.Settings.Default.isRememberCheck == true)
+            if (Properties.Settings.Default.Store_isChecked == true)
             {
-                p.tbUsername.Text = Properties.Settings.Default.username;
-                p.password.Password = Properties.Settings.Default.password;
+                p.tbUsername.Text = Properties.Settings.Default.Store_username;
+                p.password.Password = Properties.Settings.Default.Store_password;
                 p.Remember.IsChecked = true;
             }
         }
@@ -62,20 +62,22 @@ namespace Novea2._0.ViewModel.Login
                         {
                             if (p.Remember.IsChecked == true)
                             {
-                                Properties.Settings.Default.isRememberCheck = true;
-                                Properties.Settings.Default.username = username;
-                                Properties.Settings.Default.password = p.password.Password;
+                                Properties.Settings.Default.Store_isChecked = true;
+                                Properties.Settings.Default.Store_username = username;
+                                Properties.Settings.Default.Store_password = p.password.Password;
                                 Properties.Settings.Default.Save();
                             }
                             if (p.Remember.IsChecked == false)
                             {
-                                Properties.Settings.Default.isRememberCheck = false;
+                                Properties.Settings.Default.Store_isChecked = false;
                                 Properties.Settings.Default.Save();
                             }
                             Const.IsLogin = true;
                             Const.CH = store;
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
+                            Window mainLogin = Window.GetWindow(p);
+                            mainLogin.Close();
                             return;
                         }
                         else

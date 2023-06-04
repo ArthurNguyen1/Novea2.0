@@ -26,36 +26,144 @@ namespace Novea2._0.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string username {
+        public string Store_username {
             get {
-                return ((string)(this["username"]));
+                return ((string)(this["Store_username"]));
             }
             set {
-                this["username"] = value;
+                this["Store_username"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string password {
+        public string Store_password {
             get {
-                return ((string)(this["password"]));
+                return ((string)(this["Store_password"]));
             }
             set {
-                this["password"] = value;
+                this["Store_password"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool isRememberCheck {
+        public bool Store_isChecked {
             get {
-                return ((bool)(this["isRememberCheck"]));
+                return ((bool)(this["Store_isChecked"]));
             }
             set {
-                this["isRememberCheck"] = value;
+                this["Store_isChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Client_username {
+            get {
+                return ((string)(this["Client_username"]));
+            }
+            set {
+                this["Client_username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Client_password {
+            get {
+                return ((string)(this["Client_password"]));
+            }
+            set {
+                this["Client_password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Client_isChecked {
+            get {
+                return ((bool)(this["Client_isChecked"]));
+            }
+            set {
+                this["Client_isChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Admin_username {
+            get {
+                return ((string)(this["Admin_username"]));
+            }
+            set {
+                this["Admin_username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Admin_password {
+            get {
+                return ((string)(this["Admin_password"]));
+            }
+            set {
+                this["Admin_password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Admin_isChecked {
+            get {
+                return ((bool)(this["Admin_isChecked"]));
+            }
+            set {
+                this["Admin_isChecked"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Shipper_username {
+            get {
+                return ((string)(this["Shipper_username"]));
+            }
+            set {
+                this["Shipper_username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Shipper_password {
+            get {
+                return ((string)(this["Shipper_password"]));
+            }
+            set {
+                this["Shipper_password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Shipper_isChecked {
+            get {
+                return ((bool)(this["Shipper_isChecked"]));
+            }
+            set {
+                this["Shipper_isChecked"] = value;
             }
         }
     }
