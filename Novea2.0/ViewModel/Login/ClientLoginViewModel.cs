@@ -18,12 +18,8 @@ namespace Novea2._0.ViewModel.Login
 {
     public class ClientLoginViewModel : BaseViewModel
     {
-        private string _Username;
-        public string Username { get => _Username; set { _Username = value; OnPropertyChanged(); } }
-        private string _Password;
-        public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
         public ICommand Login { get; set; }
-        public ICommand PasswordChangedCommand { get; set; }
+        public ICommand UncheckedCommand { get; set; }
         public ICommand RegisterCommand { get; set; }
         public ICommand ForgetPassCommand { get; set; }
         public ICommand _Loadwd { get; set; }
@@ -31,48 +27,67 @@ namespace Novea2._0.ViewModel.Login
         public ClientLoginViewModel()
         {
             Const.IsLogin = false;
-            Password = "";
-            Username = "";
-            _Loadwd = new RelayCommand<ClientLogin>((p) => true, (p) => loadwd());
+            _Loadwd = new RelayCommand<ClientLogin>((p) => true, (p) => loadwd(p));
             Login = new RelayCommand<ClientLogin>((p) => true, (p) => login(p));
-            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) => { Password = p.Password; });
             RegisterCommand = new RelayCommand<ClientLogin>((p) => true, (p) => Register());
             ForgetPassCommand = new RelayCommand<ClientLogin>((p) => true, (p) => ForgetPass());
+            UncheckedCommand = new RelayCommand<CheckBox>((p) => true, (p) => Unchecked());
         }
-        void loadwd()
+        void Unchecked()
+        {
+            Properties.Settings.Default.Client_isChecked = false;
+            Properties.Settings.Default.Save();
+        }
+        void loadwd(ClientLogin p)
         {
             Const.IsLogin = false;
+            if (Properties.Settings.Default.Client_isChecked == true)
+            {
+                p.tbUsername.Text = Properties.Settings.Default.Client_username;
+                p.password.Password = Properties.Settings.Default.Client_password;
+                p.Remember.IsChecked = true;
+            }
         }
-
         public void login(ClientLogin p)
         {
             try
             {
                 if (p == null) return;
-                string PassEncode = MainLoginViewModel.MD5Hash(MainLoginViewModel.Base64Encode(Password));
-                var accCountKH = DataProvider.Ins.DB.KHACHes.Where(x => x.TAIKHOAN == Username && x.MATKHAU == PassEncode && x.STATU == true).Count();
-                if (accCountKH > 0)
+                string username = p.tbUsername.Text;
+                string PassEncode = MainLoginViewModel.MD5Hash(MainLoginViewModel.Base64Encode(p.password.Password));
+                foreach (KHACH k in DataProvider.Ins.DB.KHACHes)
                 {
-                    if (p.Remember.IsChecked == true)
+                    if (username == k.TAIKHOAN && PassEncode == k.MATKHAU)
                     {
-                        Const.IsLogin = true;
-                        Const.TenDangNhap = Username;
-
-                        Properties.Settings.Default.Save();
-
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
+                        if (k.STATU == true)
+                        {
+                            if (p.Remember.IsChecked == true)
+                            {
+                                Properties.Settings.Default.Client_isChecked = true;
+                                Properties.Settings.Default.Client_username = username;
+                                Properties.Settings.Default.Client_password = p.password.Password;
+                                Properties.Settings.Default.Save();
+                            }
+                            if (p.Remember.IsChecked == false)
+                            {
+                                Properties.Settings.Default.Client_isChecked = false;
+                                Properties.Settings.Default.Save();
+                            }
+                            Const.IsLogin = true;
+                            Const.KH = k;
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
+                            Window mainLogin = Window.GetWindow(p);
+                            mainLogin.Close();
+                            return;
+                        }
+                        else
+                        {
+                            //Process blocked account
+                        }
                     }
-                    else
-                    {
-                        Const.IsLogin = true;
-                        Const.TenDangNhap = Username;
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        Username = "";
-                    }
-                }
-                else
+                }             
+                if (Const.IsLogin == false)
                 {
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButton.OK);
                 }
