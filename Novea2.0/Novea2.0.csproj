@@ -198,6 +198,7 @@
     <Compile Include="ViewModel\Login\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModel\Login\MainLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\ShipperLoginViewModel.cs" />
+    <Compile Include="ViewModel\Login\ShipperSignUpViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreSignUpViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -260,6 +261,9 @@
     </Compile>
     <Compile Include="View\Login\ShipperLogin.xaml.cs">
       <DependentUpon>ShipperLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\ShipperSignUp.xaml.cs">
+      <DependentUpon>ShipperSignUp.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login\StoreLogin.xaml.cs">
       <DependentUpon>StoreLogin.xaml</DependentUpon>
@@ -384,6 +388,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login\ShipperLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\ShipperSignUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
