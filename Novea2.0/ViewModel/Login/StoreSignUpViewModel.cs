@@ -47,14 +47,18 @@ namespace Novea2._0.ViewModel.Login
             }
             int dem1 = DataProvider.Ins.DB.KHACHes.Where(k => k.TAIKHOAN == p.User.Text).Count();
             int dem2 = DataProvider.Ins.DB.CUAHANGs.Where(c => c.TAIKHOAN == p.User.Text).Count();
-            if (dem1 > 0 || dem2 > 0)
+            int dem3 = DataProvider.Ins.DB.ADMINIS.Where(m => m.TAIKHOAN == p.User.Text).Count();
+            int dem4 = DataProvider.Ins.DB.SHIPPERs.Where(n => n.TAIKHOAN == p.User.Text).Count();
+            if (dem1 > 0 || dem2 > 0 || dem3 > 0 || dem4 > 0)
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            int dem3 = DataProvider.Ins.DB.KHACHes.Where(k => k.EMAIL == p.Mail.Text).Count();
-            int dem4 = DataProvider.Ins.DB.CUAHANGs.Where(c => c.EMAIL == p.Mail.Text).Count();
-            if (dem3 > 0 || dem4 > 0)
+            int dem5 = DataProvider.Ins.DB.KHACHes.Where(k => k.EMAIL == p.Mail.Text).Count();
+            int dem6 = DataProvider.Ins.DB.CUAHANGs.Where(c => c.EMAIL == p.Mail.Text).Count();
+            int dem7 = DataProvider.Ins.DB.ADMINIS.Where(m => m.EMAIL == p.Mail.Text).Count();
+            int dem8 = DataProvider.Ins.DB.SHIPPERs.Where(n => n.EMAIL == p.Mail.Text).Count();
+            if (dem5 > 0 || dem6 > 0 || dem7 > 0 || dem8 > 0)
             {
                 MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -88,6 +92,7 @@ namespace Novea2._0.ViewModel.Login
                 temp.MATKHAU = MainLoginViewModel.MD5Hash(MainLoginViewModel.Base64Encode(p.password.Password));
                 temp.AVATAR = imageData;
                 temp.STATU = true;
+                temp.REASONBANNING = "";
                 DataProvider.Ins.DB.CUAHANGs.Add(temp);
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Chúc mừng bạn đã đăng ký thành công !", "THÔNG BÁO", MessageBoxButton.OK);

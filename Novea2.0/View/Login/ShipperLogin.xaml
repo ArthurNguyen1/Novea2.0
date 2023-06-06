@@ -14,7 +14,8 @@
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding _Loadwd}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding _Loadwd}"
+                          CommandParameter="{Binding ElementName=ShipperLoginPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
