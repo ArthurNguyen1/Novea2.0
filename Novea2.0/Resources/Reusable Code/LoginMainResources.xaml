@@ -9,4 +9,5 @@
     <viewmodel:StoreSignUpViewModel x:Key="StoreSignUpVM"/>
     <viewmodel:ClientSignUpViewModel x:Key="ClientSignUpVM"/>
     <viewmodel:ForgotPasswordViewModel x:Key="ForgotPasswordVM"/>
+    <viewmodel:AdminSignUpViewModel x:Key="AdminSignUpVM"/>
 </ResourceDictionary>
