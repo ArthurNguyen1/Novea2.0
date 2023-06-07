@@ -29,8 +29,7 @@
                 <materialDesign:PackIcon Kind="Account" 
                                          VerticalAlignment="Center" 
                                          Foreground="{StaticResource plainTextColor2}"/>
-                <TextBox x:Name="dangnhap" 
-                         Text="{Binding Username}"                         
+                <TextBox x:Name="dangnhap"                        
                          Foreground="{StaticResource plainTextColor2}"
                          materialDesign:HintAssist.Hint="Tên tài khoản" 
                          Width="250" Margin="5"/>
@@ -43,20 +42,20 @@
                              Foreground="{StaticResource plainTextColor2}"
                              materialDesign:HintAssist.Hint="Mật khẩu" 
                              Width="250" Margin="5">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="PasswordChanged">
-                            <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
-                                                   CommandParameter="{Binding ElementName=password}"></i:InvokeCommandAction>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                 </PasswordBox>
             </StackPanel>
             <Grid Height="auto">
                 <CheckBox x:Name="Remember" 
                           Cursor="Hand"                          
-                          Content="Nhớ tên tài khoản" 
+                          Content="Nhớ tài khoản" 
                           Margin="127,10,0,21" 
-                          Foreground="{StaticResource ResourceKey=plainTextColor2}"/>
+                          Foreground="{StaticResource ResourceKey=plainTextColor2}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Unchecked">
+                            <i:InvokeCommandAction Command="{Binding UncheckedCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </CheckBox>
             </Grid>
             <Button IsDefault="True"
                     Content="ĐĂNG NHẬP"
