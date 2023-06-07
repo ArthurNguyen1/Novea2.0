@@ -35,16 +35,16 @@ namespace Novea2._0.ViewModel.Login
         }
         void Unchecked()
         {
-            Properties.Settings.Default.Client_isChecked = false;
+            Properties.Settings.Default.Shipper_isChecked = false;
             Properties.Settings.Default.Save();
         }
         void loadwd(ShipperLogin p)
         {
             Const.IsLogin = false;
-            if (Properties.Settings.Default.Client_isChecked == true)
+            if (Properties.Settings.Default.Shipper_isChecked == true)
             {
-                p.dangnhap.Text = Properties.Settings.Default.Client_username;
-                p.password.Password = Properties.Settings.Default.Client_password;
+                p.dangnhap.Text = Properties.Settings.Default.Shipper_username;
+                p.password.Password = Properties.Settings.Default.Shipper_password;
                 p.Remember.IsChecked = true;
             }
         }
@@ -63,14 +63,14 @@ namespace Novea2._0.ViewModel.Login
                         {
                             if (p.Remember.IsChecked == true)
                             {
-                                Properties.Settings.Default.Client_isChecked = true;
-                                Properties.Settings.Default.Client_username = username;
-                                Properties.Settings.Default.Client_password = p.password.Password;
+                                Properties.Settings.Default.Shipper_isChecked = true;
+                                Properties.Settings.Default.Shipper_username = username;
+                                Properties.Settings.Default.Shipper_password = p.password.Password;
                                 Properties.Settings.Default.Save();
                             }
                             if (p.Remember.IsChecked == false)
                             {
-                                Properties.Settings.Default.Client_isChecked = false;
+                                Properties.Settings.Default.Shipper_isChecked = false;
                                 Properties.Settings.Default.Save();
                             }
                             Const.IsLogin = true;
