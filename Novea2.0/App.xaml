@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/Resources/Reusable Code/LoginMainResources.xaml"/>
                 <ResourceDictionary Source="/Resources/Reusable Code/StoreOwnerMainResources.xaml"/>
                 <ResourceDictionary Source="/Resources/Reusable Code/CustomerMainResources.xaml"/>
+                <ResourceDictionary Source="/Resources/Reusable Code/AdminMainResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
