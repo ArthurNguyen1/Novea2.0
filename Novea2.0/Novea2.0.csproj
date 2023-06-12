@@ -181,9 +181,12 @@
     <Compile Include="Model\SHIPPER.cs">
       <DependentUpon>QuanLyBanHangNovea.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Admin\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Admin\CustomerViewModel.cs" />
     <Compile Include="ViewModel\Admin\HomeViewModel.cs" />
     <Compile Include="ViewModel\Admin\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\Admin\PersonInfoViewModel.cs" />
+    <Compile Include="ViewModel\Admin\SettingViewModel.cs" />
     <Compile Include="ViewModel\Admin\ShipperViewModel.cs" />
     <Compile Include="ViewModel\Admin\StoreViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -219,6 +222,9 @@
     <Compile Include="ViewModel\Store Owner\ProductViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\SettingViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\StoreInfoViewModel.cs" />
+    <Compile Include="View\Admin\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
     </Compile>
@@ -227,6 +233,12 @@
     </Compile>
     <Compile Include="View\Admin\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\PersonInfo.xaml.cs">
+      <DependentUpon>PersonInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Shipper.xaml.cs">
       <DependentUpon>Shipper.xaml</DependentUpon>
@@ -351,6 +363,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Admin\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Admin\Customer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -360,6 +376,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\PersonInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

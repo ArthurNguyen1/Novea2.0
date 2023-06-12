@@ -6,4 +6,7 @@
     <viewmodel:StoreViewModel x:Key="StoreVM"/>
     <viewmodel:CustomerViewModel x:Key="CustomerVM"/>
     <viewmodel:ShipperViewModel x:Key="ShipperVM"/>
+    <viewmodel:SettingViewModel x:Key="AdminSettingVM"/>
+    <viewmodel:PersonInfoViewModel x:Key="AdminInfoVM"/>
+    <viewmodel:ChangePasswordViewModel x:Key="AdminChangePasswordVM"/>
 </ResourceDictionary>
