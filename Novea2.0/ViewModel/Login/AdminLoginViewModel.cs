@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Novea2._0.View.Admin;
 
 namespace Novea2._0.ViewModel.Login
 {
@@ -75,8 +76,8 @@ namespace Novea2._0.ViewModel.Login
                             }
                             Const.IsLogin = true;
                             //Const.KH = k;
-                            //MainWindow mainWindow = new MainWindow();
-                            //mainWindow.Show();
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
                             Window mainLogin = Window.GetWindow(p);
                             mainLogin.Close();
                             return;
