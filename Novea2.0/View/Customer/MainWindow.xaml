@@ -27,7 +27,7 @@
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindowCommand}"
-                                       CommandParameter="{Binding ElementName=Guestwd}"></i:InvokeCommandAction>
+                                       CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
         </i:Interaction.Triggers>
 
