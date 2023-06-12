@@ -173,7 +173,7 @@
                                 </i:Interaction.Triggers>-->
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="StoreCheckOutline" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="QUẢN LÝ CHỦ CỬA HÀNG" 
+                                    <TextBlock Text="QUẢN LÝ CỬA HÀNG" 
                                                Style="{StaticResource menuButtonText}"
                                                FontFamily="Segoe UI"/>
                                 </StackPanel>
