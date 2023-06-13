@@ -188,6 +188,7 @@
     <Compile Include="ViewModel\Admin\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Admin\PersonInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\SettingViewModel.cs" />
+    <Compile Include="ViewModel\Admin\ShipperInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\ShipperViewModel.cs" />
     <Compile Include="ViewModel\Admin\StoreInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\StoreViewModel.cs" />
@@ -247,6 +248,9 @@
     </Compile>
     <Compile Include="View\Admin\Shipper.xaml.cs">
       <DependentUpon>Shipper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\ShipperInfo.xaml.cs">
+      <DependentUpon>ShipperInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Store.xaml.cs">
       <DependentUpon>Store.xaml</DependentUpon>
@@ -400,6 +404,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\Shipper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\ShipperInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

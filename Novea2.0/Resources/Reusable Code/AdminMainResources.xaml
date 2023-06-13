@@ -11,4 +11,5 @@
     <viewmodel:ChangePasswordViewModel x:Key="AdminChangePasswordVM"/>
     <viewmodel:StoreInfoViewModel x:Key="storeInfoVM"/>
     <viewmodel:CustomerInfoViewModel x:Key="CustomerInfoVM"/>
+    <viewmodel:ShipperInfoViewModel x:Key="ShipperInfoVM"/>
 </ResourceDictionary>
