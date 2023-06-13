@@ -188,6 +188,7 @@
     <Compile Include="ViewModel\Admin\PersonInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\SettingViewModel.cs" />
     <Compile Include="ViewModel\Admin\ShipperViewModel.cs" />
+    <Compile Include="ViewModel\Admin\StoreInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\StoreViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\Customer\CartViewModel.cs" />
@@ -245,6 +246,9 @@
     </Compile>
     <Compile Include="View\Admin\Store.xaml.cs">
       <DependentUpon>Store.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\StoreInfo.xaml.cs">
+      <DependentUpon>StoreInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Customer\Cart.xaml.cs">
       <DependentUpon>Cart.xaml</DependentUpon>
@@ -392,6 +396,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\Store.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\StoreInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
