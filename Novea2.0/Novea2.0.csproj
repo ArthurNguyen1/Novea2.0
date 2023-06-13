@@ -182,6 +182,7 @@
       <DependentUpon>QuanLyBanHangNovea.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Admin\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModel\Admin\CustomerInfoViewModel.cs" />
     <Compile Include="ViewModel\Admin\CustomerViewModel.cs" />
     <Compile Include="ViewModel\Admin\HomeViewModel.cs" />
     <Compile Include="ViewModel\Admin\MainWindowViewModel.cs" />
@@ -228,6 +229,9 @@
     </Compile>
     <Compile Include="View\Admin\Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\CustomerInfo.xaml.cs">
+      <DependentUpon>CustomerInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -372,6 +376,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\Customer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\CustomerInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

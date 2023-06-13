@@ -10,4 +10,5 @@
     <viewmodel:PersonInfoViewModel x:Key="AdminInfoVM"/>
     <viewmodel:ChangePasswordViewModel x:Key="AdminChangePasswordVM"/>
     <viewmodel:StoreInfoViewModel x:Key="storeInfoVM"/>
+    <viewmodel:CustomerInfoViewModel x:Key="CustomerInfoVM"/>
 </ResourceDictionary>
