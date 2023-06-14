@@ -12,4 +12,5 @@
     <viewmodel:StoreInfoViewModel x:Key="storeInfoVM"/>
     <viewmodel:CustomerInfoViewModel x:Key="CustomerInfoVM"/>
     <viewmodel:ShipperInfoViewModel x:Key="ShipperInfoVM"/>
+    <viewmodel:BanWindowViewModel x:Key="BanWindowVM"/>
 </ResourceDictionary>
