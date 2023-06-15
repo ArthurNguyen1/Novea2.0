@@ -5,4 +5,7 @@
     <viewmodel:HomeViewModel x:Key="ShipperHomeVM"/>
     <viewmodel:OrderViewModel x:Key="ShipperOrderVM"/>
     <viewmodel:DetailOrderViewModel x:Key="ShipperDetailOrderVM"/>
+    <viewmodel:SettingViewModel x:Key="ShipperSettingVM"/>
+    <viewmodel:PersonInfoViewModel x:Key="shipperInfoVM"/>
+    <viewmodel:ChangePasswordViewModel x:Key="ShipperChangePasswordVM"/>
 </ResourceDictionary>

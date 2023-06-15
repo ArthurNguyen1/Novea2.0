@@ -214,10 +214,13 @@
     <Compile Include="ViewModel\Login\StoreLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\StoreSignUpViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\Shipper\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Shipper\DetailOrderViewModel.cs" />
     <Compile Include="ViewModel\Shipper\HomeViewModel.cs" />
     <Compile Include="ViewModel\Shipper\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\Shipper\OrderViewModel.cs" />
+    <Compile Include="ViewModel\Shipper\PersonInfoViewModel.cs" />
+    <Compile Include="ViewModel\Shipper\SettingViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\AddProductViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\CustomerViewModel.cs" />
@@ -327,6 +330,9 @@
     <Compile Include="View\Login\StoreSignUp.xaml.cs">
       <DependentUpon>StoreSignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Shipper\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Shipper\DetailOrder.xaml.cs">
       <DependentUpon>DetailOrder.xaml</DependentUpon>
     </Compile>
@@ -338,6 +344,12 @@
     </Compile>
     <Compile Include="View\Shipper\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shipper\PersonInfo.xaml.cs">
+      <DependentUpon>PersonInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shipper\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Store Owner\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
@@ -523,6 +535,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Shipper\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Shipper\DetailOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -536,6 +552,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Shipper\Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shipper\PersonInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shipper\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
