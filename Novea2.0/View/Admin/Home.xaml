@@ -12,12 +12,12 @@
       x:Name="HomePage"
       DataContext="{StaticResource AdminHomeVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadWdCommand}"
                                    CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -78,18 +78,18 @@
                                        Margin="20 15 10 0"/>
 
                             <TextBlock Text="123456"
-                                       x:Name="totalproducts"
+                                       x:Name="totalstores"
                                        FontSize="26"
                                        Foreground="{StaticResource plainTextColor2}"
                                        FontWeight="SemiBold"
                                        HorizontalAlignment="Left"
                                        Margin="20 40 10 0" Width="135">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadSP}"
+                                        <i:InvokeCommandAction Command="{Binding LoadCH}"
                                                            CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -126,19 +126,19 @@
                                        Margin="20 15 10 0"/>
 
                             <TextBlock Text="696969"
-                                       x:Name="totalorders"
+                                       x:Name="totalcustomers"
                                        FontSize="26"
                                        Foreground="{StaticResource plainTextColor2}"
                                        FontWeight="SemiBold"
                                        HorizontalAlignment="Left"
                                        Margin="20 40 10 0" 
                                        Width="135">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadDon}"
+                                        <i:InvokeCommandAction Command="{Binding LoadKH}"
                                                        CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -176,19 +176,19 @@
 
                             <TextBlock Text="13579"
                                        Width="auto"
-                                       x:Name="totalrevenue"
+                                       x:Name="totalshippers"
                                        TextWrapping="Wrap"
                                        FontSize="25"
                                        FontWeight="SemiBold"
                                        Foreground="{StaticResource plainTextColor2}"
                                        HorizontalAlignment="Left"
                                        Margin="18 40 10 0">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadDoanhThu}"
+                                        <i:InvokeCommandAction Command="{Binding LoadSHP}"
                                                        CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -271,12 +271,12 @@
                                 </syncfusion:ColumnSeries.ColorModel>
                             </syncfusion:ColumnSeries>
 
-                            <!--<i:Interaction.Triggers>
+                            <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Loaded">
                                     <i:InvokeCommandAction Command="{Binding LoadChart}"
                                                        CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers>-->
+                            </i:Interaction.Triggers>
                         </syncfusion:SfChart>
                     </StackPanel>
                 </Border>

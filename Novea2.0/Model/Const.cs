@@ -15,6 +15,8 @@ namespace Novea2._0.Model
         public static string MACH { get; set; }
         public static CUAHANG CH { get; set; }
         public static KHACH KH { get; set; }
+        public static ADMINI ADM { get; set; }
+        public static SHIPPER SHP { get; set; }
         public static HOADON HD { get; set; }
         public static SANPHAM SP_temp { get; set; }
 
