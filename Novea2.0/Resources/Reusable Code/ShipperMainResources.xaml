@@ -4,4 +4,5 @@
     <viewmodel:MainWindowViewModel x:Key="ShipperMainWindowVM"/>
     <viewmodel:HomeViewModel x:Key="ShipperHomeVM"/>
     <viewmodel:OrderViewModel x:Key="ShipperOrderVM"/>
+    <viewmodel:DetailOrderViewModel x:Key="ShipperDetailOrderVM"/>
 </ResourceDictionary>
