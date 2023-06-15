@@ -216,6 +216,7 @@
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Shipper\HomeViewModel.cs" />
     <Compile Include="ViewModel\Shipper\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\Shipper\OrderViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\AddProductViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\Store Owner\CustomerViewModel.cs" />
@@ -330,6 +331,9 @@
     </Compile>
     <Compile Include="View\Shipper\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shipper\Order.xaml.cs">
+      <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Store Owner\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
@@ -520,6 +524,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Shipper\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shipper\Order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
