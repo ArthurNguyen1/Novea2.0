@@ -1,8 +1,6 @@
 ﻿using Novea2._0.Model;
 using Novea2._0.View;
-using Novea2._0.View.Login;
 using Novea2._0.View.Admin;
-using Novea2._0.ViewModel.Login;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

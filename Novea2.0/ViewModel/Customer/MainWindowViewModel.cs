@@ -1,7 +1,6 @@
 ﻿using Novea2._0.Model;
 using Novea2._0.View;
 using Novea2._0.View.Customer;
-using Novea2._0.View.Store_Owner;
 using System;
 using System.Collections.Generic;
 using System.IO;
