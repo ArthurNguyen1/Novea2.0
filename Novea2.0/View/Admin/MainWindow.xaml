@@ -109,7 +109,7 @@
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
-                        <TextBlock x:Name="TenDangNhap"
+                        <TextBlock x:Name="tbHoten"
                                    Text="nhvtmanh" 
                                    Foreground="#fff8f0" 
                                    FontSize="22" 

@@ -58,7 +58,7 @@ namespace Novea2._0.ViewModel.Admin
         }
         public void LoadTenAD(MainWindow p)
         {
-            p.TenDangNhap.Text = string.Join(" ", Const.CH.TENCH.Split().Reverse().Take(2).Reverse());
+            p.tbHoten.Text = string.Join(" ", Const.CH.TENCH.Split().Reverse().Take(2).Reverse());
         }
         private void minimizeWindow(MainWindow p)
         {
@@ -82,7 +82,7 @@ namespace Novea2._0.ViewModel.Admin
                     p.MainFrame.NavigationService.Navigate(new View.Admin.Customer());
                     break;
                 case 3:
-                    p.MainFrame.NavigationService.Navigate(new Shipper());
+                    p.MainFrame.NavigationService.Navigate(new View.Admin.Shipper());
                     break;
                 case 4:
                     p.MainFrame.NavigationService.Navigate(new Setting());

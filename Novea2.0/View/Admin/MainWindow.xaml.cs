@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,9 +20,16 @@ namespace Novea2._0.View.Admin
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow instance;
+        public static MainWindow Instance
+        {
+            get { return instance; }
+            set { instance = value; }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            instance = this;
         }
     }
 }
