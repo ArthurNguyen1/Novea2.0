@@ -75,7 +75,7 @@ namespace Novea2._0.ViewModel.Login
                                 Properties.Settings.Default.Save();
                             }
                             Const.IsLogin = true;
-                            //Const.KH = k;
+                            Const.SHP = k;
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
                             Window mainLogin = Window.GetWindow(p);

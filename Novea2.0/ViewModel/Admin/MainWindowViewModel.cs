@@ -58,7 +58,7 @@ namespace Novea2._0.ViewModel.Admin
         }
         public void LoadTenAD(MainWindow p)
         {
-            p.tbHoten.Text = string.Join(" ", Const.CH.TENCH.Split().Reverse().Take(2).Reverse());
+            p.tbHoten.Text = string.Join(" ", Const.ADM.HOTEN.Split().Reverse().Take(2).Reverse());
         }
         private void minimizeWindow(MainWindow p)
         {
