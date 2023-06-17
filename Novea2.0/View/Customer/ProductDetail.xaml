@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Novea2._0.View.Customer" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Novea2._0.View.Customer" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
         Background="Transparent"
         AllowsTransparency="True"
@@ -111,6 +114,32 @@
                                            TextWrapping="Wrap"
                                            x:Name="txbTENSP"
                                            Text="Trà đào cam sả"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"
+                                        Height="auto" 
+                                        Width="auto"
+                                        HorizontalAlignment="Left"
+                                        Margin="10 0 0 0">
+                                <syncfusion:SfRating ItemsCount="5" 
+                                                     ShowToolTip="False"
+                                                     Precision="Exact"
+                                                     Value="{Binding AvgRatingValue}"
+                                                     IsReadOnly="True">
+                                    <syncfusion:SfRating.ItemContainerStyle>
+                                        <Style TargetType="syncfusion:SfRatingItem">
+                                            <Setter Property="RatedFill" Value="#FFF40A"/>
+                                            <Setter Property="RatedStroke" Value="#FFA229"/>
+                                            <Setter Property="RatedStrokeThickness" Value="1"/>
+                                            <Setter Property="UnratedFill" Value="#F4F2EC"/>
+                                            <Setter Property="UnratedStroke" Value="#FFA229"/>
+                                            <Setter Property="UnratedStrokeThickness" Value="1"/>
+                                            <Setter Property="PointerOverFill" Value="#FFF40A"/>
+                                            <Setter Property="PointerOverStroke" Value="#FFA229"/>
+                                            <Setter Property="PointerOverStrokeThickness" Value="1"/>
+                                        </Style>
+                                    </syncfusion:SfRating.ItemContainerStyle>
+                                </syncfusion:SfRating>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal"
