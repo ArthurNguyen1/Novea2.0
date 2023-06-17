@@ -124,7 +124,7 @@
                                 <syncfusion:SfRating ItemsCount="5" 
                                                      ShowToolTip="False"
                                                      Precision="Exact"
-                                                     Value="{Binding AvgRatingValue}"
+                                                     Value="{Binding AverageRating}"
                                                      IsReadOnly="True">
                                     <syncfusion:SfRating.ItemContainerStyle>
                                         <Style TargetType="syncfusion:SfRatingItem">
@@ -140,6 +140,30 @@
                                         </Style>
                                     </syncfusion:SfRating.ItemContainerStyle>
                                 </syncfusion:SfRating>
+                                <TextBlock FontFamily="Segoe UI"
+                                           FontSize="25"
+                                           Margin="5 0 0 0"
+                                           Text="{Binding AverageRating}"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock FontFamily="Segoe UI"
+                                           FontSize="25"
+                                           Margin="5 -3 0 0"
+                                           Text="|"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock FontFamily="Segoe UI"
+                                           FontSize="25"
+                                           Margin="5 0 0 0"
+                                           Text="{Binding SumRating}"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock FontFamily="Segoe UI"
+                                           FontSize="25"
+                                           Margin="5 0 0 0"
+                                           Text="lượt đánh giá"
+                                           Foreground="{StaticResource plainTextColor3}"
+                                           HorizontalAlignment="Center"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal"
