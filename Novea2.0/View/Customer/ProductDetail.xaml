@@ -43,12 +43,40 @@
                         <Border Width="250"
                                 Height="250"
                                 HorizontalAlignment="Center"
-                                Margin="0,25,0,0">
+                                Margin="0,40,0,0">
                             <Image Source="{Binding Image}"
                                    Stretch="UniformToFill"/>
                             <!--<Image Source="/Resources/Images/tradaocamsa.jpg"
                                    Stretch="UniformToFill"/>-->
                         </Border>
+                        <StackPanel Margin="0 40 0 0">
+                            <TextBlock FontFamily="{StaticResource Custom1}"
+                                       FontSize="28"
+                                       FontWeight="SemiBold"
+                                       Foreground="{StaticResource plainTextColor3}"
+                                       HorizontalAlignment="Center"
+                                       TextWrapping="Wrap"
+                                       Text="Đánh giá sản phẩm"/>
+                            <syncfusion:SfRating ItemsCount="5" 
+                                                 ShowToolTip="False"
+                                                 HorizontalAlignment="Center"
+                                                 Margin="0 5 0 0"
+                                                 x:Name="Rating">
+                                <syncfusion:SfRating.ItemContainerStyle>
+                                    <Style TargetType="syncfusion:SfRatingItem">
+                                        <Setter Property="RatedFill" Value="#FFF40A"/>
+                                        <Setter Property="RatedStroke" Value="#FFA229"/>
+                                        <Setter Property="RatedStrokeThickness" Value="1"/>
+                                        <Setter Property="UnratedFill" Value="#F4F2EC"/>
+                                        <Setter Property="UnratedStroke" Value="#FFA229"/>
+                                        <Setter Property="UnratedStrokeThickness" Value="1"/>
+                                        <Setter Property="PointerOverFill" Value="#FFF40A"/>
+                                        <Setter Property="PointerOverStroke" Value="#FFA229"/>
+                                        <Setter Property="PointerOverStrokeThickness" Value="1"/>
+                                    </Style>
+                                </syncfusion:SfRating.ItemContainerStyle>
+                            </syncfusion:SfRating>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
             </Grid>
