@@ -110,7 +110,7 @@
                             </Ellipse>
                         </Border>
                         <TextBlock x:Name="tbHoten"
-                                   Text="nhvtmanh" 
+                                   Text="{Binding Hoten}" 
                                    Foreground="#fff8f0" 
                                    FontSize="22" 
                                    FontFamily="Segoe UI"

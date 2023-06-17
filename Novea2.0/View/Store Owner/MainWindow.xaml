@@ -130,7 +130,6 @@
                         <TextBlock x:Name="TenDangNhap"
                                    FontFamily="Segoe UI"
                                    Margin="5"
-                                   Text="nhvtmanh" 
                                    Foreground="#fff8f0" 
                                    TextWrapping="Wrap"
                                    FontSize="22" 

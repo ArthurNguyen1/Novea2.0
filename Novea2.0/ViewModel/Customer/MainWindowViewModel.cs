@@ -31,19 +31,19 @@ namespace Novea2._0.ViewModel.Customer
         private int buttonIndex;
         public MainWindowViewModel()
         {
-            CloseWdCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => CloseWd());
-            MinimizeWdCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => MinimizeWd(p));
-            LogOutCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => LogOut(p));
+            CloseWdCommand = new RelayCommand<MainWindow>((p) => true, (p) => CloseWd());
+            MinimizeWdCommand = new RelayCommand<MainWindow>((p) => true, (p) => MinimizeWd(p));
+            LogOutCommand = new RelayCommand<MainWindow>((p) => true, (p) => LogOut(p));
             GetIdTab = new RelayCommand<RadioButton>((p) => true, (p) => buttonIndex = int.Parse(p.Uid));
-            SwitchTabCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => SwitchTab(p));
-            LoadGuestwdCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => LoadGuestwd(p));
-            MoveWindowCommand = new RelayCommand<View.Customer.MainWindow>((p) => true, (p) => MoveWindow(p));
+            SwitchTabCommand = new RelayCommand<MainWindow>((p) => true, (p) => SwitchTab(p));
+            LoadGuestwdCommand = new RelayCommand<MainWindow>((p) => true, (p) => LoadGuestwd(p));
+            MoveWindowCommand = new RelayCommand<MainWindow>((p) => true, (p) => MoveWindow(p));
         }
-        private void MoveWindow(View.Customer.MainWindow p)
+        private void MoveWindow(MainWindow p)
         {
             p.DragMove();
         }
-        void LoadGuestwd(View.Customer.MainWindow p)
+        void LoadGuestwd(MainWindow p)
         {
             if (Const.IsLogin)
             {
@@ -60,22 +60,22 @@ namespace Novea2._0.ViewModel.Customer
         {
             Application.Current.Shutdown();
         }
-        private void MinimizeWd(View.Customer.MainWindow p)
+        private void MinimizeWd(MainWindow p)
         {
             p.WindowState = WindowState.Minimized;
         }
-        private void LogOut(View.Customer.MainWindow p)
+        private void LogOut(MainWindow p)
         {
             MainLogin mainLogin = new MainLogin();
             mainLogin.Show();
             p.Close();
         }
-        private void SwitchTab(View.Customer.MainWindow p)
+        private void SwitchTab(MainWindow p)
         {
             switch (buttonIndex)
             {
                 case 0:
-                    p.MainFrame.NavigationService.Navigate(new View.Customer.Home());
+                    p.MainFrame.NavigationService.Navigate(new Home());
                     break;
                 case 1:
                     p.MainFrame.NavigationService.Navigate(new Cart());
@@ -84,7 +84,7 @@ namespace Novea2._0.ViewModel.Customer
                     p.MainFrame.NavigationService.Navigate(new OrderHistory());
                     break;
                 case 3:
-                    p.MainFrame.NavigationService.Navigate(new View.Customer.Setting());
+                    p.MainFrame.NavigationService.Navigate(new Setting());
                     break;
                 default:
                     break;
