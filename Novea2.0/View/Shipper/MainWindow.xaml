@@ -15,20 +15,20 @@
         Height="600" Width="1024"
         x:Name="MainWD"
         DataContext="{StaticResource ShipperMainWindowVM}">
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadGuestwdCommand}"
+            <i:InvokeCommandAction Command="{Binding LoadAdminwdCommand}"
                           CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="30" BorderThickness="1">
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindowCommand}"
                               CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
 
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -109,7 +109,7 @@
                             </Ellipse>
                         </Border>
                         <TextBlock x:Name="tbHoten"
-                                   Text="nhvtmanh" 
+                                   Text="{Binding Hoten}" 
                                    Foreground="#fff8f0" 
                                    FontSize="22" 
                                    FontFamily="Segoe UI"
@@ -138,7 +138,7 @@
                                          Tag="{StaticResource color1}"
                                          Uid="0" 
                                          IsChecked="True">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
@@ -147,7 +147,7 @@
                                         <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnHome}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Home" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="TRANG CHỦ" 
@@ -160,7 +160,7 @@
                                          Style="{StaticResource menuButton}"
                                          Tag="{StaticResource color1}"
                                          Uid="1">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
@@ -169,7 +169,7 @@
                                         <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnOrder}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Cart" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="ĐƠN HÀNG" 
@@ -182,7 +182,7 @@
                                          Style="{StaticResource menuButton}"
                                          Tag="{StaticResource color1}"
                                          Uid="2">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
@@ -191,7 +191,7 @@
                                         <i:InvokeCommandAction Command="{Binding GetIdTab}"
                                                            CommandParameter="{Binding ElementName=btnSetting}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Settings" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="CÀI ĐẶT" 
@@ -203,12 +203,12 @@
                             <RadioButton x:Name="btnLogout"
                                          Style="{StaticResource menuButton}"                                
                                          Tag="{StaticResource color1}">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding LogOutCommand}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
                                     <TextBlock Text="ĐĂNG XUẤT" 
@@ -241,12 +241,12 @@
                                                          Width="{Binding Width, ElementName=clostBt}" 
                                                          Height="{Binding Width, ElementName=clostBt}">
                                 </materialDesign:PackIcon>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding CloseWdCommand}"                                               
                                                                CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                             <!--<Button Style="{StaticResource controlButton}"
                                     Tag="{StaticResource plainTextColor1}"
@@ -272,12 +272,12 @@
                                                          Width="{Binding Width, ElementName=clostBt}"
                                                          Height="{Binding Width, ElementName=clostBt}">
                                 </materialDesign:PackIcon>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding MinimizeWdCommand}"                                    
                                                                CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                         </StackPanel>
                     </Border>
