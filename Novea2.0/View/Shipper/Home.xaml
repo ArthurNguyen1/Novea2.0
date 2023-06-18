@@ -12,12 +12,12 @@
       x:Name="HomePage"
       DataContext="{StaticResource ShipperHomeVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadWdCommand}"
-                                   CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
+                          CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -86,12 +86,12 @@
                                        FontWeight="SemiBold"
                                        HorizontalAlignment="Left"
                                        Margin="20 25 10 0" Width="135">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadSP}"
-                                                           CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
+                                        <i:InvokeCommandAction Command="{Binding Load1Command}"
+                                                      CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
@@ -100,7 +100,7 @@
                 <Border Width="220"
                         Height="140"
                         CornerRadius="40"
-                        Margin="10 0 25 0">
+                        Margin="20 0 25 0">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
                             <GradientStop Color="#f4a261" Offset="0"/>
@@ -127,7 +127,7 @@
                                        Foreground="{StaticResource plainTextColor2}"
                                        Margin="20 10 10 0"/>
 
-                            <TextBlock Text="696969"
+                            <TextBlock Text="{Binding TotalSalary, StringFormat=\{0:#\,###\} VNĐ}"
                                        x:Name="tb2"
                                        FontSize="26"
                                        Foreground="{StaticResource plainTextColor2}"
@@ -135,21 +135,15 @@
                                        HorizontalAlignment="Left"
                                        Margin="20 45 10 0" 
                                        Width="135">
-                                <!--<i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadDon}"
-                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
                             </TextBlock>
                         </StackPanel>
                     </Grid>
                 </Border>
 
-                <Border Width="245"                   
+                <Border Width="220"                   
                         Height="140"                   
                         CornerRadius="40"                    
-                        Margin="10">
+                        Margin="20">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
                             <GradientStop Color="#f4d03f" Offset="0"/>
@@ -171,15 +165,14 @@
                                                  Foreground="{StaticResource plainTextColor2}" 
                                                  HorizontalAlignment="Right" />
                         <StackPanel Margin="5">
-                            <TextBlock Text="Total Orders Need To Be Delivered"
+                            <TextBlock Text="Total Orders In Delivery"
                                        Width="170"
                                        TextWrapping="Wrap"
                                        FontSize="20"
                                        Foreground="{StaticResource plainTextColor2}"
-                                       Margin="-10 8 10 0"/>
+                                       Margin="15 8 10 0"/>
 
-                            <TextBlock Text="13579"
-                                       Width="auto"
+                            <TextBlock Width="auto"
                                        x:Name="tb3"
                                        TextWrapping="Wrap"
                                        FontSize="25"
@@ -187,12 +180,12 @@
                                        Foreground="{StaticResource plainTextColor2}"
                                        HorizontalAlignment="Left"
                                        Margin="22 20 10 0">
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding LoadDoanhThu}"
-                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
+                                        <i:InvokeCommandAction Command="{Binding Load2Command}"
+                                                      CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </TextBlock>
                         </StackPanel>
                     </Grid>
