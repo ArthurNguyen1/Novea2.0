@@ -11,12 +11,12 @@
       x:Name="StorePage"
       DataContext="{StaticResource StoreVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadCommand}"                                                       
-                                   CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding LoadCsCommand}"                                                       
+                                   CommandParameter="{Binding ElementName=StorePage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border Height="565"
             Width="775"
@@ -60,12 +60,12 @@
                             Content="A->Z"/>
                         <ComboBoxItem
                             Content="Z->A"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding SortCommand}"
-                                                       CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=StorePage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
 
                     <StackPanel Orientation="Horizontal"
@@ -95,12 +95,12 @@
                                          BorderThickness="0"                                                  
                                          MinWidth="200"                                                  
                                          VerticalAlignment="Center">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="TextChanged">
                                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                       CommandParameter="{Binding ElementName=CustomerPage}"></i:InvokeCommandAction>
+                                                       CommandParameter="{Binding ElementName=StorePage}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </TextBox>
                                 <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
                                         Grid.Column="2">
@@ -154,7 +154,7 @@
                     </Border>
 
                     <ListView x:Name="ListViewStore" 
-                              ItemsSource="{Binding ListStore}"
+                              ItemsSource="{Binding listStore}"
                               Height="390"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"                                           
                               SelectionMode="Single"
@@ -208,6 +208,12 @@
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
+                                                       CommandParameter="{Binding ElementName=StorePage}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>

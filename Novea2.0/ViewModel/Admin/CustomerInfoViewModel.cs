@@ -55,7 +55,7 @@ namespace Novea2._0.ViewModel.Admin
                     a.STATU = true;
                 }
                 DataProvider.Ins.DB.SaveChanges();
-                MessageBox.Show("Cập nhật sản phẩm thành công !", "THÔNG BÁO");
+                MessageBox.Show("Mở khóa tài khoản thành công !", "THÔNG BÁO");
             }
             p.Close();
         }
