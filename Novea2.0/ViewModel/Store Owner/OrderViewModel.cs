@@ -31,7 +31,7 @@ namespace Novea2._0.ViewModel.Store_Owner
         void _LoadCsCommand(Order parameter)
         {
             DataProvider.Ins.Refresh();
-            listHD1 = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU != "Khởi tạo"));
+            listHD1 = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(h => h.MACH == Const.CH.MACH && h.STATU != "Khởi tạo"));
             listHD = new ObservableCollection<HOADON>(listHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()));
             parameter.cbbFilter.SelectedIndex = 0;
             Filter(parameter);
