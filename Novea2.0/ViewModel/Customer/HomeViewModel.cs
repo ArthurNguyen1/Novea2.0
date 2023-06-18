@@ -35,7 +35,7 @@ namespace Novea2._0.ViewModel.Customer
             ListStore1 = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs);
             ListStore = new ObservableCollection<CUAHANG>(ListStore1.GroupBy(p => p.TENCH).Select(grp => grp.FirstOrDefault()));
             LoadStoreCommand = new RelayCommand<Home>((p) => true, (p) => loadStore(p));
-            StoreDetailCommand = new RelayCommand<Home>((p) => { return p.ListViewStore.SelectedItem != null; }, (p) => DisplayStoreDetail(p));
+            StoreDetailCommand = new RelayCommand<Home>((p) => { return p.ListViewStore.SelectedItem != null ? true : false; }, (p) => DisplayStoreDetail(p));
             SearchCommand = new RelayCommand<Home>((p) => { return p != null; }, (p) => Search(p));
         }
         void Search(Home parameter)
@@ -67,8 +67,8 @@ namespace Novea2._0.ViewModel.Customer
         void loadStore(Home parameter)
         {
             //DataProvider.Ins.Refresh();
-            //ListStore1 = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs);           
-            //ListStore = new ObservableCollection<CUAHANG>(ListStore1.GroupBy(p => p.TENCH).Select(grp => grp.FirstOrDefault()));           
+            ListStore1 = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs);
+            ListStore = new ObservableCollection<CUAHANG>(ListStore1.GroupBy(p => p.TENCH).Select(grp => grp.FirstOrDefault()));
             Const.CH = null;
         }
         void DisplayStoreDetail(Home parameter)
@@ -77,6 +77,7 @@ namespace Novea2._0.ViewModel.Customer
             Const.CH = temp;
             Page detailStore = new StoreDetail();
             MainWindow.Instance.MainFrame.NavigationService.Navigate(detailStore);
+            parameter.ListViewStore.SelectedItem = null;
         }
     }
 }

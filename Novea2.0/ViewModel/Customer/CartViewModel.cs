@@ -28,20 +28,20 @@ namespace Novea2._0.ViewModel.Customer
         }
         void _LoadCartCommand(Cart parameter)
         {
-            if (Const.HD != null)
+            DataProvider.Ins.Refresh();
+            var hoadon = DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU == "Khởi tạo").FirstOrDefault();
+            if (hoadon != null)
             {
-                DataProvider.Ins.Refresh();
-                listCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == Const.HD.SOHD));
-                HOADON hd_temp = DataProvider.Ins.DB.HOADONs.Where(p => p.SOHD == Const.HD.SOHD).FirstOrDefault();
-                TongTien = (int)hd_temp.TONGTIEN;
+                listCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == hoadon.SOHD));
+                TongTien = (int)hoadon.TONGTIEN;
             }
         }
         void _DeleteCartCommand(Cart parameter)
         {
-            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn có muốn hủy giỏ hàng hiện tại ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult h = MessageBox.Show("Bạn có muốn hủy giỏ hàng hiện tại ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
-                var itemToRemove = DataProvider.Ins.DB.HOADONs.Where(pa => (pa.SOHD == Const.HD.SOHD)).SingleOrDefault();
+                var itemToRemove = DataProvider.Ins.DB.HOADONs.Where(pa => pa.MAND_KHACH == Const.KH.MAND && pa.STATU == "Khởi tạo").SingleOrDefault();
 
                 ObservableCollection<CTHD> ListCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == itemToRemove.SOHD));
 
@@ -65,11 +65,11 @@ namespace Novea2._0.ViewModel.Customer
         }
         void _AcceptCartCommand(Cart parameter)
         {
-            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn xác nhận mua hàng ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult h = MessageBox.Show("Bạn xác nhận mua hàng ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
-                var uRow = DataProvider.Ins.DB.HOADONs.Where(w => w.SOHD == Const.HD.SOHD).FirstOrDefault();
-                uRow.STATU = "Đang xử lý";
+                var hoadon = DataProvider.Ins.DB.HOADONs.Where(hd => hd.MAND_KHACH == Const.KH.MAND && hd.STATU == "Khởi tạo").FirstOrDefault();
+                hoadon.STATU = "Đang xử lý";
                 DataProvider.Ins.DB.SaveChanges();
 
                 listCTHD = null;

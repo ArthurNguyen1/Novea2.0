@@ -337,7 +337,8 @@
                                     VerticalAlignment="Top"
                                     Margin="0,30,0,0"
                                     Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                                    Content="Thêm vào giỏ hàng">
+                                    Content="Thêm vào giỏ hàng"
+                                    x:Name="buttonAdd">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding AddToCartCommand}"

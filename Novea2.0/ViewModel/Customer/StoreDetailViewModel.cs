@@ -77,80 +77,82 @@ namespace Novea2._0.ViewModel.Customer
             productDetail.txbSIZE.Text = "Size: " + temp.SIZE;
             Const.SP_temp = temp;
 
-            if (Const.HD == null)
-            {
-                HOADON hd = new HOADON();
-                hd.SOHD = rdSOHD();
-                hd.NGMH = DateTime.Now;
-                hd.TONGTIEN = 0;
-                //Set hd.STATU
-                hd.STATU = "Khởi tạo";
-                hd.MAND_KHACH = Const.KH.MAND;
-                hd.MACH = Const.CH.MACH;
-                Const.HD = hd;
-                productDetail.txbSOHD.Text = Const.HD.SOHD;
-                DataProvider.Ins.DB.HOADONs.Add(hd);
-                DataProvider.Ins.DB.SaveChanges();
+            productDetail.ShowDialog();
+            paramater.ListViewProduct.SelectedItem = null;
+            //if (Const.HD == null)
+            //{
+            //    HOADON hd = new HOADON();
+            //    hd.SOHD = rdSOHD();
+            //    hd.NGMH = DateTime.Now;
+            //    hd.TONGTIEN = 0;
+            //    //Set hd.STATU
+            //    hd.STATU = "Khởi tạo";
+            //    hd.MAND_KHACH = Const.KH.MAND;
+            //    hd.MACH = Const.CH.MACH;
+            //    Const.HD = hd;
+            //    productDetail.txbSOHD.Text = Const.HD.SOHD;
+            //    DataProvider.Ins.DB.HOADONs.Add(hd);
+            //    DataProvider.Ins.DB.SaveChanges();
 
-                productDetail.ShowDialog();
-                paramater.ListViewProduct.SelectedItem = null;
-            }
-            else
-            {
-                if (Const.HD.MACH != Const.CH.MACH)
-                {
-                    MessageBoxResult h = System.Windows.MessageBox.Show("Bạn có muốn hủy giỏ hàng hiện tại ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-                    if (h == MessageBoxResult.Yes)
-                    {
-                        var itemToRemove = DataProvider.Ins.DB.HOADONs.SingleOrDefault(pa => (pa.SOHD == Const.HD.SOHD));
+            //    productDetail.ShowDialog();
+            //    paramater.ListViewProduct.SelectedItem = null;
+            //}
+            //else
+            //{
+            //    if (Const.HD.MACH != Const.CH.MACH)
+            //    {
+            //        MessageBoxResult h = System.Windows.MessageBox.Show("Bạn có muốn hủy giỏ hàng hiện tại ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            //        if (h == MessageBoxResult.Yes)
+            //        {
+            //            var itemToRemove = DataProvider.Ins.DB.HOADONs.SingleOrDefault(pa => (pa.SOHD == Const.HD.SOHD));
 
-                        ObservableCollection<CTHD> ListCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == itemToRemove.SOHD));
+            //            ObservableCollection<CTHD> ListCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == itemToRemove.SOHD));
 
-                        if (itemToRemove != null)
-                        {
-                            if (ListCTHD != null)
-                            {
-                                for (int i = 0; i < ListCTHD.Count; i++)
-                                {
-                                    DataProvider.Ins.DB.CTHDs.Remove(ListCTHD[i]);
-                                }
-                            }
-                            DataProvider.Ins.DB.HOADONs.Remove(itemToRemove);
-                            DataProvider.Ins.DB.SaveChanges();
-                        }
-                        HOADON hd = new HOADON();
-                        hd.SOHD = rdSOHD();
-                        hd.NGMH = DateTime.Now;
-                        hd.TONGTIEN = 0;
-                        //Set hd.STATU
-                        hd.STATU = "Khởi tạo";
-                        hd.MAND_KHACH = Const.KH.MAND;
-                        hd.MACH = Const.CH.MACH;
-                        Const.HD = hd;
-                        productDetail.txbSOHD.Text = Const.HD.SOHD;
-                        DataProvider.Ins.DB.HOADONs.Add(hd);
-                        DataProvider.Ins.DB.SaveChanges();
+            //            if (itemToRemove != null)
+            //            {
+            //                if (ListCTHD != null)
+            //                {
+            //                    for (int i = 0; i < ListCTHD.Count; i++)
+            //                    {
+            //                        DataProvider.Ins.DB.CTHDs.Remove(ListCTHD[i]);
+            //                    }
+            //                }
+            //                DataProvider.Ins.DB.HOADONs.Remove(itemToRemove);
+            //                DataProvider.Ins.DB.SaveChanges();
+            //            }
+            //            HOADON hd = new HOADON();
+            //            hd.SOHD = rdSOHD();
+            //            hd.NGMH = DateTime.Now;
+            //            hd.TONGTIEN = 0;
+            //            //Set hd.STATU
+            //            hd.STATU = "Khởi tạo";
+            //            hd.MAND_KHACH = Const.KH.MAND;
+            //            hd.MACH = Const.CH.MACH;
+            //            Const.HD = hd;
+            //            productDetail.txbSOHD.Text = Const.HD.SOHD;
+            //            DataProvider.Ins.DB.HOADONs.Add(hd);
+            //            DataProvider.Ins.DB.SaveChanges();
 
-                        productDetail.ShowDialog();
-                        paramater.ListViewProduct.SelectedItem = null;
-                    }
-                }
-                else
-                {
-                    var CountSPExist = DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == Const.HD.SOHD && p.MASP == Const.SP_temp.MASP).Count();
-                    if (CountSPExist > 0)
-                    {
-                        MessageBox.Show("Bạn đã thêm sản phẩm này vào giỏ hàng.\n" +
-                                        "Nếu bạn muốn thay đổi chi tiết đơn hàng, mời bạn vào giao diện giỏ hàng.");
-                    }
-                    else
-                    {
-                        productDetail.txbSOHD.Text = Const.HD.SOHD;
-                        productDetail.ShowDialog();
-                        paramater.ListViewProduct.SelectedItem = null;
-                    }
-                }
-            }
+            //            productDetail.ShowDialog();
+            //            paramater.ListViewProduct.SelectedItem = null;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        var CountSPExist = DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == Const.HD.SOHD && p.MASP == Const.SP_temp.MASP).Count();
+            //        if (CountSPExist > 0)
+            //        {
+            //            MessageBox.Show("Bạn đã thêm sản phẩm này vào giỏ hàng.\n" +
+            //                            "Nếu bạn muốn thay đổi chi tiết đơn hàng, mời bạn vào giao diện giỏ hàng.");
+            //        }
+            //        else
+            //        {
+            //            productDetail.txbSOHD.Text = Const.HD.SOHD;
+            //            productDetail.ShowDialog();
+            //            paramater.ListViewProduct.SelectedItem = null;
+            //        }
+            //    }
+            //}
         }
     }
 }

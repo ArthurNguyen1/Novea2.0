@@ -67,27 +67,75 @@ namespace Novea2._0.ViewModel.Customer
             bitmapImage.StreamSource = new MemoryStream(imageData);
             bitmapImage.EndInit();
             Image = bitmapImage;
-            HoaDon = DataProvider.Ins.DB.HOADONs.Where(p => p.SOHD == parameter.txbSOHD.Text).FirstOrDefault();
-            Const.HD = HoaDon;
+            //HoaDon = DataProvider.Ins.DB.HOADONs.Where(p => p.SOHD == parameter.txbSOHD.Text).FirstOrDefault();
+            //Const.HD = HoaDon;
 
-            CTHD CT = new CTHD();
-            CT.SOHD = parameter.txbSOHD.Text;
-            CT.MASP = Const.SP_temp.MASP;
-            CT.SOLUONG = 0;
-            CT.TRIGIA = 0;
+            //CTHD CT = new CTHD();
+            //CT.SOHD = parameter.txbSOHD.Text;
+            //CT.MASP = Const.SP_temp.MASP;
+            //CT.SOLUONG = 0;
+            //CT.TRIGIA = 0;
 
-            Cthd = CT;
+            //Cthd = CT;
+
+            //Disable button add to cart if product from diffrent store or product has exist in cart
+            if (CheckProduct())
+                parameter.buttonAdd.IsEnabled = false;
 
             parameter.txbSL.Text = "1";
             _UpdateSLCommand(parameter);
         }
+        bool CheckProduct()
+        {
+            var hoadon = DataProvider.Ins.DB.HOADONs.Where(hd => hd.MAND_KHACH == Const.KH.MAND && hd.STATU == "Khởi tạo").FirstOrDefault();
+            if (hoadon != null)
+            {
+                var dem = DataProvider.Ins.DB.CTHDs.Count(ct => ct.SOHD == hoadon.SOHD && ct.MASP == Const.SP_temp.MASP);
+                if (dem > 0 || Const.SP_temp.MACH != hoadon.MACH)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         void _AddToCartCommand(ProductDetail parameter)
         {
-            CTHD Cthd_temp = new CTHD();
-            Cthd_temp = Cthd;
-            Cthd_temp.SOLUONG = Int32.Parse(parameter.txbSL.Text);
+            //CTHD Cthd_temp = new CTHD();
+            //Cthd_temp = Cthd;
+            //Cthd_temp.SOLUONG = Int32.Parse(parameter.txbSL.Text);
 
-            DataProvider.Ins.DB.CTHDs.Add(Cthd_temp);
+            //DataProvider.Ins.DB.CTHDs.Add(Cthd_temp);
+            //DataProvider.Ins.DB.SaveChanges();
+
+            //Create hd
+            var hoadon = DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_KHACH == Const.KH.MAND && h.STATU == "Khởi tạo").FirstOrDefault();
+            if (hoadon == null)
+            {
+                HOADON hd = new HOADON();
+                hd.SOHD = rdSOHD();
+                hd.NGMH = DateTime.Now;
+                hd.TONGTIEN = 0;
+                hd.STATU = "Khởi tạo";
+                hd.MAND_KHACH = Const.KH.MAND;
+                hd.MACH = Const.CH.MACH;
+                DataProvider.Ins.DB.HOADONs.Add(hd);
+                Const.HD = hd;
+            }
+            
+            //Create cthd
+            CTHD cthd = new CTHD();
+            cthd.SOCTHD = rdSOCTHD();
+            if (Const.HD == null)
+            {
+                cthd.SOHD = hoadon.SOHD;
+            }
+            else
+            {
+                cthd.SOHD = Const.HD.SOHD;
+            }
+            cthd.MASP = Const.SP_temp.MASP;
+            cthd.SOLUONG = Int32.Parse(parameter.txbSL.Text);
+            DataProvider.Ins.DB.CTHDs.Add(cthd);
             DataProvider.Ins.DB.SaveChanges();
 
             parameter.Close();
@@ -95,6 +143,44 @@ namespace Novea2._0.ViewModel.Customer
         void CloseProductDetailwd(ProductDetail p)
         {
             p.Close();
+        }
+        bool checkSOHD(string m)
+        {
+            foreach (HOADON temp in DataProvider.Ins.DB.HOADONs)
+            {
+                if (temp.SOHD == m)
+                    return true;
+            }
+            return false;
+        }
+        string rdSOHD()
+        {
+            string SoHD;
+            do
+            {
+                Random rand = new Random();
+                SoHD = "HD" + rand.Next(0, 10000).ToString();
+            } while (checkSOHD(SoHD));
+            return SoHD;
+        }
+        bool checkSOCTHD(string m)
+        {
+            foreach (CTHD temp in DataProvider.Ins.DB.CTHDs)
+            {
+                if (temp.SOCTHD == m)
+                    return true;
+            }
+            return false;
+        }
+        string rdSOCTHD()
+        {
+            string SoCTHD;
+            do
+            {
+                Random rand = new Random();
+                SoCTHD = "CTHD" + rand.Next(0, 10000).ToString();
+            } while (checkSOCTHD(SoCTHD));
+            return SoCTHD;
         }
     }
 }

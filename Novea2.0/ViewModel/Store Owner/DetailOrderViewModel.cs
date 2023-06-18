@@ -36,13 +36,17 @@ namespace Novea2._0.ViewModel.Store_Owner
         }
         void _FinishOrderCommand(DetailOrder p)
         {
-            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn xác nhận hoàn thành đơn hàng này ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult h = MessageBox.Show("Bạn xác nhận hoàn thành đơn hàng này ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
+                //Random a shipper
+                var random = new Random();
+                ObservableCollection<SHIPPER> list = new ObservableCollection<SHIPPER>(DataProvider.Ins.DB.SHIPPERs);
+                var randomShipper = list[random.Next(list.Count)];
                 var uRow = DataProvider.Ins.DB.HOADONs.Where(w => w.SOHD == SoHD_Now).FirstOrDefault();
+                uRow.MAND_SHIPPER = randomShipper.MAND;
                 uRow.STATU = "Đang giao hàng";
                 DataProvider.Ins.DB.SaveChanges();
-
                 p.Close();
             }
         }
