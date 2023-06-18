@@ -692,6 +692,8 @@
       <DependentUpon>QuanLyBanHangNovea.edmx</DependentUpon>
       <LastGenOutput>QuanLyBanHangNovea.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Images\admin1.jpg" />
+    <Resource Include="Resources\Images\shipper1.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
