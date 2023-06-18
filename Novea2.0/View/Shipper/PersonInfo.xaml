@@ -11,12 +11,12 @@
       x:Name="PersonInfoPage"
       DataContext="{StaticResource shipperInfoVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadPersonInfowdCommand}"
-                                   CommandParameter="{Binding ElementName=PersonInfoPage}"/>
+                          CommandParameter="{Binding ElementName=PersonInfoPage}"/>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="0 0 40 0"
             Background="Transparent">
@@ -74,12 +74,12 @@
                                               Opacity="0.5"
                                               BlurRadius="5"/>
                         </Button.Effect>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding UpdateAvatarCommand}"
-                                                       CommandParameter="{Binding ElementName=image}"></i:InvokeCommandAction>
+                                              CommandParameter="{Binding ElementName=image}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                     <Grid Grid.Column="1">
                         <StackPanel Margin="20,20,0,0">
@@ -246,12 +246,12 @@
                                                     Opacity="0.5"
                                                     BlurRadius="5"/>
                                 </Button.Effect>
-                                <!--<i:Interaction.Triggers>
+                                <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
                                         <i:InvokeCommandAction Command="{Binding UpdateInfoCommand}"
-                                                               CommandParameter="{Binding ElementName=PersonInfoPage}"></i:InvokeCommandAction>
+                                                      CommandParameter="{Binding ElementName=PersonInfoPage}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
-                                </i:Interaction.Triggers>-->
+                                </i:Interaction.Triggers>
                             </Button>
                         </StackPanel>
                     </Grid>
