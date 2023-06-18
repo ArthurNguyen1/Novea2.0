@@ -15,12 +15,21 @@
         Height="400" Width="600"
         x:Name="BanWD"
         DataContext="{StaticResource BanWindowVM}">
+
     <Border CornerRadius="15" Background="MidnightBlue">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding MoveWindow}"
+                                       CommandParameter="{Binding ElementName=BanWD}"></i:InvokeCommandAction>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
             <Button Style="{StaticResource controlButton}"
                     Tag="{StaticResource plainTextColor1}"
                     Width="25" Height="25"
@@ -29,12 +38,12 @@
                 <materialDesign:PackIcon Kind="CloseThick" 
                                          Foreground="{StaticResource plainTextColor3}" 
                                          Height="25" Width="25"/>
-                <!--<i:Interaction.Triggers>
+                <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding CloseWdCommand}"
-                                      CommandParameter="{Binding ElementName=BanWD}"></i:InvokeCommandAction>
+                        <i:InvokeCommandAction Command="{Binding Closewd}"
+                                                        CommandParameter="{Binding ElementName=BanWD}"></i:InvokeCommandAction>
                     </i:EventTrigger>
-                </i:Interaction.Triggers>-->
+                </i:Interaction.Triggers>
             </Button>
             <TextBlock Grid.Row="1"
                        Foreground="{StaticResource color1}"
@@ -77,12 +86,12 @@
                     Style="{StaticResource MaterialDesignFlatMidBgButton}" 
                     HorizontalAlignment="Center"
                     Margin="0 230 0 0">
-                <!--<i:Interaction.Triggers>
+                <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <i:InvokeCommandAction Command="{Binding BanCommand}"
                                     CommandParameter="{Binding ElementName=BanWD}"></i:InvokeCommandAction>
                     </i:EventTrigger>
-                </i:Interaction.Triggers>-->
+                </i:Interaction.Triggers>
             </Button>
         </Grid>
     </Border>

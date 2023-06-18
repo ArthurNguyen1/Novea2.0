@@ -84,7 +84,8 @@ namespace Novea2._0.ViewModel.Login
                         }
                         else
                         {
-                            //Process blocked account
+                            string mota = k.REASONBANNING;
+                            MessageBox.Show(mota, "Thông báo", MessageBoxButton.OK);
                         }
                     }
                 }

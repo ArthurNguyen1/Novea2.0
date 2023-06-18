@@ -17,12 +17,12 @@
         DataContext="{StaticResource ShipperInfoVM}">
     <Border CornerRadius="12" Background="MidnightBlue">
 
-        <!--<i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseLeftButtonDown">
-                <i:InvokeCommandAction Command="{Binding MoveWdCommand}"
-                              CommandParameter="{Binding ElementName=ShipperSignUpWD}"></i:InvokeCommandAction>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <i:InvokeCommandAction Command="{Binding Loadwd}"
+                                   CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
 
         <Grid>
             <Grid.RowDefinitions>
@@ -30,6 +30,14 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding MoveWindow}"
+                                       CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
             <Grid Grid.Row="0"
                   Background="Transparent">
                 <StackPanel 
@@ -43,24 +51,24 @@
                                     Margin="5 0 0 0"
                                     Width="25">
                         <materialDesign:PackIcon Kind="WindowMinimize" Foreground="{StaticResource plainTextColor3}" Height="24" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding MinimizeWdCommand}"
-                                              CommandParameter="{Binding ElementName=ShipperSignUpWD}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding Minimizewd}"
+                                                        CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                     <Button Style="{StaticResource controlButton}"
                                     Tag="{StaticResource plainTextColor1}"
                                     Width="25"
                                     x:Name="a">
                         <materialDesign:PackIcon Kind="CloseThick" Foreground="{StaticResource plainTextColor3}" Height="24" Width="24"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding CloseWdCommand}"
-                                              CommandParameter="{Binding ElementName=ShipperSignUpWD}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding Closewd}"
+                                                        CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
 
                 </StackPanel>
@@ -186,12 +194,12 @@
                                         Background="#FD8A87"
                                         Height="40"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
-                                            <i:InvokeCommandAction Command="{Binding SignUpCommand}"
-                                                          CommandParameter="{Binding ElementName=ShipperSignUpWD}"></i:InvokeCommandAction>
+                                            <i:InvokeCommandAction Command="{Binding BanAccountCommand}"
+                                                   CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </Button>
                                 <Button Width="auto"
                                         Margin="10 0 0 0"
@@ -202,12 +210,12 @@
                                         Background="#FD8A87"
                                         Height="40"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                                    <!--<i:Interaction.Triggers>
+                                    <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
-                                            <i:InvokeCommandAction Command="{Binding SignUpCommand}"
-                                                          CommandParameter="{Binding ElementName=ShipperSignUpWD}"></i:InvokeCommandAction>
+                                            <i:InvokeCommandAction Command="{Binding UnbanAccountCommand}"
+                                                   CommandParameter="{Binding ElementName=ShipperInfoWD}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
-                                    </i:Interaction.Triggers>-->
+                                    </i:Interaction.Triggers>
                                 </Button>
                             </StackPanel>
                         </StackPanel>
