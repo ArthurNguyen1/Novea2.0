@@ -11,12 +11,12 @@
       x:Name="OrderPage"
       DataContext="{StaticResource ShipperOrderVM}">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
-                                   CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"
+                          CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border Height="565"
             Width="820"
@@ -57,18 +57,63 @@
                               Height="45"
                               HorizontalAlignment="Center"
                               VerticalAlignment="Center"
-                              Margin="610 0 0 0">
+                              Margin="60 0 0 0">
                         <ComboBoxItem Content="Không"/>
-                        <ComboBoxItem Content="Đang xử lý"/>
                         <ComboBoxItem Content="Đang giao hàng"/>
-                        <ComboBoxItem Content="Bị hủy"/>
-                        <!--<i:Interaction.Triggers>
+                        <ComboBoxItem Content="Đã nhận"/>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding FilterCommand}"
-                                                       CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
+                                              CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ComboBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="184 0 0 0">
+                        <materialDesign:ColorZone Mode="Standard"                                               
+                                                  Padding="8 4 8 4"                                               
+                                                  CornerRadius="2"                                                
+                                                  Panel.ZIndex="1"
+                                                  Background="{StaticResource plainTextColor3}"
+                                                  materialDesign:ElevationAssist.Elevation="Dp2"
+                                                  VerticalAlignment="Center">
+                            <Grid Width="350">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource MaterialDesignToolButton}"
+                                        Foreground="{StaticResource plainTextColor2}">
+                                    <materialDesign:PackIcon Kind="Search"                                                                 
+                                                             Opacity=".56" />
+                                </Button>
+                                <TextBox x:Name="txbSearch"
+                                         Grid.Column="1"                                                  
+                                         Margin="8 0 0 0"
+                                         Foreground="{StaticResource plainTextColor2}"
+                                         materialDesign:HintAssist.Hint="Tìm số hóa đơn"                                                
+                                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"                                                 
+                                         BorderThickness="0"                                                  
+                                         MinWidth="200"                                                  
+                                         VerticalAlignment="Center">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="TextChanged">
+                                            <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                                                       CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBox>
+                                <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
+                                        Grid.Column="2">
+                                    <materialDesign:PackIcon Kind="Microphone"                                                     
+                                                             Opacity=".56"                                                   
+                                                             Margin="8 0 0 0"/>
+                                </Button>
+                            </Grid>
+                        </materialDesign:ColorZone>
+                    </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
@@ -129,7 +174,7 @@
                     </Border>
 
                     <ListView x:Name="ListViewHD" 
-                              ItemsSource="{Binding listHD}"
+                              ItemsSource="{Binding ListHD}"
                               SelectionMode="Single"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden" 
@@ -203,12 +248,12 @@
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding Detail}"
+                                <i:InvokeCommandAction Command="{Binding DetailOrderCommand}"
                                               CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>
