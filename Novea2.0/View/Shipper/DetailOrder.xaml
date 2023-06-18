@@ -15,16 +15,16 @@
         Height="600" Width="700"
         x:Name="DetailOrderWD"
         DataContext="{StaticResource ShipperDetailOrderVM}">
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetSoHD}"
-                                   CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                          CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                          CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
         </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
     <Border CornerRadius="20">
         <Border.Background>
@@ -42,12 +42,12 @@
             </Grid.RowDefinitions>
 
             <Grid>
-                <!--<i:Interaction.Triggers>
+                <i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseLeftButtonDown">
                         <i:InvokeCommandAction Command="{Binding MoveWindow}"
-                                       CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                                      CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
                     </i:EventTrigger>
-                </i:Interaction.Triggers>-->
+                </i:Interaction.Triggers>
 
                 <StackPanel Orientation="Horizontal"                                
                             HorizontalAlignment="Right"
@@ -62,12 +62,12 @@
                                                  Height="25" Width="25" 
                                                  HorizontalAlignment="Center" 
                                                  VerticalAlignment="Center"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding Minimizewd}"
-                                                        CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                                              CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
 
                     <Button Style="{StaticResource controlButton}"
@@ -79,12 +79,12 @@
                                                  Height="25" Width="25" 
                                                  HorizontalAlignment="Center" 
                                                  VerticalAlignment="Center"/>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding Closewd}"
-                                                        CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                                              CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
                             </i:EventTrigger>
-                        </i:Interaction.Triggers>-->
+                        </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -318,12 +318,12 @@
                         Margin="0,5,50,0"                                   
                         Foreground="Black"                                  
                         materialDesign:ButtonAssist.CornerRadius="10">
-                    <!--<i:Interaction.Triggers>
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding FinishOrderCommand}"
-                                                       CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
+                                          CommandParameter="{Binding ElementName=DetailOrderWD}"></i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
         </Grid>
