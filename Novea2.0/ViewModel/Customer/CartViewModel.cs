@@ -18,6 +18,7 @@ namespace Novea2._0.ViewModel.Customer
         private int _TongTien;
         public int TongTien { get => _TongTien; set { _TongTien = value; OnPropertyChanged(); } }
         public ICommand LoadCartCommand { get; set; }
+        public ICommand DetailPdCommand { get; set; }
         public ICommand DeleteCartCommand { get; set; }
         public ICommand AcceptCartCommand { get; set; }
         public CartViewModel()
@@ -25,6 +26,21 @@ namespace Novea2._0.ViewModel.Customer
             LoadCartCommand = new RelayCommand<Cart>((p) => true, (p) => _LoadCartCommand(p));
             DeleteCartCommand = new RelayCommand<Cart>((p) => true, (p) => _DeleteCartCommand(p));
             AcceptCartCommand = new RelayCommand<Cart>((p) => true, (p) => _AcceptCartCommand(p));
+            DetailPdCommand = new RelayCommand<Cart>((p) => { return p.ListViewCTHD.SelectedItem != null; }, (p) => DisplayDetailProduct(p));
+        }
+        public void DisplayDetailProduct(Cart paramater)
+        {
+            CartDetail cartDetail = new CartDetail();
+            CTHD temp = (CTHD)paramater.ListViewCTHD.SelectedItem;
+            cartDetail.txbTENSP.Text = temp.SANPHAM.TENSP;
+            cartDetail.txbDONGIA.Text = string.Format("{0:0,0}", temp.SANPHAM.DONGIA) + " VNĐ";
+            cartDetail.txbMOTA.Text = temp.SANPHAM.MOTA;
+            cartDetail.txbSIZE.Text = "Size: " + temp.SANPHAM.SIZE;
+            cartDetail.txbSL.Text = temp.SOLUONG.ToString();
+            Const.CTHD_temp = temp;
+
+            cartDetail.ShowDialog();
+            paramater.ListViewCTHD.SelectedItem = null;
         }
         void _LoadCartCommand(Cart parameter)
         {

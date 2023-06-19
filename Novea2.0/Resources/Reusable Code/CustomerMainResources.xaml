@@ -11,4 +11,5 @@
     <viewmodel:PersonInfoViewModel x:Key="PersonInfoVM"/>
     <viewmodel:ChangePasswordViewModel x:Key="CustomerChangePasswordVM"/>
     <viewmodel:StoreIdToNameConverter x:Key="StoreIdToNameConverter"/>
+    <viewmodel:CartDetailViewModel x:Key="CartDetailVM"/>
 </ResourceDictionary>

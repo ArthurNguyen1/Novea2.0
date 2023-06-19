@@ -19,6 +19,7 @@ namespace Novea2._0.Model
         public static SHIPPER SHP { get; set; }
         public static HOADON HD { get; set; }
         public static SANPHAM SP_temp { get; set; }
+        public static CTHD CTHD_temp { get; set; }
 
         public static string _localLink = System.Reflection.Assembly.GetExecutingAssembly().Location.Remove(System.Reflection.Assembly.GetExecutingAssembly().Location.IndexOf(@"bin\Debug"));
     }

@@ -157,6 +157,12 @@
                                 <StackPanel/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
+                                                       CommandParameter="{Binding ElementName=CartPage}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>
