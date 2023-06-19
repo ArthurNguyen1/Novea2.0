@@ -161,7 +161,7 @@ namespace Novea2._0.ViewModel.Store_Owner
             detailProduct.Size.Text = temp.SIZE;
             detailProduct.Mota.Text = temp.MOTA;
             detailProduct.ShowDialog();
-            //listSP_temp = new ObservableCollection<SANPHAM>(DataProvider.Ins.DB.SANPHAMs.Where(p => p.MACH == Const.CH.MACH));
+            listSP_temp = new ObservableCollection<SANPHAM>(DataProvider.Ins.DB.SANPHAMs.Where(p => p.MACH == Const.CH.MACH));
             paramater.ListViewProduct.SelectedItem = null;
             _Filter(paramater);
             _SearchCommand(paramater);

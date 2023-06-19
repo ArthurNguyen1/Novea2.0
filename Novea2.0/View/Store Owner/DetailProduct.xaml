@@ -318,12 +318,13 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0 5 0 0" Height="auto" Width="auto">
                             <TextBlock x:Name="txbAvail"
-                                       Foreground="{StaticResource plainTextColor3}"
+                                       Foreground="#fff8f0"
                                        VerticalAlignment="Center"
-                                       FontSize="13"
-                                       Width="120" Height="22"
+                                       Margin="10 0 0 0"
+                                       FontSize="18"
+                                       Width="120" Height="25"
                                        Text="{Binding Available}"
-                                       FontFamily="{StaticResource Custom}"/>
+                                       FontFamily="Segoe UI"/>
 
                             <Button x:Name="btnAvail" 
                                     Background="Transparent" 

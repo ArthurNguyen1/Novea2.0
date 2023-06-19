@@ -191,7 +191,7 @@
 
             <Grid Grid.Row="2">
                 <ListView x:Name="ListViewProduct" 
-                          ItemsSource="{Binding ListSP}"
+                          ItemsSource="{Binding listSP}"
                           SelectionMode="Single"
                           Margin="30,0,30,0"
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
