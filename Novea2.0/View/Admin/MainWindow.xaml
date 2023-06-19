@@ -191,7 +191,7 @@
                                          Uid="2">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
+                                        <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="MouseMove">
@@ -213,7 +213,7 @@
                                          Uid="3">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
+                                        <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="MouseMove">
@@ -235,7 +235,7 @@
                                          Uid="4">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Click">
-                                        <i:InvokeCommandAction Command="{Binding SwitchTabCommand}"
+                                        <i:InvokeCommandAction Command="{Binding SwitchTab}"
                                                            CommandParameter="{Binding ElementName=MainWD}"></i:InvokeCommandAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="MouseMove">
