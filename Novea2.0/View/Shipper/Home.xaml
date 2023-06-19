@@ -132,9 +132,10 @@
                                        FontSize="26"
                                        Foreground="{StaticResource plainTextColor2}"
                                        FontWeight="SemiBold"
+                                       TextWrapping="Wrap"
                                        HorizontalAlignment="Left"
                                        Margin="20 45 10 0" 
-                                       Width="135">
+                                       Width="auto">
                             </TextBlock>
                         </StackPanel>
                     </Grid>

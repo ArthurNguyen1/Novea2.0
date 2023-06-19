@@ -28,12 +28,12 @@ namespace Novea2._0.ViewModel.Shipper
         }
         private void LoadTotalOrdersInDelivery(Home p)
         {
-            int count = (int)ListHD.Select(hd => hd.STATU == "Đang giao hàng").Count();
+            var count = ListHD.Count(hd => hd.STATU == "Đang giao hàng");
             p.tb3.Text = count.ToString();
         }
         private void LoadTotalDeliveredOrders(Home p)
         {
-            int count = (int)ListHD.Select(hd => hd.STATU == "Đã nhận").Count();
+            var count = ListHD.Count(hd => hd.STATU == "Đã nhận");
             p.tb1.Text = count.ToString();
             TotalSalary = count * 30000;
         }
