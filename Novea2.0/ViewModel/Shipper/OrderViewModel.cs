@@ -85,11 +85,16 @@ namespace Novea2._0.ViewModel.Shipper
             detailOrder.TenKH.Text = temp.KHACH.HOTEN;
             detailOrder.DiaChi.Text = temp.KHACH.DIACHI;
             detailOrder.SDT.Text = temp.KHACH.SDT;
+            if (temp.STATU == "Đang giao hàng")
+            {
+                detailOrder.btConfirm.Visibility = System.Windows.Visibility.Visible;
+            }
             detailOrder.ShowDialog();
             parameter.ListViewHD.SelectedItem = null;
             ListHD1 = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(h => h.MAND_SHIPPER == Const.SHP.MAND));
             ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()));
             parameter.ListViewHD.ItemsSource = ListHD;
+            parameter.cbbFilter.SelectedIndex = 0;
         }
     }
 }
