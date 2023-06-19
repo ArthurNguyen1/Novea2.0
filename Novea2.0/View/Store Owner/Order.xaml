@@ -76,6 +76,51 @@
                         </i:Interaction.Triggers>
                     </ComboBox>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="60 0 0 0">
+                    <materialDesign:ColorZone Mode="Standard"                                               
+                                                  Padding="8 4 8 4"                                               
+                                                  CornerRadius="2"                                                
+                                                  Panel.ZIndex="1"
+                                                  Background="{StaticResource plainTextColor3}"
+                                                  materialDesign:ElevationAssist.Elevation="Dp2"
+                                                  VerticalAlignment="Center">
+                        <Grid Width="350">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource MaterialDesignToolButton}"
+                                        Foreground="{StaticResource plainTextColor2}">
+                                <materialDesign:PackIcon Kind="Search"                                                                 
+                                                             Opacity=".56" />
+                            </Button>
+                            <TextBox x:Name="txbSearch"
+                                         Grid.Column="1"                                                  
+                                         Margin="8 0 0 0"
+                                         Foreground="{StaticResource plainTextColor2}"
+                                         materialDesign:HintAssist.Hint="Tìm số hóa đơn"                                                
+                                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"                                                 
+                                         BorderThickness="0"                                                  
+                                         MinWidth="200"                                                  
+                                         VerticalAlignment="Center">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                                                       CommandParameter="{Binding ElementName=OrderPage}"></i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+                            <Button Style="{StaticResource MaterialDesignToolButton}"                                                    
+                                        Grid.Column="2">
+                                <materialDesign:PackIcon Kind="Microphone"                                                     
+                                                             Opacity=".56"                                                   
+                                                             Margin="8 0 0 0"/>
+                            </Button>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
                 <StackPanel>

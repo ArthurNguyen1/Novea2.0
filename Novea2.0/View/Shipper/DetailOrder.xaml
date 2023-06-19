@@ -317,7 +317,8 @@
                         VerticalAlignment="Top"                                   
                         Margin="0,5,50,0"                                   
                         Foreground="Black"                                  
-                        materialDesign:ButtonAssist.CornerRadius="10">
+                        materialDesign:ButtonAssist.CornerRadius="10"
+                        Visibility="Hidden">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding FinishOrderCommand}"
