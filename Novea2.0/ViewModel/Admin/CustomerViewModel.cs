@@ -49,17 +49,11 @@ namespace Novea2._0.ViewModel.Admin
             {
                 case "0":
                     {
-                        listCustomer = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()));
-                        parameter.ListViewCustomer.ItemsSource = listCustomer;
-                        break;
-                    }
-                case "1":
-                    {
                         listCustomer = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()).OrderBy(m => m.HOTEN));
                         parameter.ListViewCustomer.ItemsSource = listCustomer;
                         break;
                     }
-                case "2":
+                case "1":
                     {
                         listCustomer = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()).OrderByDescending(m => m.HOTEN));
                         parameter.ListViewCustomer.ItemsSource = listCustomer;

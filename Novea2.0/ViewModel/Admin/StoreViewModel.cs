@@ -49,17 +49,11 @@ namespace Novea2._0.ViewModel.Admin
             {
                 case "0":
                     {
-                        listStore = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.GroupBy(p => p.MACH).Select(grp => grp.FirstOrDefault()));
-                        parameter.ListViewStore.ItemsSource = listStore;
-                        break;
-                    }
-                case "1":
-                    {
                         listStore = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.GroupBy(p => p.MACH).Select(grp => grp.FirstOrDefault()).OrderBy(m => m.TENCH));
                         parameter.ListViewStore.ItemsSource = listStore;
                         break;
                     }
-                case "2":
+                case "1":
                     {
                         listStore = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.GroupBy(p => p.MACH).Select(grp => grp.FirstOrDefault()).OrderByDescending(m => m.TENCH));
                         parameter.ListViewStore.ItemsSource = listStore;

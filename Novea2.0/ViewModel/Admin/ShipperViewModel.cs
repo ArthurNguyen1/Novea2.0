@@ -49,17 +49,11 @@ namespace Novea2._0.ViewModel.Admin
             {
                 case "0":
                     {
-                        listShipper = new ObservableCollection<SHIPPER>(DataProvider.Ins.DB.SHIPPERs.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()));
-                        parameter.ListViewShipper.ItemsSource = listShipper;
-                        break;
-                    }
-                case "1":
-                    {
                         listShipper = new ObservableCollection<SHIPPER>(DataProvider.Ins.DB.SHIPPERs.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()).OrderBy(m => m.HOTEN));
                         parameter.ListViewShipper.ItemsSource = listShipper;
                         break;
                     }
-                case "2":
+                case "1":
                     {
                         listShipper = new ObservableCollection<SHIPPER>(DataProvider.Ins.DB.SHIPPERs.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()).OrderByDescending(m => m.HOTEN));
                         parameter.ListViewShipper.ItemsSource = listShipper;
