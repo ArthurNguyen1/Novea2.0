@@ -314,15 +314,15 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
-                            <StackPanel  Orientation="Horizontal" Margin="30,30,0,0" Height="auto" Width="auto" HorizontalAlignment="Left">
+                            <StackPanel  Orientation="Horizontal" Margin="10,30,0,0" Height="auto" Width="auto" HorizontalAlignment="Left">
                                 <TextBlock FontFamily="{StaticResource Custom1}"
                                            FontSize="30"
                                            Height="30"
                                            Foreground="{StaticResource color1}"
                                            HorizontalAlignment="Center"
-                                           Text="Thành tiền:"/>
+                                           Text="Thành tiền"/>
                                 <TextBlock FontFamily="{StaticResource Custom1}"
-                                           Margin="10 0 0 0"
+                                           Margin="40 0 0 0"
                                            FontSize="30"
                                            Height="30"
                                            Foreground="{StaticResource plainTextColor3}"

@@ -34,6 +34,8 @@ namespace Novea2._0.ViewModel.Customer
             {
                 listCTHD = new ObservableCollection<CTHD>(DataProvider.Ins.DB.CTHDs.Where(p => p.SOHD == hoadon.SOHD));
                 TongTien = (int)hoadon.TONGTIEN;
+                parameter.acceptbtn.IsEnabled = true;
+                parameter.deletebtn.IsEnabled = true;
             }
         }
         void _DeleteCartCommand(Cart parameter)
@@ -60,6 +62,8 @@ namespace Novea2._0.ViewModel.Customer
                 listCTHD = null;
                 Const.HD = null;
                 TongTien = 0;
+                parameter.acceptbtn.IsEnabled = false;
+                parameter.deletebtn.IsEnabled = false;
                 _LoadCartCommand(parameter);
             }
         }
@@ -75,6 +79,8 @@ namespace Novea2._0.ViewModel.Customer
                 listCTHD = null;
                 Const.HD = null;
                 TongTien = 0;
+                parameter.acceptbtn.IsEnabled = false;
+                parameter.deletebtn.IsEnabled = false;
                 _LoadCartCommand(parameter);
             }
         }
