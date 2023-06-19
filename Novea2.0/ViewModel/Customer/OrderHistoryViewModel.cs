@@ -63,11 +63,17 @@ namespace Novea2._0.ViewModel.Customer
                     }
                 case "1":
                     {
-                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đang giao"));
+                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đang xử lý"));
                         p.ListViewHD.ItemsSource = ListHD;
                         break;
                     }
                 case "2":
+                    {
+                        ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đang giao hàng"));
+                        p.ListViewHD.ItemsSource = ListHD;
+                        break;
+                    }
+                case "3":
                     {
                         ListHD = new ObservableCollection<HOADON>(ListHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đã nhận"));
                         p.ListViewHD.ItemsSource = ListHD;

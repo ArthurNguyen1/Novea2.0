@@ -75,7 +75,8 @@
                               Margin="22 0 0 0"
                               x:Name="cbbFilter">
                         <ComboBoxItem Content="Không"/>
-                        <ComboBoxItem Content="Đang giao"/>
+                        <ComboBoxItem Content="Đang xử lý"/>
+                        <ComboBoxItem Content="Đang giao hàng"/>
                         <ComboBoxItem Content="Đã nhận"/>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
