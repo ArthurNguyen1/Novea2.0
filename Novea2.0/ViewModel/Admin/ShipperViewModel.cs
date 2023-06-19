@@ -1,5 +1,6 @@
 ﻿using Novea2._0.Model;
 using Novea2._0.View.Admin;
+using Novea2._0.View.Store_Owner;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -99,6 +100,14 @@ namespace Novea2._0.ViewModel.Admin
             shipperInfo.NS.Text = temp.NGSINH.ToString();
             shipperInfo.SDT.Text = temp.SDT;
             shipperInfo.Mail.Text = temp.EMAIL;
+            if (temp.STATU == true)
+            {
+                shipperInfo.btUnban.IsEnabled = false;
+            }
+            else
+            {
+                shipperInfo.btBan.IsEnabled = false;
+            }
             shipperInfo.ShowDialog();
             paramater.ListViewShipper.SelectedItem = null;
             listShipper = new ObservableCollection<SHIPPER>(DataProvider.Ins.DB.SHIPPERs.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()));

@@ -16,7 +16,7 @@
         x:Name="BanWD"
         DataContext="{StaticResource BanWindowVM}">
 
-    <Border CornerRadius="15" Background="MidnightBlue">
+    <Border CornerRadius="15" Background="#FF0F1955">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>

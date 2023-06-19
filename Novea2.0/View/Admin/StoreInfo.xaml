@@ -12,7 +12,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        Height="450" Width="650"
+        Height="360" Width="650"
         x:Name="StoreInfoWD"
         DataContext="{StaticResource storeInfoVM}">
     
@@ -176,6 +176,7 @@
                                         Foreground="White"
                                         Background="#FC84CB"
                                         Height="40"
+                                        x:Name="btBan"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
@@ -192,6 +193,7 @@
                                         Foreground="White"
                                         Background="#FC84CB"
                                         Height="40"
+                                        x:Name="btUnban"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">

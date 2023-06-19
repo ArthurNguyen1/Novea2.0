@@ -24,14 +24,14 @@ namespace Novea2._0.ViewModel.Admin
 
         public StoreViewModel()
         {
-            SearchCommand = new RelayCommand<View.Admin.Store>((p) => { return p == null ? false : true; }, (p) => _SearchCommand(p));
-            LoadCsCommand = new RelayCommand<View.Admin.Store>((p) => true, (p) => _LoadCsCommand(p));
-            SortCommand = new RelayCommand<View.Admin.Store>((p) => { return p == null ? false : true; }, (p) => _SortCommand(p));
-            DetailPdCommand = new RelayCommand<View.Admin.Store>((p) => { return p.ListViewStore.SelectedItem == null ? false : true; }, (p) => _DetailPd(p));
+            SearchCommand = new RelayCommand<Store>((p) => { return p == null ? false : true; }, (p) => _SearchCommand(p));
+            LoadCsCommand = new RelayCommand<Store>((p) => true, (p) => _LoadCsCommand(p));
+            SortCommand = new RelayCommand<Store>((p) => { return p == null ? false : true; }, (p) => _SortCommand(p));
+            DetailPdCommand = new RelayCommand<Store>((p) => { return p.ListViewStore.SelectedItem == null ? false : true; }, (p) => _DetailPd(p));
             if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
                 return;
         }
-        void _LoadCsCommand(View.Admin.Store parameter)
+        void _LoadCsCommand(Store parameter)
         {
             listStore = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.GroupBy(p => p.MACH).Select(grp => grp.FirstOrDefault()));
             parameter.cbbSort.SelectedIndex = 0;
@@ -43,7 +43,7 @@ namespace Novea2._0.ViewModel.Admin
             Const.SHP = null;
         }
 
-        void _SortCommand(View.Admin.Store parameter)
+        void _SortCommand(Store parameter)
         {
             switch (parameter.cbbSort.SelectedIndex.ToString())
             {
@@ -62,7 +62,7 @@ namespace Novea2._0.ViewModel.Admin
             }
         }
 
-        void _SearchCommand(View.Admin.Store paramater)
+        void _SearchCommand(Store paramater)
         {
             ObservableCollection<CUAHANG> temp = new ObservableCollection<CUAHANG>();
             if (paramater.tbSearch.Text == "")
@@ -89,7 +89,7 @@ namespace Novea2._0.ViewModel.Admin
             }
         }
 
-        void _DetailPd(View.Admin.Store paramater)
+        void _DetailPd(Store paramater)
         {
             StoreInfo storeInfo = new StoreInfo();
             CUAHANG temp = (CUAHANG)paramater.ListViewStore.SelectedItem;
@@ -98,6 +98,14 @@ namespace Novea2._0.ViewModel.Admin
             storeInfo.SDT.Text = temp.SDT;
             storeInfo.Mail.Text = temp.EMAIL;
             storeInfo.DCCH.Text = temp.DIADIEM;
+            if (temp.STATU == true)
+            {
+                storeInfo.btUnban.IsEnabled = false;
+            }
+            else
+            {
+                storeInfo.btBan.IsEnabled = false;
+            }
             storeInfo.ShowDialog();
             paramater.ListViewStore.SelectedItem = null;
             listStore = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.GroupBy(p => p.MACH).Select(grp => grp.FirstOrDefault()));

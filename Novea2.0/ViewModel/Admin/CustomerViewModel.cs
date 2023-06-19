@@ -1,5 +1,6 @@
 ﻿using Novea2._0.Model;
 using Novea2._0.View.Admin;
+using Novea2._0.View.Store_Owner;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -100,6 +101,14 @@ namespace Novea2._0.ViewModel.Admin
             customerInfo.SDT.Text = temp.SDT;
             customerInfo.Mail.Text = temp.EMAIL;
             customerInfo.DC.Text = temp.DIACHI;
+            if (temp.STATU == true)
+            {
+                customerInfo.btUnban.IsEnabled = false;
+            }
+            else
+            {
+                customerInfo.btBan.IsEnabled = false;
+            }
             customerInfo.ShowDialog();
             paramater.ListViewCustomer.SelectedItem = null;
             listCustomer = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.GroupBy(p => p.MAND).Select(grp => grp.FirstOrDefault()));

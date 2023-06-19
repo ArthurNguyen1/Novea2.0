@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True" 
-        Height="450" Width="650" 
+        Height="360" Width="650" 
         WindowStartupLocation="CenterScreen"
         x:Name="ShipperInfoWD"
         DataContext="{StaticResource ShipperInfoVM}">
@@ -193,6 +193,7 @@
                                         Foreground="White"
                                         Background="#FD8A87"
                                         Height="40"
+                                        x:Name="btBan"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
@@ -209,6 +210,7 @@
                                         Foreground="White"
                                         Background="#FD8A87"
                                         Height="40"
+                                        x:Name="btUnban"
                                         Style="{StaticResource MaterialDesignFlatMidBgButton}">
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
