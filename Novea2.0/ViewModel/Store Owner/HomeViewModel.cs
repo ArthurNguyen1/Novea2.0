@@ -2,12 +2,21 @@
 using Novea2._0.View.Store_Owner;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Input;
+using LiveCharts;
+using LiveCharts.Wpf;
+using System.Data;
+using System.Data.SqlClient;
+using System.Collections.ObjectModel;
+using LiveCharts.Defaults;
+using Syncfusion.UI.Xaml.Charts;
+using System.Windows.Documents;
+using System.ComponentModel;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace Novea2._0.ViewModel.Store_Owner
 {
@@ -34,6 +43,9 @@ namespace Novea2._0.ViewModel.Store_Owner
         public ObservableCollection<SANPHAM> listSP { get => _listSP; set { _listSP = value; OnPropertyChanged(); } }
         private ObservableCollection<HOADON> _listHD;
         public ObservableCollection<HOADON> listHD { get => _listHD; set { _listHD = value; OnPropertyChanged(); } }
+        private ObservableCollection<HOADON> _listHD_Done;
+        public ObservableCollection<HOADON> listHD_Done { get => _listHD_Done; set { _listHD_Done = value; OnPropertyChanged(); } }
+
         private ObservableCollection<CTHD> _CTHD;
         public ObservableCollection<CTHD> CTHD { get => _CTHD; set { _CTHD = value; OnPropertyChanged(); } }
         public List<KetQuaHienThiList> Data { get; set; }
@@ -80,9 +92,9 @@ namespace Novea2._0.ViewModel.Store_Owner
         private void LoadDT(Home p)
         {
             long total = 0;
-            if (listHD.Select(x => x.TONGTIEN).Count() != 0)
+            if (listHD_Done.Select(x => x.TONGTIEN).Count() != 0)
             {
-                total = (long)listHD.Select(x => x.TONGTIEN).Sum();
+                total = (long)listHD_Done.Select(x => x.TONGTIEN).Sum();
                 DoanhThu = total.ToString("#,###") + " VNĐ";
             }
             else DoanhThu = "0 VNĐ";
@@ -101,9 +113,10 @@ namespace Novea2._0.ViewModel.Store_Owner
         private void LoadWindow(Home p)
         {
             //Set hd.STATU
-            listKH = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.MACH && hd.STATU == "")));
+            listKH = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.CH.MACH && hd.STATU != "Khởi tạo")));
             listSP = new ObservableCollection<SANPHAM>(DataProvider.Ins.DB.SANPHAMs.Where(sp => sp.MACH == Const.CH.MACH));
-            listHD = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(hd => hd.MACH == Const.CH.MACH && hd.STATU == ""));
+            listHD = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(hd => hd.MACH == Const.CH.MACH && hd.STATU != "Khởi tạo"));
+            listHD_Done = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs.Where(hd => hd.MACH == Const.CH.MACH && hd.STATU == "Đã nhận"));
         }
     }
 }

@@ -49,6 +49,8 @@ namespace Novea2._0.ViewModel.Admin
         }
         private void LoadWindow(Home p)
         {
+            DataProvider.Ins.Refresh();
+
             //Get user throught user.STATU
             listCH = new ObservableCollection<CUAHANG>(DataProvider.Ins.DB.CUAHANGs.Where(ch => ch.STATU == true));
             listKH = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes.Where(kh => kh.STATU == true));

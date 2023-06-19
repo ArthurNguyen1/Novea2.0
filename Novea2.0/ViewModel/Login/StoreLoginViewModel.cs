@@ -74,6 +74,7 @@ namespace Novea2._0.ViewModel.Login
                             }
                             Const.IsLogin = true;
                             Const.CH = store;
+                            Const.MACH = store.MACH;
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
                             Window mainLogin = Window.GetWindow(p);
