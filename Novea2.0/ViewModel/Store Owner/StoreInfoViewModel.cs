@@ -65,36 +65,47 @@ namespace Novea2._0.ViewModel.Store_Owner
         {
             if (Const.IsLogin)
             {
-                string a = Const.TenDangNhap;
-                User = DataProvider.Ins.DB.CUAHANGs.Where(x => x.TAIKHOAN == a).FirstOrDefault();
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
-                bitmapImage.StreamSource = new MemoryStream(User.AVATAR);
+                bitmapImage.StreamSource = new MemoryStream(Const.CH.AVATAR);
                 bitmapImage.EndInit();
                 Ava = bitmapImage;
-                Name = User.TENCH;
-                DoB = User.NGDK.ToString();
-                DiaChi = User.DIADIEM;
-                SDT = User.SDT;
-                TenTK = User.TAIKHOAN;
-                Mail = User.EMAIL;
+                Name = Const.CH.TENCH;
+                DoB = Const.CH.NGDK.ToString();
+                DiaChi = Const.CH.DIADIEM;
+                SDT = Const.CH.SDT;
+                TenTK = Const.CH.TAIKHOAN;
+                Mail = Const.CH.EMAIL;
             }
         }
         void _UdpateInfo(StoreInfo p)
         {
-            foreach (CUAHANG temp2 in DataProvider.Ins.DB.CUAHANGs)
+            if (p.tbName.Text == "" || p.tbSDT.Text == "" || p.tbAddress.Text == "" || p.tbMail.Text == "")
             {
-                if (temp2.EMAIL == p.tbMail.Text && p.tbMail.Text != Const.CH.EMAIL)
-                {
-                    MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            int dem5 = DataProvider.Ins.DB.SHIPPERs.Where(k => k.EMAIL == p.tbMail.Text).Count();
+            int dem6 = DataProvider.Ins.DB.ADMINIS.Where(k => k.EMAIL == p.tbMail.Text).Count();
+            int dem7 = DataProvider.Ins.DB.KHACHes.Where(k => k.EMAIL == p.tbMail.Text).Count();
+            int dem8 = DataProvider.Ins.DB.CUAHANGs.Where(k => k.EMAIL == p.tbMail.Text).Count();
+            if ((dem5 > 0 || dem6 > 0 || dem7 > 0) || (dem8 > 0 && p.tbMail.Text != Const.CH.EMAIL))
+            {
+                MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
             string match = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
             Regex reg = new Regex(match);
             if (!reg.IsMatch(p.tbMail.Text))
             {
                 MessageBox.Show("Email không hợp lệ !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            string match1 = @"^((09(\d){8})|(086(\d){7})|(088(\d){7})|(089(\d){7})|(01(\d){9}))$";
+            Regex reg1 = new Regex(match1);
+            if (!reg1.IsMatch(p.tbSDT.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             var temp = DataProvider.Ins.DB.CUAHANGs.Where(pa => pa.TAIKHOAN == TenTK).FirstOrDefault();
@@ -104,6 +115,7 @@ namespace Novea2._0.ViewModel.Store_Owner
             temp.EMAIL = p.tbMail.Text;
             temp.AVATAR = imageData;
             DataProvider.Ins.DB.SaveChanges();
+            Const.CH = temp;
             MessageBox.Show("Cập nhật thành công!", "Thông báo");
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
@@ -111,7 +123,6 @@ namespace Novea2._0.ViewModel.Store_Owner
             bitmapImage.EndInit();
             MainWindow.Instance.image.ImageSource = bitmapImage;
             MainWindow.Instance.TenDangNhap.Text = string.Join(" ", temp.TENCH.Split().Reverse().Take(2).Reverse());
-
         }
     }
 }

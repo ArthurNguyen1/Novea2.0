@@ -41,33 +41,23 @@ namespace Novea2._0.ViewModel.Shipper
                 MessageBox.Show("Bạn chưa nhập đầy đủ thông tin !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            int dem1 = DataProvider.Ins.DB.KHACHes.Where(k => k.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
-            if (dem1 > 0 && p.tbTENDANGNHAP.Text != Const.KH.TAIKHOAN)
+            int dem1 = DataProvider.Ins.DB.ADMINIS.Where(k => k.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
+            int dem2 = DataProvider.Ins.DB.KHACHes.Where(k => k.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
+            int dem3 = DataProvider.Ins.DB.CUAHANGs.Where(k => k.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
+            int dem4 = DataProvider.Ins.DB.SHIPPERs.Where(k => k.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
+            if ((dem1 > 0 || dem2 > 0 || dem3 > 0) || (dem4 > 0 && p.tbTENDANGNHAP.Text != Const.SHP.TAIKHOAN))
             {
                 MessageBox.Show("Tên đăng nhập đã tồn tại !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            int dem2 = DataProvider.Ins.DB.CUAHANGs.Where(c => c.TAIKHOAN == p.tbTENDANGNHAP.Text).Count();
-            if (dem2 > 0 && p.tbTENDANGNHAP.Text != Const.KH.TAIKHOAN)
+            int dem5 = DataProvider.Ins.DB.ADMINIS.Where(k => k.EMAIL == p.tbMAIL.Text).Count();
+            int dem6 = DataProvider.Ins.DB.KHACHes.Where(k => k.EMAIL == p.tbMAIL.Text).Count();
+            int dem7 = DataProvider.Ins.DB.CUAHANGs.Where(k => k.EMAIL == p.tbMAIL.Text).Count();
+            int dem8 = DataProvider.Ins.DB.SHIPPERs.Where(k => k.EMAIL == p.tbMAIL.Text).Count();
+            if ((dem5 > 0 || dem6 > 0 || dem7 > 0) || (dem8 > 0 && p.tbMAIL.Text != Const.SHP.EMAIL))
             {
-                MessageBox.Show("Tên đăng nhập đã tồn tại !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }
-            foreach (KHACH k in DataProvider.Ins.DB.KHACHes)
-            {
-                if (p.tbMAIL.Text == k.EMAIL && p.tbMAIL.Text != Const.KH.EMAIL)
-                {
-                    MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-            }
-            foreach (CUAHANG c in DataProvider.Ins.DB.CUAHANGs)
-            {
-                if (p.tbMAIL.Text == c.EMAIL && p.tbMAIL.Text != Const.KH.EMAIL)
-                {
-                    MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
             }
             string match = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
             Regex reg = new Regex(match);
