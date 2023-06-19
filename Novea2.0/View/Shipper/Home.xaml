@@ -206,7 +206,7 @@
                           CalendarDayButtonStyle="{DynamicResource CalendarDayButtonStyle1}"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center"
-                          Margin="510 0 0 0"/>
+                          Margin="525 0 0 0"/>
             </Grid>
         </Grid>
     </Border>

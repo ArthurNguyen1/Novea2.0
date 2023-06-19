@@ -11,18 +11,6 @@ using System.Windows.Input;
 
 namespace Novea2._0.ViewModel.Admin
 {
-    public class KetQuaHienThiList
-    {
-        private int _Hour;
-        public int Hour { get => _Hour; set { _Hour = value; } }
-        private int _SLND;
-        public int SLND { get => _SLND; set { _SLND = value; } }
-        public KetQuaHienThiList(int h = 0, int slnd = 0)
-        {
-            Hour = h; SLND = slnd;
-        }
-    }
-
     public class HomeViewModel : BaseViewModel
     {
         private ObservableCollection<CUAHANG> _listCH;
@@ -32,55 +20,17 @@ namespace Novea2._0.ViewModel.Admin
         private ObservableCollection<SHIPPER> _listSHP;
         public ObservableCollection<SHIPPER> listSHP { get => _listSHP; set { _listSHP = value; OnPropertyChanged(); } }
 
-        public List<KetQuaHienThiList> Data { get; set; }
         public DateTime Ngay { get; set; }
         public ICommand LoadWdCommand { get; set; }
         public ICommand LoadCH { get; set; }
         public ICommand LoadKH { get; set; }
         public ICommand LoadSHP { get; set; }
-        public ICommand LoadChart { get; set; }
         public HomeViewModel()
         {
             LoadWdCommand = new RelayCommand<Home>((p) => true, (p) => LoadWindow(p));
             LoadCH = new RelayCommand<Home>((p) => true, (p) => _LoadCH(p));
             LoadKH = new RelayCommand<Home>((p) => true, (p) => _LoadKH(p));
             LoadSHP = new RelayCommand<Home>((p) => true, (p) => _LoadSHP(p));
-            LoadChart = new RelayCommand<Home>((p) => true, (p) => LineChart(p));
-        }
-        private void LineChart(Home p)
-        {
-            var _listCH_temp = from ch in DataProvider.Ins.DB.CUAHANGs
-                               where ch.STATU == true
-                               select new HomeViewModel()
-                               {
-                                   Ngay = (System.DateTime)ch.NGDK,
-                               };
-            var _listKH_temp = from kh in DataProvider.Ins.DB.KHACHes
-                               where kh.STATU == true
-                               select new HomeViewModel()
-                               {
-                                   Ngay = (System.DateTime)kh.NGDK,
-                               };
-            var _listSHP_temp = from shp in DataProvider.Ins.DB.SHIPPERs
-                                where shp.STATU == true
-                                select new HomeViewModel()
-                                {
-                                    Ngay = (System.DateTime)shp.NGDK,
-                                };
-            var query = _listCH_temp.Union(_listKH_temp).Union(_listSHP_temp).ToList();         
-
-            Data = new List<KetQuaHienThiList>();
-            for (int h = 0; h < 24; h++)
-            {
-                int value = 0;
-                if (query.Where(x => x.Ngay.Hour == h && x.Ngay.Day == DateTime.Now.Day && x.Ngay.Month == DateTime.Now.Month && x.Ngay.Year == DateTime.Now.Year).Count() > 0)
-                {
-                    value++;
-                }
-                KetQuaHienThiList KetQuaHienThiList = new KetQuaHienThiList(h, value);
-                Data.Add(KetQuaHienThiList);
-            }
-            p.Chart.ItemsSource = Data;
         }
         private void _LoadSHP(Home p)
         {

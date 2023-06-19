@@ -196,90 +196,19 @@
             </StackPanel>
 
             <Grid Grid.Row="2">
-                <Border Height="320"                               
-                        Width="730"                               
-                        Background="#243771"                              
-                        CornerRadius="25"
-                        Margin="2,0,0,0">
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="15" 
-                                          Direction="-90"
-                                          RenderingBias="Quality" 
-                                          ShadowDepth="5"/>
-                    </Border.Effect>
-
-                    <StackPanel VerticalAlignment="Center">
-                        <syncfusion:SfChart Foreground="{StaticResource color1}" 
-                                            FontWeight="Bold" 
-                                            FontSize="16"
-                                            Height="320" 
-                                            Width="700" 
-                                            Header="Đồ thị số lượng người dùng">
-
-                            <syncfusion:SfChart.PrimaryAxis>
-                                <syncfusion:CategoryAxis/>
-                            </syncfusion:SfChart.PrimaryAxis>
-
-                            <syncfusion:SfChart.SecondaryAxis>
-                                <syncfusion:NumericalAxis/>
-                            </syncfusion:SfChart.SecondaryAxis>
-
-                            <syncfusion:SfChart.Legend>
-                                <syncfusion:ChartLegend Foreground="{StaticResource plainTextColor3}"/>
-                            </syncfusion:SfChart.Legend>
-
-                            <syncfusion:SfChart.Resources>
-
-                                <DataTemplate x:Key="tooltipTemplate">
-                                    <Border>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <TextBlock Text="{Binding Item.SP}"
-                                                       Foreground="{StaticResource plainTextColor2}" 
-                                                       TextAlignment="Center" 
-                                                       FontFamily="{StaticResource Custom1}"/>
-                                        </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-
-                                <Style TargetType="Path" x:Key="tooltipStyle">
-                                    <Setter Property="Stroke" Value="Pink"/>
-                                    <Setter Property="Fill" Value="#FFE5D8"/>
-                                </Style>
-
-                            </syncfusion:SfChart.Resources>
-
-                            <syncfusion:SfChart.Behaviors>
-                                <syncfusion:ChartTooltipBehavior Style="{StaticResource tooltipStyle}" 
-                                                                 Position="Pointer"/>
-                            </syncfusion:SfChart.Behaviors>
-
-                            <syncfusion:ColumnSeries x:Name="Chart" 
-                                                     ShowTooltip="True" 
-                                                     TooltipTemplate="{StaticResource tooltipTemplate}" 
-                                                     Palette="Custom" Label="User"
-                                                     ItemsSource="{Binding Data}" 
-                                                     XBindingPath="Hour" YBindingPath="SP" 
-                                                     EnableAnimation="True" 
-                                                     AnimationDuration="00:00:01">
-
-                                <syncfusion:ColumnSeries.ColorModel>
-                                    <syncfusion:ChartColorModel>
-                                        <syncfusion:ChartColorModel.CustomBrushes>
-                                            <SolidColorBrush Color="Red"/>
-                                        </syncfusion:ChartColorModel.CustomBrushes>
-                                    </syncfusion:ChartColorModel>
-                                </syncfusion:ColumnSeries.ColorModel>
-                            </syncfusion:ColumnSeries>
-
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Loaded">
-                                    <i:InvokeCommandAction Command="{Binding LoadChart}"
-                                                       CommandParameter="{Binding ElementName=HomePage}"></i:InvokeCommandAction>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </syncfusion:SfChart>
-                    </StackPanel>
-                </Border>
+                <Image Source="/Resources/Images/admin1.png"
+                       Width="300"
+                       Height="300"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="115 0 0 0"/>
+                <Calendar Style="{DynamicResource CalendarStyle1}" 
+                          CalendarButtonStyle="{DynamicResource CalendarButtonStyle1}" 
+                          CalendarItemStyle="{DynamicResource CalendarItemStyle1}" 
+                          CalendarDayButtonStyle="{DynamicResource CalendarDayButtonStyle1}"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="510 0 0 0"/>
             </Grid>
         </Grid>
     </Border>
