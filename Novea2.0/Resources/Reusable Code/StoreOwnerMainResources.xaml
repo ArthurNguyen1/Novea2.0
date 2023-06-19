@@ -7,7 +7,7 @@
     <viewmodel:DetailOrderViewModel x:Key="DetailOrderVM"/>
     <viewmodel:ProductViewModel x:Key="ProductVM"/>
     <viewmodel:DetailProductViewModel x:Key="DetailProductVM"/>
-    <viewmodel:CustomerViewModel x:Key="CustomerVM"/>
+    <viewmodel:CustomerViewModel x:Key="customerVM"/>
     <viewmodel:HistoryViewModel x:Key="HistoryVM"/>
     <viewmodel:SettingViewModel x:Key="StoreOwnerSettingVM"/>
     <viewmodel:StoreInfoViewModel x:Key="StoreInfoVM"/>

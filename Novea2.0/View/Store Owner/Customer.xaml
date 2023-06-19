@@ -10,7 +10,7 @@
       d:DesignHeight="565" d:DesignWidth="820"
       Title="Customer"
       x:Name="CustomerPage"
-      DataContext="{StaticResource CustomerVM}">
+      DataContext="{StaticResource customerVM}">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

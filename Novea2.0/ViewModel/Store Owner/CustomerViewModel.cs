@@ -31,27 +31,41 @@ namespace Novea2._0.ViewModel.Store_Owner
         }
         private void Load(View.Store_Owner.Customer p)
         {
-            listKHtemp = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes);
+            ListKHtemp = new ObservableCollection<KHACH>(DataProvider.Ins.DB.KHACHes);
             //Set hd.STATU
-            listKH = new ObservableCollection<KHACH>(listKHtemp.GroupBy(k => k.HOTEN).Select(grp => grp.FirstOrDefault()).Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.MACH && hd.STATU == "")));
+            //ListKH = new ObservableCollection<KHACH>(ListKHtemp.GroupBy(k => k.HOTEN).Select(grp => grp.FirstOrDefault()).Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.MACH && hd.STATU == "Đã nhận")));
             p.cbbSort.SelectedIndex = 0;
-            p.cbbSort.Items.SortDescriptions.Add(new SortDescription("HOTEN", ListSortDirection.Ascending));
+            Sort(p); 
+            Search(p);
         }
         private void Sort(View.Store_Owner.Customer p)
         {
-            var SortDirection = p.cbbSort.SelectedIndex.ToString() == "0" ? ListSortDirection.Ascending : ListSortDirection.Descending;
-            p.ListViewKH.Items.SortDescriptions[0] = new SortDescription("HOTEN", SortDirection);
+            switch (p.cbbSort.SelectedIndex.ToString())
+            {
+                case "0":
+                    {
+                        ListKH = new ObservableCollection<KHACH>(ListKHtemp.GroupBy(k => k.HOTEN).Select(grp => grp.FirstOrDefault()).Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.MACH && hd.STATU == "Đã nhận")).OrderBy(m => m.HOTEN));
+                        p.ListViewKH.ItemsSource = ListKH;
+                        break;
+                    }
+                case "1":
+                    {
+                        ListKH = new ObservableCollection<KHACH>(ListKHtemp.GroupBy(k => k.MAND).Select(grp => grp.FirstOrDefault()).Where(kh => kh.HOADONs.Any(hd => hd.MACH == Const.MACH && hd.STATU == "Đã nhận")).OrderByDescending(m => m.HOTEN));
+                        p.ListViewKH.ItemsSource = ListKH;
+                        break;
+                    }
+            }
         }
         private void Search(View.Store_Owner.Customer p)
         {
             ObservableCollection<KHACH> temp = new ObservableCollection<KHACH>();
             if (p.tbSearch.Text == "")
             {
-                p.ListViewKH.ItemsSource = listKH;
+                p.ListViewKH.ItemsSource = ListKH;
             } 
             else
             {
-                foreach (KHACH k in listKH)
+                foreach (KHACH k in ListKH)
                 {
                     if (k.HOTEN.ToLower().Contains(p.tbSearch.Text.ToLower()))
                     {
