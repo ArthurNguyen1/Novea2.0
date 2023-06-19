@@ -49,7 +49,9 @@
                             <!--<Image Source="/Resources/Images/tradaocamsa.jpg"
                                    Stretch="UniformToFill"/>-->
                         </Border>
-                        <StackPanel Margin="0 40 0 0">
+                        <StackPanel Margin="0 40 0 0"
+                                    Visibility="Hidden"
+                                    x:Name="RatingStackPanel">
                             <TextBlock FontFamily="{StaticResource Custom1}"
                                        FontSize="28"
                                        FontWeight="SemiBold"
@@ -75,6 +77,12 @@
                                         <Setter Property="PointerOverStrokeThickness" Value="1"/>
                                     </Style>
                                 </syncfusion:SfRating.ItemContainerStyle>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="ValueChanged">
+                                        <i:InvokeCommandAction Command="{Binding UserRateCommand}"
+                                                      CommandParameter="{Binding ElementName=ProductDetailWD}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
                             </syncfusion:SfRating>
                         </StackPanel>
                     </StackPanel>
@@ -183,7 +191,7 @@
                                 <TextBlock FontFamily="Segoe UI"
                                            FontSize="25"
                                            Margin="5 0 0 0"
-                                           Text="{Binding SumRating}"
+                                           Text="{Binding TotalRating}"
                                            Foreground="{StaticResource plainTextColor3}"
                                            HorizontalAlignment="Center"/>
                                 <TextBlock FontFamily="Segoe UI"

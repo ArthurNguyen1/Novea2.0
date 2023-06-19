@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.IO;
+using Novea2._0.View.Store_Owner;
 
 namespace Novea2._0.ViewModel.Customer
 {
@@ -24,16 +25,24 @@ namespace Novea2._0.ViewModel.Customer
         public int Trigia { get => _Trigia; set { _Trigia = value; OnPropertyChanged(); } }
         private BitmapImage image;
         public BitmapImage Image { get => image; set { image = value; OnPropertyChanged(); } }
+        private double averageRating;
+        public double AverageRating { get => averageRating; set { averageRating = value; OnPropertyChanged(); } }
+        private int sumRating;
+        public int SumRating { get => sumRating; set { sumRating = value; OnPropertyChanged(); } }
+        private int totalRating;
+        public int TotalRating { get => totalRating; set { totalRating = value; OnPropertyChanged(); } }
         public ICommand CloseProductDetailwdCommand { get; set; }
         public ICommand Loadwd { get; set; }
         public ICommand UpdateSLCommand { get; set; }
         public ICommand AddToCartCommand { get; set; }
+        public ICommand UserRateCommand { get; set; }
         public ProductDetailViewModel()
         {
             Loadwd = new RelayCommand<ProductDetail>((p) => true, (p) => _Loadwd(p));
             UpdateSLCommand = new RelayCommand<ProductDetail>((p) => true, (p) => _UpdateSLCommand(p));
             AddToCartCommand = new RelayCommand<ProductDetail>((p) => true, (p) => _AddToCartCommand(p));
             CloseProductDetailwdCommand = new RelayCommand<ProductDetail>((p) => true, (p) => CloseProductDetailwd(p));
+            UserRateCommand = new RelayCommand<ProductDetail>((p) => true, (p) => Rate(p));
         }
         void _UpdateSLCommand(ProductDetail parameter)
         {
@@ -84,6 +93,42 @@ namespace Novea2._0.ViewModel.Customer
 
             parameter.txbSL.Text = "1";
             _UpdateSLCommand(parameter);
+
+            //Load AverageRating, SumRating, Rating
+            SumRating = 0;
+            TotalRating = 0;
+            foreach (DANHGIA dg in DataProvider.Ins.DB.DANHGIAs)
+            {
+                if (dg.MASP == Const.SP_temp.MASP)
+                {
+                    SumRating += (int)dg.RATE;
+                    TotalRating++;
+                }
+            }
+            if (TotalRating == 0)
+            {
+                AverageRating = 0;
+            }
+            else
+            {
+                AverageRating = Math.Round(sumRating * 1.0 / TotalRating, 1);
+            }
+            var result = from cthd in DataProvider.Ins.DB.CTHDs
+                         join hoadon in DataProvider.Ins.DB.HOADONs on cthd.SOHD equals hoadon.SOHD
+                         where hoadon.MAND_KHACH == Const.KH.MAND && hoadon.STATU == "Đã nhận" && cthd.MASP == Const.SP_temp.MASP
+                         select cthd;
+            if (result.Any())
+            {
+                parameter.RatingStackPanel.Visibility = Visibility.Visible;
+                var danhgia = (from d in DataProvider.Ins.DB.DANHGIAs
+                               where d.MAND_KHACH == Const.KH.MAND && d.MASP == Const.SP_temp.MASP
+                               select d.RATE).FirstOrDefault();
+                if (danhgia != null)
+                {
+                    parameter.Rating.Value = danhgia.Value;
+                    parameter.Rating.IsEnabled = false;
+                }
+            }
         }
         bool CheckProduct()
         {
@@ -181,6 +226,36 @@ namespace Novea2._0.ViewModel.Customer
                 SoCTHD = "CTHD" + rand.Next(0, 10000).ToString();
             } while (checkSOCTHD(SoCTHD));
             return SoCTHD;
+        }
+        bool checkDANHGIA(string m)
+        {
+            foreach (DANHGIA d in DataProvider.Ins.DB.DANHGIAs)
+            {
+                if (d.MADG == m)
+                    return true;
+            }
+            return false;
+        }
+        string rdDANHGIA()
+        {
+            string madg;
+            do
+            {
+                Random rand = new Random();
+                madg = "DG" + rand.Next(0, 10000).ToString();
+            } while (checkDANHGIA(madg));
+            return madg;
+        }
+        void Rate(ProductDetail p)
+        {
+            p.Rating.IsEnabled = false;
+            DANHGIA dg = new DANHGIA();
+            dg.MADG = rdDANHGIA();
+            dg.RATE = (int)p.Rating.Value;
+            dg.MAND_KHACH = Const.KH.MAND;
+            dg.MASP = Const.SP_temp.MASP;
+            DataProvider.Ins.DB.DANHGIAs.Add(dg);
+            DataProvider.Ins.DB.SaveChanges();
         }
     }
 }
