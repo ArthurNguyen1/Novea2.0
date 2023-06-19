@@ -67,6 +67,7 @@
                         <ComboBoxItem Content="Không"/>
                         <ComboBoxItem Content="Đang xử lý"/>
                         <ComboBoxItem Content="Đang giao hàng"/>
+                        <ComboBoxItem Content="Đã nhận"/>
                         <ComboBoxItem Content="Bị hủy"/>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">

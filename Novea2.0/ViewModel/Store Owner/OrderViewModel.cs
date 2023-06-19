@@ -64,6 +64,12 @@ namespace Novea2._0.ViewModel.Store_Owner
                     }
                 case "3":
                     {
+                        listHD = new ObservableCollection<HOADON>(listHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Đã nhận"));
+                        p.ListViewHD.ItemsSource = listHD;
+                        break;
+                    }
+                case "4":
+                    {
                         listHD = new ObservableCollection<HOADON>(listHD1.GroupBy(h => h.SOHD).Select(grp => grp.FirstOrDefault()).Where(h => h.STATU == "Bị hủy"));
                         p.ListViewHD.ItemsSource = listHD;
                         break;
