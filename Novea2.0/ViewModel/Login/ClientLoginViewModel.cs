@@ -85,6 +85,7 @@ namespace Novea2._0.ViewModel.Login
                         {
                             string mota = k.REASONBANNING;
                             MessageBox.Show(mota, "Thông báo", MessageBoxButton.OK);
+                            return;
                         }
                     }
                 }             
