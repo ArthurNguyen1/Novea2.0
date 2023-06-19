@@ -10,4 +10,5 @@
     <viewmodel:SettingViewModel x:Key="CustomerSettingVM"/>
     <viewmodel:PersonInfoViewModel x:Key="PersonInfoVM"/>
     <viewmodel:ChangePasswordViewModel x:Key="CustomerChangePasswordVM"/>
+    <viewmodel:StoreIdToNameConverter x:Key="StoreIdToNameConverter"/>
 </ResourceDictionary>

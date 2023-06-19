@@ -203,6 +203,7 @@
     <Compile Include="ViewModel\Customer\ProductDetailViewModel.cs" />
     <Compile Include="ViewModel\Customer\SettingViewModel.cs" />
     <Compile Include="ViewModel\Customer\StoreDetailViewModel.cs" />
+    <Compile Include="ViewModel\Customer\StoreIdToNameConverter.cs" />
     <Compile Include="ViewModel\Login\AdminLoginViewModel.cs" />
     <Compile Include="ViewModel\Login\AdminSignUpViewModel.cs" />
     <Compile Include="ViewModel\Login\ClientLoginViewModel.cs" />

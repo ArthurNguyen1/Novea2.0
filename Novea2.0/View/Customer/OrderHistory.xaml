@@ -11,7 +11,6 @@
       Title="OrderHistory"
       x:Name="OrderHistoryPage"
       DataContext="{StaticResource OrderHistoryVM}">
-
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadOrderHistoryCommand}"
@@ -230,7 +229,7 @@
                                                        VerticalAlignment="Center"
                                                        FontFamily="{StaticResource Custom}"
                                                        FontSize="18"
-                                                       Text="{Binding TENCH}"/>
+                                                       Text="{Binding MACH, Converter={StaticResource StoreIdToNameConverter}}"/>
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock HorizontalAlignment="Center"
